@@ -16,7 +16,7 @@ public class TestingMod implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-
+// xd this is a funny comment!
 //	public static final EntityType<TestingProjectileEntity> TESTING_PROJECTILE_ENTITY_ENTITY_TYPE = Registry.register(
 //			Registries.ENTITY_TYPE,
 //			new Identifier(MOD_ID, "testing_projectile"),
