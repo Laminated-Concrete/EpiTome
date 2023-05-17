@@ -1,6 +1,6 @@
-package net.fryke.testingmod.mixin;
+package net.fryke.tomesofpower.mixin;
 
-import net.fryke.testingmod.TestingMod;
+import net.fryke.tomesofpower.ToPMod;
 import net.minecraft.client.gui.screen.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ExampleMixin {
 	@Inject(at = @At("HEAD"), method = "init()V")
 	private void init(CallbackInfo info) {
-		TestingMod.LOGGER.info("This line is printed by an example mod mixin!");
+		ToPMod.LOGGER.info("This line is printed by an example mod mixin!");
 	}
 }
