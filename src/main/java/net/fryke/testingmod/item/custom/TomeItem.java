@@ -56,6 +56,7 @@ public class TomeItem extends Item {
             }
         });
 
+        // testing comment for github stuff
         spellList.add(new Identifier(TestingMod.MOD_ID, "testing_spell_1"));
         spellList.add(new Identifier(TestingMod.MOD_ID, "testing_spell_2"));
         spellList.add(new Identifier(TestingMod.MOD_ID, "testing_spell_3"));
