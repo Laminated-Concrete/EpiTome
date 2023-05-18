@@ -3,12 +3,12 @@ package net.fryke.tomesofpower.item.custom;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fryke.tomesofpower.ToPMod;
 import net.fryke.tomesofpower.ToPModClient;
-import net.fryke.tomesofpower.spells.types.ProjectileSpellEntity;
-import net.minecraft.entity.EntityType;
+import net.fryke.tomesofpower.spells.ModSpells;
+import net.fryke.tomesofpower.spells.SpellIdentifiers;
+import net.fryke.tomesofpower.spells.types.Spell;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
@@ -20,7 +20,7 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 
 public class TomeItem extends Item {
-    public ArrayList<Identifier> spellList = new ArrayList<Identifier>();
+    public ArrayList<Identifier> spellList = new ArrayList<>();
     public Identifier selectedSpell = null;
 
     public TomeItem(Settings settings) {
@@ -57,43 +57,33 @@ public class TomeItem extends Item {
             }
         });
 
-        spellList.add(new Identifier(ToPMod.MOD_ID, "spell_entity"));
-        spellList.add(new Identifier(ToPMod.MOD_ID, "testing_projectile"));
-        spellList.add(new Identifier(ToPMod.MOD_ID, "testing_spell_3"));
+        spellList.add(SpellIdentifiers.DIG_SPELL_ID);
+//        spellList.add(SpellIdentifiers.PLOW_SPELL_ID);
+        spellList.add(SpellIdentifiers.EMBER_SPELL_ID);
         selectedSpell = spellList.get(0);
     }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if(hand == Hand.MAIN_HAND) {
-            ToPMod.LOGGER.info("trying to play sound");
             world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
 
             // this part happens on the server for obvious security concerns
             if (!world.isClient) {
-                user.sendMessage(Text.literal("Trying to cast spell = " + selectedSpell.toString()));
-                ToPMod.LOGGER.info("PRINTING THE THING");
+                ToPMod.LOGGER.info("Trying to cast spell = " + selectedSpell.toString());
 
-                if(true) { // TODO figure this out. need to check if we are dealing with an 'projectile_entity' type spell
-                    // If we are dealing with an Entity type spell
-                    // First we need to get the projectile_entity type from the Registry
-                    EntityType<?> spellEntityType = Registries.ENTITY_TYPE.get(selectedSpell);
+                Spell spell = (Spell) ModSpells.spellRegistry.get(selectedSpell);
+                spell.castSpell(world, user, hand);
 
-                    // Then we create the projectile_entity
-                    ProjectileSpellEntity spellEntity = (ProjectileSpellEntity) spellEntityType.create(world);
-                    spellEntity.setPos(user.getX(), user.getY(), user.getZ()); // TODO how to get head position instead of feet position?
-                    spellEntity.setOwner(user);
-
-                    if(true) { // TODO figure out this check or move velocity init to the spell projectile class?
-                        // If we are dealing with a projectile type projectile_entity, then we need to set its velocity?
-                        spellEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.0F, 0F);
-                    }
-                    world.spawnEntity(spellEntity); // spawns projectile_entity
-                } else if(false) { // TODO figure this check out. need to check if we are dealing with an 'interaction' type spell
-
-                } else if(false) { // TODO figure this check out. need to check if we are dealing with a 'self' type spell
-
-                }
+//                if(true) { // TODO figure this out. need to check if we are dealing with an 'projectile_entity' type spell
+////                    // If we are dealing with an Entity type spell
+////                    // First we need to get the projectile_entity type from the Registry
+////
+//                } else if(false) { // TODO figure this check out. need to check if we are dealing with an 'interaction' type spell
+//
+//                } else if(false) { // TODO figure this check out. need to check if we are dealing with a 'self' type spell
+//
+//                }
 
             }
 

@@ -1,6 +1,5 @@
 package net.fryke.tomesofpower.spells.custom_entity;
 
-import net.fryke.tomesofpower.spells.types.CustomSpellEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.World;
 

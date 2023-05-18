@@ -1,13 +1,10 @@
 package net.fryke.tomesofpower.spells.types;
 
-import net.fryke.tomesofpower.ToPMod;
-import net.minecraft.util.Identifier;
+import net.fryke.tomesofpower.spells.SpellIdentifiers;
 
-public class InteractionSpell implements SpellInterface {
-    public static final Identifier INTERACTION_SPELL_TYPE = new Identifier(ToPMod.MOD_ID, "interaction_spell_type");
-
-    @Override
-    public Identifier getSpellType() {
-        return INTERACTION_SPELL_TYPE;
+public abstract class InteractionSpell extends Spell {
+    public InteractionSpell() {
+        super();
+        SPELL_TYPE = SpellIdentifiers.INTERACTION_SPELL_TYPE;
     }
 }

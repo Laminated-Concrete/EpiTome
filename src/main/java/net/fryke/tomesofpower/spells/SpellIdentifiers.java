@@ -4,6 +4,13 @@ import net.fryke.tomesofpower.ToPMod;
 import net.minecraft.util.Identifier;
 
 public class SpellIdentifiers {
+    // Spell type identifiers
+    public static final Identifier INTERACTION_SPELL_TYPE = new Identifier(ToPMod.MOD_ID, "interaction_spell_type");
+    public static final Identifier SELF_SPELL_TYPE = new Identifier(ToPMod.MOD_ID, "self_spell_type");
+    public static final Identifier PROJECTILE_ENTITY_SPELL_TYPE = new Identifier(ToPMod.MOD_ID, "projectile_entity_spell_type");
+    public static final Identifier CUSTOM_ENTITY_SPELL_TYPE = new Identifier(ToPMod.MOD_ID, "custom_entity_spell_type");
+
+
     // Used in the Tome of Earth (T1)
     public static final Identifier DIG_SPELL_ID = new Identifier(ToPMod.MOD_ID, "dig_spell");
     public static final Identifier PLOW_SPELL_ID = new Identifier(ToPMod.MOD_ID, "plow_spell");

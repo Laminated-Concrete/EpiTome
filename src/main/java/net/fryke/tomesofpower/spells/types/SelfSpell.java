@@ -1,13 +1,10 @@
 package net.fryke.tomesofpower.spells.types;
 
-import net.fryke.tomesofpower.ToPMod;
-import net.minecraft.util.Identifier;
+import net.fryke.tomesofpower.spells.SpellIdentifiers;
 
-public class SelfSpell implements SpellInterface {
-    public static final Identifier SELF_SPELL_TYPE = new Identifier(ToPMod.MOD_ID, "self_spell_type");
-
-    @Override
-    public Identifier getSpellType() {
-        return SELF_SPELL_TYPE;
+public abstract class SelfSpell extends Spell {
+    public SelfSpell() {
+        super();
+        SPELL_TYPE = SpellIdentifiers.SELF_SPELL_TYPE;
     }
 }

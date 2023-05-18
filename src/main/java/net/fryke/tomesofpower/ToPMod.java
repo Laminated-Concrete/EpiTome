@@ -1,11 +1,17 @@
 package net.fryke.tomesofpower;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
+import net.fabricmc.fabric.api.event.registry.RegistryAttribute;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fryke.tomesofpower.block.ModBlocks;
 import net.fryke.tomesofpower.entity.ModEntities;
 import net.fryke.tomesofpower.item.ModItems;
 import net.fryke.tomesofpower.event.ServerConnectionInitHandler;
+import net.fryke.tomesofpower.spells.ModSpells;
+import net.fryke.tomesofpower.spells.types.Spell;
+import net.minecraft.registry.SimpleRegistry;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,6 +41,7 @@ public class ToPMod implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
+		ModSpells.registerModSpells();
 
 		ServerPlayConnectionEvents.INIT.register(new ServerConnectionInitHandler());
 	}

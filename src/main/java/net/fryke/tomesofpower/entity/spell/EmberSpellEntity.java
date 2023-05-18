@@ -1,6 +1,5 @@
-package net.fryke.tomesofpower.spells.projectile_entity;
+package net.fryke.tomesofpower.entity.spell;
 
-import net.fryke.tomesofpower.spells.types.ProjectileSpellEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.hit.EntityHitResult;
@@ -8,8 +7,12 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class EmberSpellEntity extends ProjectileSpellEntity {
-    public EmberSpellEntity(EntityType<? extends ProjectileSpellEntity> entityType, World world) {
+    public EmberSpellEntity(EntityType<? extends ProjectileSpellEntity> entityType, World world, float gravity, float dragScalar, Entity caster) {
         super(entityType, world);
+        this.gravity = gravity;
+        this.dragScalar = dragScalar;
+        this.setOwner(caster);
+        this.setPosition(caster.getX(), caster.getEyeY() - 0.1, caster.getZ());
     }
 
     @Override
@@ -27,6 +30,7 @@ public class EmberSpellEntity extends ProjectileSpellEntity {
         super.onCollision(hitResult);
         if (!this.world.isClient) { // if we are on the server
 //            this.world.sendEntityStatus(this, (byte)3); // particle?
+            // TODO lets make a little smoke particle on entity death or something?
             this.kill(); // kills the projectile
         }
     }

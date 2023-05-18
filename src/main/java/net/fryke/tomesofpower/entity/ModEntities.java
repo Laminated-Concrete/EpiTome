@@ -5,9 +5,10 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fryke.tomesofpower.ToPMod;
 import net.fryke.tomesofpower.client.render.SpellEntityRenderer;
 import net.fryke.tomesofpower.client.render.TestingProjectileEntityRenderer;
-import net.fryke.tomesofpower.spells.types.ProjectileSpellEntity;
+import net.fryke.tomesofpower.entity.spell.ProjectileSpellEntity;
+import net.fryke.tomesofpower.entity.spell.SpellEntity;
 import net.fryke.tomesofpower.spells.SpellIdentifiers;
-import net.fryke.tomesofpower.spells.projectile_entity.EmberSpellEntity;
+import net.fryke.tomesofpower.entity.spell.EmberSpellEntity;
 import net.fryke.tomesofpower.entity.custom.TestingProjectileEntity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -16,11 +17,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-import java.util.ArrayList;
-
 public class ModEntities {
-    public static ArrayList<Identifier> spellIdentifiers = new ArrayList<Identifier>();
-
     public static final EntityType<TestingProjectileEntity> TESTING_PROJECTILE_ENTITY_ENTITY_TYPE = registerEntity(
             "testing_projectile",
             FabricEntityTypeBuilder.<TestingProjectileEntity>create(SpawnGroup.MISC, TestingProjectileEntity::new)
@@ -38,6 +35,7 @@ public class ModEntities {
     public static final EntityType<EmberSpellEntity> EMBER_SPELL_ENTITY_TYPE = registerSpellEntity(
             SpellIdentifiers.EMBER_SPELL_ID,
             FabricEntityTypeBuilder.<ProjectileSpellEntity>create(SpawnGroup.MISC, EmberSpellEntity::new)
+//                    .trackedUpdateRate(0) // this is how many ticks pass before an update. so 1 is every tick
                     .dimensions(EntityDimensions.fixed(0.25f, 0.25f))
                     .build()
     );
@@ -48,7 +46,7 @@ public class ModEntities {
         EntityRendererRegistry.register(TESTING_PROJECTILE_ENTITY_ENTITY_TYPE,
                 TestingProjectileEntityRenderer::new);
 
-        EntityRendererRegistry.register(SPELL_ENTITY_TYPE,
+        EntityRendererRegistry.register(EMBER_SPELL_ENTITY_TYPE,
                 SpellEntityRenderer::new);
     }
 

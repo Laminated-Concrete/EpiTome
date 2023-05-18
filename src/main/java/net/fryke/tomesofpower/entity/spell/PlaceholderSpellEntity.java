@@ -1,4 +1,4 @@
-package net.fryke.tomesofpower.spells.projectile_entity;
+package net.fryke.tomesofpower.entity.spell;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

@@ -2,7 +2,7 @@ package net.fryke.tomesofpower.event;
 
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
-import net.fryke.tomesofpower.spells.types.ProjectileSpellEntity;
+import net.fryke.tomesofpower.entity.spell.ProjectileSpellEntity;
 import net.fryke.tomesofpower.entity.custom.TestingProjectileEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.server.MinecraftServer;
