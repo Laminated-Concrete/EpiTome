@@ -1,6 +1,5 @@
 package net.fryke.tomesofpower.client.render;
 
-import net.fryke.tomesofpower.entity.custom.TestingProjectileEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.VertexConsumerProvider;

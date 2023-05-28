@@ -34,5 +34,5 @@ public class ModBlocks {
     }
 
     public static final Block TESTING_BLOCK = registerBlock("testing_block",
-            new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool()), ModItemGroup.TOMES_TESTING);
+            new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool()), ModItemGroup.TOMES_OF_POWER);
 }

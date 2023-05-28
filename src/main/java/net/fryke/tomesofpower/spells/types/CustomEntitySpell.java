@@ -1,5 +1,6 @@
 package net.fryke.tomesofpower.spells.types;
 
+import net.fryke.tomesofpower.item.tomes.TomeItem;
 import net.fryke.tomesofpower.spells.SpellIdentifiers;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Hand;
@@ -12,7 +13,7 @@ public class CustomEntitySpell extends Spell {
     }
 
     @Override
-    public void castSpell(World world, PlayerEntity caster, Hand hand) {
+    public void castSpell(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
 
     }
 }

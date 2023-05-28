@@ -1,16 +1,13 @@
-package net.fryke.tomesofpower.item.custom;
+package net.fryke.tomesofpower.item.tomes;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fryke.tomesofpower.ToPMod;
 import net.fryke.tomesofpower.ToPModClient;
 import net.fryke.tomesofpower.spells.ModSpells;
-import net.fryke.tomesofpower.spells.SpellIdentifiers;
 import net.fryke.tomesofpower.spells.types.Spell;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
@@ -26,7 +23,7 @@ public class TomeItem extends Item {
     public TomeItem(Settings settings) {
         super(settings);
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            if (ToPModClient.keyBinding.wasPressed()) {
+            if (ToPModClient.keyBinding.wasPressed() && !spellList.isEmpty()) {
                 ItemStack mainHandStack = client.player.getInventory().getMainHandStack();
                 if(mainHandStack.getItem().equals(this)) {
                     client.player.sendMessage(Text.literal("Key was pressed while holding item"), false);
@@ -56,49 +53,24 @@ public class TomeItem extends Item {
                 }
             }
         });
-
-        spellList.add(SpellIdentifiers.DIG_SPELL_ID);
-//        spellList.add(SpellIdentifiers.PLOW_SPELL_ID);
-        spellList.add(SpellIdentifiers.EMBER_SPELL_ID);
-        selectedSpell = spellList.get(0);
     }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if(hand == Hand.MAIN_HAND) {
-            world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
-
             // this part happens on the server for obvious security concerns
+            Spell spell = (Spell) ModSpells.spellRegistry.get(selectedSpell);
+            ToPMod.LOGGER.info("Trying to cast spell = " + selectedSpell.toString());
             if (!world.isClient) {
-                ToPMod.LOGGER.info("Trying to cast spell = " + selectedSpell.toString());
-
-                Spell spell = (Spell) ModSpells.spellRegistry.get(selectedSpell);
-                spell.castSpell(world, user, hand);
-
-//                if(true) { // TODO figure this out. need to check if we are dealing with an 'projectile_entity' type spell
-////                    // If we are dealing with an Entity type spell
-////                    // First we need to get the projectile_entity type from the Registry
-////
-//                } else if(false) { // TODO figure this check out. need to check if we are dealing with an 'interaction' type spell
-//
-//                } else if(false) { // TODO figure this check out. need to check if we are dealing with a 'self' type spell
-//
-//                }
-
+                ToPMod.LOGGER.info("Trying to cast spell on server = " + selectedSpell.toString());
+                spell.castSpell(world, user, hand, this);
             }
 
             user.incrementStat(Stats.USED.getOrCreateStat(this)); // TODO figure out wtf this is
 
-//            if(!user.getAbilities().creativeMode) {
-//                itemStack.decrement(1);
-//
             if(ToPModClient.keyBinding.isPressed()) {
                 user.sendMessage(Text.literal("Key is being pressed!"), false);
             }
-
-
-
-            user.getItemCooldownManager().set(this, 10);
         }
 
         return super.use(world, user, hand);

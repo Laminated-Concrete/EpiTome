@@ -8,8 +8,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModItemGroup {
-    public static final ItemGroup TOMES_TESTING = FabricItemGroup.builder(new Identifier(ToPMod.MOD_ID))
-            .displayName(Text.literal("Testing Tomes"))
+    public static final ItemGroup TOMES_OF_POWER = FabricItemGroup.builder(new Identifier(ToPMod.MOD_ID))
+            .displayName(Text.literal("Tomes of Power"))
             .icon(() -> new ItemStack(ModItems.TESTING_TOME))
             .build();
 }

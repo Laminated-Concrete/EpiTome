@@ -1,11 +1,9 @@
 package net.fryke.tomesofpower.entity.spell;
 
 import io.netty.buffer.Unpooled;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fryke.tomesofpower.ToPMod;
-import net.fryke.tomesofpower.entity.ModEntities;
+import net.fryke.tomesofpower.spells.types.Spell;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
@@ -21,43 +19,32 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.util.UUID;
 
 public class ProjectileSpellEntity extends ProjectileEntity {
-    public static final Identifier ENTITY_PROJECTILE_SPELL_TYPE = new Identifier(ToPMod.MOD_ID, "projectile_entity_spell_type");
     public static final Identifier SPAWN_SPELL_PACKET_ID = new Identifier(ToPMod.MOD_ID, "spawn_projectile_spell");
     protected float gravity = 0f;
     protected float dragScalar = 0.99f;
+    protected Spell spell;
 
     public ProjectileSpellEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    @Environment(EnvType.CLIENT)
-    public ProjectileSpellEntity(World world, double x, double y, double z, int id, UUID uuid) {
-        super(ModEntities.SPELL_ENTITY_TYPE, world);
+    public void setSpellData(double x, double y, double z, int entityId, UUID entityUUID) {
         updateTrackedPosition(x, y, z);
-        setId(id);
-        setUuid(uuid);
+        setPosition(x, y, z);
+        setId(entityId);
+        setUuid(entityUUID);
     }
 
     @Override
     protected void initDataTracker() {
 
     }
-
-//    @Override
-//    public boolean shouldRender(double distance) {
-//        double d = this.getBoundingBox().getAverageSideLength() * 4.0;
-//        if (Double.isNaN(d)) {
-//            d = 4.0;
-//        }
-//        return distance < (d *= 64.0) * d;
-//    }
 
     @Override
     public void tick() {
@@ -119,6 +106,10 @@ public class ProjectileSpellEntity extends ProjectileEntity {
      */
     @Override
     public Packet<ClientPlayPacketListener> createSpawnPacket() {
+        if(spell == null) {
+            this.kill();
+            return super.createSpawnPacket();
+        }
         // fyi this is run on the server. prepares a packet to send from server to client to let the client know an projectile_entity spawned
 
         PacketByteBuf packet = new PacketByteBuf(Unpooled.buffer()); // in theory should dynamically resize itself based on what is put in
@@ -131,6 +122,7 @@ public class ProjectileSpellEntity extends ProjectileEntity {
         // projectile_entity id and uuid
         packet.writeInt(getId());
         packet.writeUuid(getUuid()); // not sure if we need this
+        packet.writeIdentifier(spell.getSpellId());
 
         // remember this is just creating the packet. It is sent automatically after this point
         return ServerPlayNetworking.createS2CPacket(SPAWN_SPELL_PACKET_ID, packet);
