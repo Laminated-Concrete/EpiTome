@@ -19,10 +19,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fryke.testingmod.TestingMod"
+      "net.fryke.tomesofpower.ToPMod"
     ],
     "client": [
-      "net.fryke.testingmod.TestingModClient"
+      "net.fryke.tomesofpower.ToPModClient"
     ]
   },
   "mixins": [
