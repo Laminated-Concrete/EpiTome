@@ -1,6 +1,8 @@
 package net.fryke.tomesofpower.entity.spell;
 
 import io.netty.buffer.Unpooled;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fryke.tomesofpower.ToPMod;
 import net.fryke.tomesofpower.spells.types.Spell;
@@ -29,16 +31,21 @@ public class ProjectileSpellEntity extends ProjectileEntity {
     protected float gravity = 0f;
     protected float dragScalar = 0.99f;
     protected Spell spell;
+    protected int lifetimeTicks = -1;
+    protected int remainingLifetimeTicks = -1;
 
     public ProjectileSpellEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public void setSpellData(double x, double y, double z, int entityId, UUID entityUUID) {
+    @Environment(EnvType.CLIENT)
+    public void setSpellData(double x, double y, double z, int entityId, UUID entityUUID, int lifetimeTicks) {
         updateTrackedPosition(x, y, z);
         setPosition(x, y, z);
         setId(entityId);
         setUuid(entityUUID);
+        this.lifetimeTicks = lifetimeTicks;
+        this.remainingLifetimeTicks = lifetimeTicks; // we get the lifetime from the packet here
     }
 
     @Override
@@ -48,8 +55,20 @@ public class ProjectileSpellEntity extends ProjectileEntity {
 
     @Override
     public void tick() {
-        double appliedDrag;
         super.tick();
+
+        if(lifetimeTicks > 0 && remainingLifetimeTicks == 0) {
+            ToPMod.LOGGER.info("we are out of life, kill");
+            // if we have a lifetime set and we are out of lifetime
+            kill(); // kill the entity
+            return;
+        } else if(lifetimeTicks > 0) {
+            // otherwise if we still have a lifetime then we need to keep track of the remainingLifeTime
+            remainingLifetimeTicks--;
+            ToPMod.LOGGER.info("we still have life, remaining life = " + remainingLifetimeTicks);
+        }
+
+        double appliedDrag;
         HitResult hitResult = ProjectileUtil.getCollision(this, this::canHit);
         boolean bl = false;
         if (hitResult.getType() == HitResult.Type.BLOCK) {
@@ -100,6 +119,11 @@ public class ProjectileSpellEntity extends ProjectileEntity {
         return dragScalar;
     }
 
+    public void setLifetimeTicks(int lifetimeTicks) {
+        this.lifetimeTicks = lifetimeTicks;
+        this.remainingLifetimeTicks = lifetimeTicks;
+    }
+
     /**
      * Is run on the server. Prepares a packet to send from server to client to let the client know an projectile_entity spawned
      * @return Packet<ClientPlayPacketListener>
@@ -123,6 +147,9 @@ public class ProjectileSpellEntity extends ProjectileEntity {
         packet.writeInt(getId());
         packet.writeUuid(getUuid()); // not sure if we need this
         packet.writeIdentifier(spell.getSpellId());
+
+        // other metadata
+        packet.writeInt(spell.lifetimeTicks);
 
         // remember this is just creating the packet. It is sent automatically after this point
         return ServerPlayNetworking.createS2CPacket(SPAWN_SPELL_PACKET_ID, packet);

@@ -10,6 +10,8 @@ public abstract class Spell {
     public Identifier SPELL_TYPE;
     public Identifier SPELL_ID;
     public int cooldownLengthTicks = 0;
+    public int chargeTimeTicks = 0;
+    public int lifetimeTicks = 0;
 
     public Spell() {
 

@@ -15,6 +15,8 @@ public class EmberSpell extends ProjectileSpell {
     public EmberSpell() {
         super();
         SPELL_ID = SpellIdentifiers.EMBER_SPELL_ID;
+        chargeTimeTicks = 10; // 0.5s
+        lifetimeTicks = 40; // 2s
     }
 
     @Override
@@ -31,14 +33,17 @@ public class EmberSpell extends ProjectileSpell {
         // For this spell, we want to shoot out three projectiles in a fan
         EmberSpellEntity spellEntityLeft = new EmberSpellEntity(ModEntities.EMBER_SPELL_ENTITY_TYPE, world, gravity, dragScalar, caster, this);
         spellEntityLeft.setVelocity(caster, caster.getPitch(), caster.getYaw() + yawOffset, 0.0F, speed, divergence);
+        spellEntityLeft.setLifetimeTicks(lifetimeTicks);
         world.spawnEntity(spellEntityLeft);
 
         EmberSpellEntity spellEntityMiddle = new EmberSpellEntity(ModEntities.EMBER_SPELL_ENTITY_TYPE, world, gravity, dragScalar, caster, this);
         spellEntityMiddle.setVelocity(caster, caster.getPitch(), caster.getYaw(), 0.0F, speed, divergence);
+        spellEntityMiddle.setLifetimeTicks(lifetimeTicks);
         world.spawnEntity(spellEntityMiddle);
 
         EmberSpellEntity spellEntityRight = new EmberSpellEntity(ModEntities.EMBER_SPELL_ENTITY_TYPE, world, gravity, dragScalar, caster, this);
         spellEntityRight.setVelocity(caster, caster.getPitch(), caster.getYaw() - yawOffset, 0.0F, speed, divergence);
+        spellEntityRight.setLifetimeTicks(lifetimeTicks);
         world.spawnEntity(spellEntityRight);
 
         caster.getItemCooldownManager().set(tome, 20); // number is in ticks
