@@ -1,9 +1,11 @@
 package net.fryke.tomesofpower.item.tomes;
 
 import net.fryke.tomesofpower.ToPMod;
+import net.fryke.tomesofpower.client.render.TomeRenderer;
 import net.fryke.tomesofpower.spells.ModSpells;
 import net.fryke.tomesofpower.spells.types.Spell;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.item.BuiltinModelItemRenderer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -13,9 +15,23 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import java.util.ArrayList;
+import software.bernie.geckolib.animatable.GeoItem;
+import software.bernie.geckolib.animatable.client.RenderProvider;
+import software.bernie.geckolib.core.animatable.GeoAnimatable;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib.util.RenderUtils;
 
-public class TomeItem extends Item {
+import java.util.ArrayList;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+
+public class TomeItem extends Item implements GeoItem {
+    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
+
     public ArrayList<Identifier> spellList = new ArrayList<>();
     public Identifier selectedSpell = null;
     public int chargeTime = 0; // in ticks
@@ -96,25 +112,40 @@ public class TomeItem extends Item {
 //        user.incrementStat(Stats.USED.getOrCreateStat(this)); // TODO figure out wtf this is
     }
 
-//    private void spawnParticles(int amount) {
-//        int i = this.getColor();
-//        if (i == -1 || amount <= 0) {
-//            return;
-//        }
-//        double d = (double)(i >> 16 & 0xFF) / 255.0;
-//        double e = (double)(i >> 8 & 0xFF) / 255.0;
-//        double f = (double)(i >> 0 & 0xFF) / 255.0;
-//        for (int j = 0; j < amount; ++j) {
-//            this.world.addParticle(ParticleTypes.ENTITY_EFFECT, this.getParticleX(0.5), this.getRandomBodyY(), this.getParticleZ(0.5), d, e, f);
-//        }
-//    }
+    @Override
+    public double getTick(Object itemStack) {
+        return RenderUtils.getCurrentTick();
+    }
 
-//    public int getColor() {
-//        return this.dataTracker.get(COLOR);
-//    }
+    @Override
+    public void createRenderer(Consumer<Object> consumer) {
+        consumer.accept(new RenderProvider() {
+            private final TomeRenderer renderer = new TomeRenderer();
 
-//    private void setColor(int color) {
-//        this.colorSet = true;
-//        this.dataTracker.set(COLOR, color);
-//    }
+            @Override
+            public BuiltinModelItemRenderer getCustomRenderer() {
+                return this.renderer;
+            }
+        });
+    }
+
+    @Override
+    public Supplier<Object> getRenderProvider() {
+        return renderProvider;
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
+        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::predicate));
+    }
+
+    private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
+        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.model.openBook", Animation.LoopType.HOLD_ON_LAST_FRAME));
+        return PlayState.CONTINUE;
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return cache;
+    }
 }

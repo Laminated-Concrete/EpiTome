@@ -1,0 +1,102 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 2,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "bottomBone",
+					"pivot": [3, 0.5, 0],
+					"cubes": [
+						{
+							"origin": [-2.5, 0, -3.5],
+							"size": [5.5, 0.5, 7],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 0, 0],
+							"uv": {
+								"north": {"uv": [14, 15], "uv_size": [6, 1]},
+								"east": {"uv": [0, 15], "uv_size": [7, 1]},
+								"south": {"uv": [0, 16], "uv_size": [6, 1]},
+								"up": {"uv": [0, 8], "uv_size": [6, 7]}
+							}
+						},
+						{
+							"origin": [-3, -0.001, -4],
+							"size": [6, 0.5, 8],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 0, 0],
+							"uv": {
+								"down": {"uv": [6, 8], "uv_size": [6, -8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "topBone",
+					"pivot": [3, 0.5, 0],
+					"cubes": [
+						{
+							"origin": [-2.5, 0.5, -3.5],
+							"size": [5.5, 0.5, 7],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 0, 0],
+							"uv": {
+								"north": {"uv": [6, 16], "uv_size": [6, 1]},
+								"east": {"uv": [7, 15], "uv_size": [7, 1]},
+								"south": {"uv": [12, 16], "uv_size": [6, 1]},
+								"down": {"uv": [6, 15], "uv_size": [6, -7]}
+							}
+						},
+						{
+							"origin": [-3, 0.501, -4],
+							"size": [6, 0.5, 8],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 0, 0],
+							"uv": {
+								"up": {"uv": [0, 0], "uv_size": [6, 8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bindingBone",
+					"pivot": [3, 0, 0],
+					"cubes": [
+						{
+							"origin": [2.001, 0, -4],
+							"size": [1, 1, 8],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 0, 0],
+							"uv": {
+								"west": {"uv": [12, 14], "uv_size": [8, 1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "pageBone",
+					"pivot": [3, 0.5, 0],
+					"cubes": [
+						{
+							"origin": [-2.5, 0.5, -3.5],
+							"size": [5.5, 0, 7],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 0, 0],
+							"uv": {
+								"up": {"uv": [12, 0], "uv_size": [6, 7]},
+								"down": {"uv": [12, 14], "uv_size": [6, -7]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
