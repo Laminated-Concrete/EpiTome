@@ -1,6 +1,7 @@
 package net.fryke.tomesofpower.item.tomes;
 
 import net.fryke.tomesofpower.ToPMod;
+import net.fryke.tomesofpower.client.SpellPageAnimatable;
 import net.fryke.tomesofpower.client.render.TomeRenderer;
 import net.fryke.tomesofpower.spells.ModSpells;
 import net.fryke.tomesofpower.spells.types.Spell;
@@ -31,6 +32,8 @@ import java.util.function.Supplier;
 public class TomeItem extends Item implements GeoItem {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
+
+    private SpellPageAnimatable spellPageAnimatable = new SpellPageAnimatable();
 
     public ArrayList<Identifier> spellList = new ArrayList<>();
     public Identifier selectedSpell = null;
@@ -120,7 +123,7 @@ public class TomeItem extends Item implements GeoItem {
     @Override
     public void createRenderer(Consumer<Object> consumer) {
         consumer.accept(new RenderProvider() {
-            private final TomeRenderer renderer = new TomeRenderer();
+            private final TomeRenderer renderer = new TomeRenderer(spellPageAnimatable);
 
             @Override
             public BuiltinModelItemRenderer getCustomRenderer() {

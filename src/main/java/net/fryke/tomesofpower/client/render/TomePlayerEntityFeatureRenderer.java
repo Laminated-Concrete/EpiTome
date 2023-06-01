@@ -15,7 +15,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.random.Random;
 
-public class TomeFeatureRenderer<T extends PlayerEntity> extends FeatureRenderer<T, PlayerEntityModel<T>> {
+public class TomePlayerEntityFeatureRenderer<T extends PlayerEntity> extends FeatureRenderer<T, PlayerEntityModel<T>> {
     public static final SpriteIdentifier BOOK_TEXTURE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier("entity/enchanting_table_book"));
     private final BookModel firstBook;
     private final BookModel secondBook;
@@ -34,7 +34,7 @@ public class TomeFeatureRenderer<T extends PlayerEntity> extends FeatureRenderer
     public float targetBookRotation;
     private static final Random RANDOM = Random.create();
 
-    public TomeFeatureRenderer(FeatureRendererContext<T, PlayerEntityModel<T>> context, EntityModelLoader loader) {
+    public TomePlayerEntityFeatureRenderer(FeatureRendererContext<T, PlayerEntityModel<T>> context, EntityModelLoader loader) {
         super(context);
         this.firstBook = new BookModel(loader.getModelPart(EntityModelLayers.BOOK));
         this.secondBook = new BookModel(loader.getModelPart(EntityModelLayers.BOOK));

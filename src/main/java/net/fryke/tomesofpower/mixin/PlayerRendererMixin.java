@@ -1,6 +1,6 @@
 package net.fryke.tomesofpower.mixin;
 
-import net.fryke.tomesofpower.client.render.TomeFeatureRenderer;
+import net.fryke.tomesofpower.client.render.TomePlayerEntityFeatureRenderer;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.LivingEntityRenderer;
@@ -20,6 +20,6 @@ public abstract class PlayerRendererMixin extends LivingEntityRenderer<AbstractC
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void constructorTail(EntityRendererFactory.Context ctx, boolean slim, CallbackInfo ci) {
-        this.addFeature(new TomeFeatureRenderer<>(this, ctx.getModelLoader()));
+//        this.addFeature(new TomePlayerEntityFeatureRenderer<>(this, ctx.getModelLoader()));
     }
 }

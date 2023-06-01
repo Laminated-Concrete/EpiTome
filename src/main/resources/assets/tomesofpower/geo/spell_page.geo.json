@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "pageBone",
+					"pivot": [0, 1.5, 0],
+					"cubes": [
+						{
+							"origin": [-5.5, 1.5, -3.5],
+							"size": [5.5, 0.001, 7],
+							"pivot": [0, 1.5, 0],
+							"rotation": [0, 0, 20.5],
+							"uv": {
+								"up": {"uv": [0, 0], "uv_size": [5.5, 7]},
+								"down": {"uv": [6, 7], "uv_size": [5.5, -7]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

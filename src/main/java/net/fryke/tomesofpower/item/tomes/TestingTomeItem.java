@@ -16,6 +16,7 @@ public class TestingTomeItem extends TomeItem {
     public TestingTomeItem(Settings settings) {
         super(settings);
         spellList.add(SpellIdentifiers.EMBER_SPELL_ID);
+        spellList.add(SpellIdentifiers.DIG_SPELL_ID);
         selectedSpell = SpellIdentifiers.EMBER_SPELL_ID; // this is the default spell
     }
 
