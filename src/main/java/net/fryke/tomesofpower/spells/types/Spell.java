@@ -12,6 +12,7 @@ public abstract class Spell {
     public int cooldownLengthTicks = 0;
     public int chargeTimeTicks = 0;
     public int lifetimeTicks = 0;
+    public double spellRange = 0;
 
     public Spell() {
 

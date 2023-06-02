@@ -2,7 +2,7 @@ package net.fryke.tomesofpower.client.render;
 
 import net.fryke.tomesofpower.ToPMod;
 import net.fryke.tomesofpower.client.model.EmberSpellEntityModel;
-import net.fryke.tomesofpower.entity.spell.EmberSpellEntity;
+import net.fryke.tomesofpower.entity.spell.projectile.EmberSpellEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.util.Identifier;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;

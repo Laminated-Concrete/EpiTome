@@ -15,7 +15,6 @@ public class TomeModel extends GeoModel<TomeItem> {
     @Override
     public Identifier getTextureResource(TomeItem animatable) {
         Identifier textureId = new Identifier(ToPMod.MOD_ID, "textures/tomes/" + animatable.tomeId.getPath() + ".png");
-        ToPMod.LOGGER.info(textureId.toString());
         return textureId;
     }
 

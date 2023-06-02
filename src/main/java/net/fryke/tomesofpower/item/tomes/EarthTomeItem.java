@@ -1,6 +1,5 @@
 package net.fryke.tomesofpower.item.tomes;
 
-import net.fryke.tomesofpower.item.ModItems;
 import net.fryke.tomesofpower.spells.SpellIdentifiers;
 
 public class EarthTomeItem extends TomeItem {

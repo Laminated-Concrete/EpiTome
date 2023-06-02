@@ -3,6 +3,7 @@ package net.fryke.tomesofpower.spells;
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
 import net.fabricmc.fabric.api.event.registry.RegistryAttribute;
 import net.fryke.tomesofpower.ToPMod;
+import net.fryke.tomesofpower.spells.custom_entity.BurningGroundSpell;
 import net.fryke.tomesofpower.spells.interaction.DigSpell;
 import net.fryke.tomesofpower.spells.interaction.PickUpSpell;
 import net.fryke.tomesofpower.spells.interaction.PlowSpell;
@@ -29,4 +30,5 @@ public class ModSpells {
     public static final Spell PICK_UP_SPELL = registerSpell(SpellIdentifiers.PICK_UP_SPELL_ID, new PickUpSpell());
 
     public static final Spell EMBER_SPELL = registerSpell(SpellIdentifiers.EMBER_SPELL_ID, new EmberSpell());
+    public static final Spell BURNING_GROUND_SPELL = registerSpell(SpellIdentifiers.BURNING_GROUND_SPELL_ID, new BurningGroundSpell());
 }

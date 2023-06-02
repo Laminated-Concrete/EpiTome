@@ -3,9 +3,11 @@ package net.fryke.tomesofpower.entity;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fryke.tomesofpower.ToPMod;
+import net.fryke.tomesofpower.client.render.BurningGroundEntityRenderer;
 import net.fryke.tomesofpower.client.render.TestingProjectileEntityRenderer;
+import net.fryke.tomesofpower.entity.spell.custom.BurningGroundSpellEntity;
 import net.fryke.tomesofpower.spells.SpellIdentifiers;
-import net.fryke.tomesofpower.entity.spell.EmberSpellEntity;
+import net.fryke.tomesofpower.entity.spell.projectile.EmberSpellEntity;
 import net.fryke.tomesofpower.entity.custom.TestingProjectileEntity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -26,11 +28,18 @@ public class ModEntities {
             FabricEntityTypeBuilder.<EmberSpellEntity>create(SpawnGroup.MISC, EmberSpellEntity::new).build()
     );
 
+    public static final EntityType<BurningGroundSpellEntity> BURNING_GROUND_SPELL_ENTITY_TYPE = registerSpellEntity(SpellIdentifiers.BURNING_GROUND_SPELL_ID,
+            FabricEntityTypeBuilder.create(SpawnGroup.MISC, BurningGroundSpellEntity::new).build()
+    );
+
     public static void registerModEntities() {
         ToPMod.LOGGER.info("Registering Mod Entities for " + ToPMod.MOD_ID);
 
         EntityRendererRegistry.register(TESTING_PROJECTILE_ENTITY_ENTITY_TYPE,
                 TestingProjectileEntityRenderer::new);
+
+        EntityRendererRegistry.register(BURNING_GROUND_SPELL_ENTITY_TYPE,
+                BurningGroundEntityRenderer::new);
     }
 
     private static EntityType registerSpellEntity(Identifier spellIdentifier, EntityType type) {

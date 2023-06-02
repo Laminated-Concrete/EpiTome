@@ -1,7 +1,7 @@
 {
   "item.tomesofpower.testing_tome": "Tome of Testing",
-  "item.tomesofpower.testing_item_2": "Second Testing Item",
   "item.tomesofpower.earth_tome": "Tome of Earth",
+  "item.tomesofpower.fire_tome": "Tome of Fire",
 
   "block.tomesofpower.testing_block": "Testing Pretty Block"
 }

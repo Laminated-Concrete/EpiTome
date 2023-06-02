@@ -1,4 +1,4 @@
-package net.fryke.tomesofpower.entity.spell;
+package net.fryke.tomesofpower.entity.spell.projectile;
 
 import io.netty.buffer.Unpooled;
 import net.fabricmc.api.EnvType;

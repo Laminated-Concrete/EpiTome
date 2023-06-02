@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fryke.tomesofpower.ToPMod;
 import net.fryke.tomesofpower.item.tomes.EarthTomeItem;
+import net.fryke.tomesofpower.item.tomes.FireTomeItem;
 import net.fryke.tomesofpower.item.tomes.TestingTomeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -24,4 +25,5 @@ public class ModItems {
     /// Tome Registrations
     public static final Item TESTING_TOME = registerItem("testing_tome", new TestingTomeItem(new FabricItemSettings().maxCount(1).fireproof()), ModItemGroup.TOMES_OF_POWER);
     public static final Item EARTH_TOME = registerItem("earth_tome", new EarthTomeItem(new FabricItemSettings().maxCount(1).fireproof()), ModItemGroup.TOMES_OF_POWER);
+    public static final Item FIRE_TOME = registerItem("fire_tome", new FireTomeItem(new FabricItemSettings().maxCount(1).fireproof()), ModItemGroup.TOMES_OF_POWER);
 }

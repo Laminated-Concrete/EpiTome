@@ -1,7 +1,7 @@
 package net.fryke.tomesofpower.spells.projectile;
 
 import net.fryke.tomesofpower.entity.ModEntities;
-import net.fryke.tomesofpower.entity.spell.EmberSpellEntity;
+import net.fryke.tomesofpower.entity.spell.projectile.EmberSpellEntity;
 import net.fryke.tomesofpower.item.tomes.TomeItem;
 import net.fryke.tomesofpower.spells.SpellIdentifiers;
 import net.fryke.tomesofpower.spells.types.ProjectileSpell;
