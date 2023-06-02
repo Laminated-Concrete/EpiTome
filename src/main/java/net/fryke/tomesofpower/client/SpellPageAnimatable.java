@@ -1,5 +1,6 @@
 package net.fryke.tomesofpower.client;
 
+import net.fryke.tomesofpower.item.tomes.TomeItem;
 import net.minecraft.client.render.item.BuiltinModelItemRenderer;
 import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
 import software.bernie.geckolib.animatable.client.RenderProvider;
@@ -13,9 +14,17 @@ import software.bernie.geckolib.util.RenderUtils;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+/*
+ * This is a special class designed specifically for allowing us to render the "Spell Page" part of tomes
+ *  and animate it as we see fit. To pull that off, we needed an animatable separate from the TomeItem.
+ */
 public class SpellPageAnimatable implements SingletonGeoAnimatable {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-    private final Supplier<Object> renderProvider = null;
+    public TomeItem tome;
+
+    public SpellPageAnimatable(TomeItem tome) {
+        this.tome = tome;
+    }
 
     @Override
     public void createRenderer(Consumer<Object> consumer) {
@@ -29,7 +38,7 @@ public class SpellPageAnimatable implements SingletonGeoAnimatable {
 
     @Override
     public Supplier<Object> getRenderProvider() {
-        return renderProvider;
+        return null;
     }
 
     @Override

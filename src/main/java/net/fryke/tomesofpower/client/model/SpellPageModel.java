@@ -1,6 +1,8 @@
 package net.fryke.tomesofpower.client.model;
 
 import net.fryke.tomesofpower.ToPMod;
+import net.fryke.tomesofpower.client.SpellPageAnimatable;
+import net.fryke.tomesofpower.spells.SpellIdentifiers;
 import net.minecraft.util.Identifier;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.model.GeoModel;
@@ -13,15 +15,8 @@ public class SpellPageModel extends GeoModel {
 
     @Override
     public Identifier getTextureResource(GeoAnimatable animatable) {
-        Identifier textureId;
-
-        // TODO how do we check the tome item state here?
-//        if(((TomeItem) animatable).selectedSpell == SpellIdentifiers.EMBER_SPELL_ID) {
-//            textureId = new Identifier(ToPMod.MOD_ID, "textures/item/texture1.png");
-//        } else {
-//            textureId = new Identifier(ToPMod.MOD_ID, "textures/item/texture2.png");
-//        }
-        return new Identifier(ToPMod.MOD_ID, "textures/item/testing_spell_page.png");
+        Identifier textureId = new Identifier(ToPMod.MOD_ID, "textures/spell_pages/" + ((SpellPageAnimatable) animatable).tome.selectedSpell.getPath() + ".png");
+        return textureId;
     }
 
     @Override

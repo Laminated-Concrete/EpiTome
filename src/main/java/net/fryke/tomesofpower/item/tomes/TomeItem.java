@@ -30,10 +30,11 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class TomeItem extends Item implements GeoItem {
+    public Identifier tomeId;
+
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
-
-    private SpellPageAnimatable spellPageAnimatable = new SpellPageAnimatable();
+    private SpellPageAnimatable spellPageAnimatable;
 
     public ArrayList<Identifier> spellList = new ArrayList<>();
     public Identifier selectedSpell = null;
@@ -42,6 +43,7 @@ public class TomeItem extends Item implements GeoItem {
 
     public TomeItem(Settings settings) {
         super(settings);
+        spellPageAnimatable = new SpellPageAnimatable(this);
     }
 
     @Override
