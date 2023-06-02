@@ -13,6 +13,6 @@ public class FireTomeItem extends TomeItem {
         // add the spells we want
         spellList.add(SpellIdentifiers.EMBER_SPELL_ID);
         spellList.add(SpellIdentifiers.BURNING_GROUND_SPELL_ID);
-//        spellList.add(SpellIdentifiers.FLAME_DASH_SPELL_ID);
+        spellList.add(SpellIdentifiers.FLAME_DASH_SPELL_ID);
     }
 }

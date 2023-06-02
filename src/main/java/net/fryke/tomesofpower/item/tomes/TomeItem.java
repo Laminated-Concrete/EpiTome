@@ -108,9 +108,9 @@ public class TomeItem extends Item implements GeoItem {
     private void castSelectedSpell(World world) {
         // this part happens on the server for obvious security concerns
         Spell spell = (Spell) ModSpells.spellRegistry.get(selectedSpell);
-        ToPMod.LOGGER.info("Trying to cast spell = " + selectedSpell.toString());
+//        ToPMod.LOGGER.info("Trying to cast spell = " + selectedSpell.toString());
         if (!world.isClient) {
-            ToPMod.LOGGER.info("Trying to cast spell on server = " + selectedSpell.toString());
+//            ToPMod.LOGGER.info("Trying to cast spell on server = " + selectedSpell.toString());
             spell.castSpell(world, this.caster, Hand.MAIN_HAND, this);
         }
 

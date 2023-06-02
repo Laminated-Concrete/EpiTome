@@ -8,6 +8,7 @@ import net.fryke.tomesofpower.spells.interaction.DigSpell;
 import net.fryke.tomesofpower.spells.interaction.PickUpSpell;
 import net.fryke.tomesofpower.spells.interaction.PlowSpell;
 import net.fryke.tomesofpower.spells.projectile.EmberSpell;
+import net.fryke.tomesofpower.spells.self.FlameDashSpell;
 import net.fryke.tomesofpower.spells.types.Spell;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.SimpleRegistry;
@@ -31,4 +32,5 @@ public class ModSpells {
 
     public static final Spell EMBER_SPELL = registerSpell(SpellIdentifiers.EMBER_SPELL_ID, new EmberSpell());
     public static final Spell BURNING_GROUND_SPELL = registerSpell(SpellIdentifiers.BURNING_GROUND_SPELL_ID, new BurningGroundSpell());
+    public static final Spell FLAME_DASH_SPELL = registerSpell(SpellIdentifiers.FLAME_DASH_SPELL_ID, new FlameDashSpell());
 }

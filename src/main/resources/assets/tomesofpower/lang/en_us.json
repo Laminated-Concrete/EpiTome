@@ -3,5 +3,7 @@
   "item.tomesofpower.earth_tome": "Tome of Earth",
   "item.tomesofpower.fire_tome": "Tome of Fire",
 
-  "block.tomesofpower.testing_block": "Testing Pretty Block"
+  "block.tomesofpower.testing_block": "Testing Pretty Block",
+
+  "effect.tomesofpower.flame_dash_effect": "Flame Dash Aura"
 }

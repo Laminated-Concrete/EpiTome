@@ -3,6 +3,7 @@ package net.fryke.tomesofpower;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fryke.tomesofpower.block.ModBlocks;
+import net.fryke.tomesofpower.effects.ModEffects;
 import net.fryke.tomesofpower.entity.ModEntities;
 import net.fryke.tomesofpower.item.ModItems;
 import net.fryke.tomesofpower.event.ServerConnectionInitHandler;
@@ -30,6 +31,7 @@ public class ToPMod implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
 		ModSpells.registerModSpells();
+		ModEffects.registerModEffects();
 
 		ServerPlayConnectionEvents.INIT.register(new ServerConnectionInitHandler());
 	}
