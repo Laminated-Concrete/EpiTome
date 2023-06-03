@@ -36,6 +36,8 @@ public class BurningGroundSpell extends CustomEntitySpell {
             spellEntity.setLifetimeTicks(lifetimeTicks);
             spellEntity.setPosition(targetPos);
             world.spawnEntity(spellEntity);
+
+            caster.getItemCooldownManager().set(tome, cooldownLengthTicks);
         }
     }
 }

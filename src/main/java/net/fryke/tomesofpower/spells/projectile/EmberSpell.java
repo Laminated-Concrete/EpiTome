@@ -17,6 +17,7 @@ public class EmberSpell extends ProjectileSpell {
         SPELL_ID = SpellIdentifiers.EMBER_SPELL_ID;
         chargeTimeTicks = 10; // 0.5s
         lifetimeTicks = 40; // 2s
+        cooldownLengthTicks = 20; // 1s
     }
 
     @Override
@@ -46,6 +47,6 @@ public class EmberSpell extends ProjectileSpell {
         spellEntityRight.setLifetimeTicks(lifetimeTicks);
         world.spawnEntity(spellEntityRight);
 
-        caster.getItemCooldownManager().set(tome, 20); // number is in ticks
+        caster.getItemCooldownManager().set(tome, cooldownLengthTicks); // number is in ticks
     }
 }

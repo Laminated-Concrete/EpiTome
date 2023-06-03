@@ -15,7 +15,7 @@ public class DigSpell extends InteractionSpell {
     public DigSpell() {
         super();
         SPELL_ID = SpellIdentifiers.DIG_SPELL_ID;
-        cooldownLengthTicks = 5;
+        cooldownLengthTicks = 5; // 0.25s
     }
 
     @Override
@@ -26,7 +26,7 @@ public class DigSpell extends InteractionSpell {
             // TODO this will break anything at all. need to restrict it
             world.breakBlock(blockHitResult.getBlockPos(), true);
 
-            caster.getItemCooldownManager().set(tome, 5); // number is in ticks
+            caster.getItemCooldownManager().set(tome, cooldownLengthTicks);
         } else {
             ToPMod.LOGGER.info("Hit result is not BlockHitResult");
         }

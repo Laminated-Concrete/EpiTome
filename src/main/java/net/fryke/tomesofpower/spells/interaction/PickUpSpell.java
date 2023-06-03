@@ -18,7 +18,12 @@ import net.minecraft.world.World;
 
 public class PickUpSpell extends Spell {
     private BlockState storedBlockState;
-    private NbtCompound storedNbtData = new NbtCompound();;
+    private NbtCompound storedNbtData = new NbtCompound();
+
+    public PickUpSpell() {
+        super();
+        cooldownLengthTicks = 10; // 0.5s
+    }
 
     @Override
     public void castSpell(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
@@ -42,7 +47,7 @@ public class PickUpSpell extends Spell {
                 world.removeBlockEntity(targetBlockPos);
                 world.removeBlock(targetBlockPos, false);
 
-                caster.getItemCooldownManager().set(tome, 10); // 0.5s
+                caster.getItemCooldownManager().set(tome, cooldownLengthTicks);
             }
         } else {
             if (hitResult instanceof BlockHitResult) {
@@ -82,7 +87,7 @@ public class PickUpSpell extends Spell {
 
                 storedBlockState = null;
                 storedNbtData = new NbtCompound();
-                caster.getItemCooldownManager().set(tome, 10); // 0.5s
+                caster.getItemCooldownManager().set(tome, cooldownLengthTicks);
             }
         }
     }
