@@ -28,6 +28,6 @@ public class SpellIdentifiers {
 
     // Used in the Tome of Water (T1)
     public static final Identifier WAVE_SPELL_ID = new Identifier(ToPMod.MOD_ID, "wave_spell");
-    public static final Identifier WALL_OF_WATER_SPELL_ID = new Identifier(ToPMod.MOD_ID, "wall_of_water_spell");
+    public static final Identifier WATER_WALL_SPELL_ID = new Identifier(ToPMod.MOD_ID, "water_wall_spell");
     public static final Identifier EXTINGUISH_SPELL_ID = new Identifier(ToPMod.MOD_ID, "extinguish_spell");
 }

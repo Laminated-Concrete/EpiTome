@@ -20,8 +20,6 @@ public class FlameDashSpell extends SelfSpell {
         super();
         SPELL_ID = SpellIdentifiers.FLAME_DASH_SPELL_ID;
         cooldownLengthTicks = 100; // 5s
-
-
     }
 
     @Override
@@ -47,5 +45,7 @@ public class FlameDashSpell extends SelfSpell {
 
         StatusEffectInstance effectInstance = new StatusEffectInstance(ModEffects.FIRE_DASH_EFFECT_TYPE, 10, 0); // duration is in ticks
         caster.addStatusEffect(effectInstance);
+
+        caster.getItemCooldownManager().set(tome, cooldownLengthTicks);
     }
 }

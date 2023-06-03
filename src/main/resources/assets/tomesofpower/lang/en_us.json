@@ -1,8 +1,9 @@
 {
   "item.tomesofpower.testing_tome": "Tome of Testing",
   "item.tomesofpower.earth_tome": "Tome of Earth",
-  "item.tomesofpower.fire_tome": "Tome of Fire",
   "item.tomesofpower.air_tome": "Tome of Air",
+  "item.tomesofpower.fire_tome": "Tome of Fire",
+  "item.tomesofpower.water_tome": "Tome of Water",
 
   "block.tomesofpower.testing_block": "Testing Pretty Block",
 

@@ -3,10 +3,7 @@ package net.fryke.tomesofpower.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fryke.tomesofpower.ToPMod;
-import net.fryke.tomesofpower.item.tomes.AirTomeItem;
-import net.fryke.tomesofpower.item.tomes.EarthTomeItem;
-import net.fryke.tomesofpower.item.tomes.FireTomeItem;
-import net.fryke.tomesofpower.item.tomes.TestingTomeItem;
+import net.fryke.tomesofpower.item.tomes.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
@@ -28,6 +25,7 @@ public class ModItems {
     /// Tome Registrations
     public static final Item TESTING_TOME = registerItem("testing_tome", new TestingTomeItem(tomeSettings), ModItemGroup.TOMES_OF_POWER);
     public static final Item EARTH_TOME = registerItem("earth_tome", new EarthTomeItem(tomeSettings), ModItemGroup.TOMES_OF_POWER);
-    public static final Item FIRE_TOME = registerItem("fire_tome", new FireTomeItem(tomeSettings), ModItemGroup.TOMES_OF_POWER);
     public static final Item AIR_TOME = registerItem("air_tome", new AirTomeItem(tomeSettings), ModItemGroup.TOMES_OF_POWER);
+    public static final Item FIRE_TOME = registerItem("fire_tome", new FireTomeItem(tomeSettings), ModItemGroup.TOMES_OF_POWER);
+    public static final Item WATER_TOME = registerItem("water_tome", new WaterTomeItem(tomeSettings), ModItemGroup.TOMES_OF_POWER);
 }
