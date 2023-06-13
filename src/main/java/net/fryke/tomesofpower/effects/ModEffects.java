@@ -11,6 +11,10 @@ public class ModEffects {
             new Identifier(ToPMod.MOD_ID, "flame_dash_effect"),
             new FlameDashEffect());
 
+    public static final StatusEffect FEATHER_FALL_EFFECT_TYPE = registerEffect(
+            new Identifier(ToPMod.MOD_ID, "feather_fall_effect"),
+            new FeatherFallEffect());
+
     public static void registerModEffects() {
         ToPMod.LOGGER.info("Registering Mod Effects for " + ToPMod.MOD_ID);
     }

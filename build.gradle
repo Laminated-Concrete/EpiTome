@@ -13,6 +13,9 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+
+//	// Patchouli
+//	maven { url 'https://maven.blamejared.com' }
 }
 
 dependencies {
@@ -31,6 +34,9 @@ dependencies {
 
 	// Geckolib
 	modImplementation 'software.bernie.geckolib:geckolib-fabric-1.19.4:4.1.3'
+
+//	// Patchouli
+//	modImplementation "vazkii.patchouli:Patchouli:[VERSION]"
 }
 
 base {

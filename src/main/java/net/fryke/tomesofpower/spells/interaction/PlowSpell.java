@@ -61,4 +61,9 @@ public class PlowSpell extends Spell {
             ToPMod.LOGGER.info("Hit result is not BlockHitResult");
         }
     }
+
+    @Override
+    public void castSpellClient(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
+
+    }
 }

@@ -11,4 +11,9 @@ public class PlaceholderInteractionSpell extends InteractionSpell {
     public void castSpell(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
         caster.getItemCooldownManager().set(tome, 20); // number is in ticks
     }
+
+    @Override
+    public void castSpellClient(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
+
+    }
 }

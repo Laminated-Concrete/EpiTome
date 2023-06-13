@@ -7,6 +7,9 @@ import net.fryke.tomesofpower.effects.ModEffects;
 import net.fryke.tomesofpower.entity.ModEntities;
 import net.fryke.tomesofpower.item.ModItems;
 import net.fryke.tomesofpower.event.ServerConnectionInitHandler;
+import net.fryke.tomesofpower.particles.ModParticles;
+import net.fryke.tomesofpower.rituals.ModRituals;
+import net.fryke.tomesofpower.rituals.RitualStructures;
 import net.fryke.tomesofpower.spells.ModSpells;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +35,9 @@ public class ToPMod implements ModInitializer {
 		ModEntities.registerModEntities();
 		ModSpells.registerModSpells();
 		ModEffects.registerModEffects();
+		ModParticles.registerModParticles();
+		ModRituals.registerModRituals();
+		RitualStructures.registerModRitualStructures();
 
 		ServerPlayConnectionEvents.INIT.register(new ServerConnectionInitHandler());
 	}

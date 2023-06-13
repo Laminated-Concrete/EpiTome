@@ -27,7 +27,7 @@ public class SpellIdentifiers {
     public static final Identifier FLAME_DASH_SPELL_ID = new Identifier(ToPMod.MOD_ID, "flame_dash_spell");
 
     // Used in the Tome of Water (T1)
-    public static final Identifier WAVE_SPELL_ID = new Identifier(ToPMod.MOD_ID, "wave_spell");
+    public static final Identifier WATER_JUMP_SPELL_ID = new Identifier(ToPMod.MOD_ID, "water_jump_spell");
     public static final Identifier WATER_WALL_SPELL_ID = new Identifier(ToPMod.MOD_ID, "water_wall_spell");
     public static final Identifier EXTINGUISH_SPELL_ID = new Identifier(ToPMod.MOD_ID, "extinguish_spell");
 }

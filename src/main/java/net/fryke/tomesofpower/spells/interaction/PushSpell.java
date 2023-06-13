@@ -46,4 +46,9 @@ public class PushSpell extends InteractionSpell {
             caster.getItemCooldownManager().set(tome, cooldownLengthTicks);
         }
     }
+
+    @Override
+    public void castSpellClient(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
+
+    }
 }

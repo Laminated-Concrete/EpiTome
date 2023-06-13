@@ -5,7 +5,11 @@
   "item.tomesofpower.fire_tome": "Tome of Fire",
   "item.tomesofpower.water_tome": "Tome of Water",
 
-  "block.tomesofpower.testing_block": "Testing Pretty Block",
+  "block.tomesofpower.ritual_block": "Ritual Block",
 
-  "effect.tomesofpower.flame_dash_effect": "Flame Dash Aura"
+  "effect.tomesofpower.flame_dash_effect": "Flame Dash Aura",
+  "effect.tomesofpower.feather_fall_effect": "Feather Fall",
+
+  "category.tomesofpower.keybinds_category": "Blargendoodle",
+  "key.tomesofpower.modifier_key": "Modifier Key"
 }

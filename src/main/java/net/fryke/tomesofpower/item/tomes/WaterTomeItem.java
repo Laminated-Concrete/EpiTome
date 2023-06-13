@@ -8,10 +8,10 @@ public class WaterTomeItem extends TomeItem {
         tomeId = TomeIdentifiers.WATER_TOME;
 
         // this is the default spell
-        selectedSpell = SpellIdentifiers.EXTINGUISH_SPELL_ID; // TODO
+        selectedSpell = SpellIdentifiers.EXTINGUISH_SPELL_ID;
 
         // add the spells we want
-//        spellList.add(SpellIdentifiers.SET_ME); // TODO
+        spellList.add(SpellIdentifiers.WATER_JUMP_SPELL_ID);
         spellList.add(SpellIdentifiers.WATER_WALL_SPELL_ID);
         spellList.add(SpellIdentifiers.EXTINGUISH_SPELL_ID);
     }

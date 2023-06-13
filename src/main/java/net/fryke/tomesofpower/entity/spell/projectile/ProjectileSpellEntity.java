@@ -33,6 +33,7 @@ public class ProjectileSpellEntity extends ProjectileEntity {
     protected Spell spell;
     protected int lifetimeTicks = -1;
     protected int remainingLifetimeTicks = -1;
+    protected int tickCounter = 0;
 
     public ProjectileSpellEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
@@ -56,6 +57,7 @@ public class ProjectileSpellEntity extends ProjectileEntity {
     @Override
     public void tick() {
         super.tick();
+        tickCounter++;
 
         if(lifetimeTicks > 0 && remainingLifetimeTicks == 0) {
             ToPMod.LOGGER.info("we are out of life, kill");
@@ -73,12 +75,12 @@ public class ProjectileSpellEntity extends ProjectileEntity {
         boolean bl = false;
         if (hitResult.getType() == HitResult.Type.BLOCK) {
             BlockPos blockPos = ((BlockHitResult)hitResult).getBlockPos();
-            BlockState blockState = this.world.getBlockState(blockPos);
+            BlockState blockState = this.getWorld().getBlockState(blockPos);
             if (blockState.isOf(Blocks.NETHER_PORTAL)) {
                 this.setInNetherPortal(blockPos);
                 bl = true;
             } else if (blockState.isOf(Blocks.END_GATEWAY)) {
-                BlockEntity blockEntity = this.world.getBlockEntity(blockPos);
+                BlockEntity blockEntity = this.getWorld().getBlockEntity(blockPos);
                 if (blockEntity instanceof EndGatewayBlockEntity && EndGatewayBlockEntity.canTeleport(this)) {
                     EndGatewayBlockEntity.tryTeleportingEntity(this.world, blockPos, blockState, this, (EndGatewayBlockEntity)blockEntity);
                 }
@@ -97,7 +99,7 @@ public class ProjectileSpellEntity extends ProjectileEntity {
         if (this.isTouchingWater()) {
             for (int i = 0; i < 4; ++i) {
                 float g = 0.25f;
-                this.world.addParticle(ParticleTypes.BUBBLE, d - vec3d.x * 0.25, e - vec3d.y * 0.25, f - vec3d.z * 0.25, vec3d.x, vec3d.y, vec3d.z);
+                this.getWorld().addParticle(ParticleTypes.BUBBLE, d - vec3d.x * 0.25, e - vec3d.y * 0.25, f - vec3d.z * 0.25, vec3d.x, vec3d.y, vec3d.z);
             }
             appliedDrag = (double)this.getDrag() - 0.2;
         } else {

@@ -1,5 +1,6 @@
 package net.fryke.tomesofpower.spells.custom_entity;
 
+import net.fryke.tomesofpower.ToPMod;
 import net.fryke.tomesofpower.entity.ModEntities;
 import net.fryke.tomesofpower.entity.spell.custom.BurningGroundSpellEntity;
 import net.fryke.tomesofpower.item.tomes.TomeItem;
@@ -18,15 +19,16 @@ public class BurningGroundSpell extends CustomEntitySpell {
     public BurningGroundSpell() {
         super();
         SPELL_ID = SpellIdentifiers.BURNING_GROUND_SPELL_ID;
-        cooldownLengthTicks = 40;
+        cooldownLengthTicks = 200; // 10s
         spellRange = 10;
-        chargeTimeTicks = 10; // 0.5s
+        chargeTimeTicks = 40; // 2s
         lifetimeTicks = 100; // 5s
     }
 
     @Override
     public void castSpell(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
         HitResult hitResult = caster.raycast(spellRange, 0.0F, false);
+        if(hitResult.getType() == HitResult.Type.MISS) { return; }
         if(hitResult instanceof BlockHitResult) {
             BlockHitResult blockHitResult = (BlockHitResult) hitResult;
             BlockPos pos = blockHitResult.getBlockPos();
@@ -39,5 +41,10 @@ public class BurningGroundSpell extends CustomEntitySpell {
 
             caster.getItemCooldownManager().set(tome, cooldownLengthTicks);
         }
+    }
+
+    @Override
+    public void castSpellClient(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
+
     }
 }

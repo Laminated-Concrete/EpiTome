@@ -1,5 +1,7 @@
 package net.fryke.tomesofpower.spells.types;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fryke.tomesofpower.item.tomes.TomeItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Hand;
@@ -27,4 +29,5 @@ public abstract class Spell {
     }
 
     public abstract void castSpell(World world, PlayerEntity caster, Hand hand, TomeItem tome);
+    public abstract void castSpellClient(World world, PlayerEntity caster, Hand hand, TomeItem tome);
 }

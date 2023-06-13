@@ -91,4 +91,9 @@ public class PickUpSpell extends Spell {
             }
         }
     }
+
+    @Override
+    public void castSpellClient(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
+
+    }
 }

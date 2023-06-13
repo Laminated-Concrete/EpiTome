@@ -112,6 +112,8 @@ public class TomeItem extends Item implements GeoItem {
         if (!world.isClient) {
 //            ToPMod.LOGGER.info("Trying to cast spell on server = " + selectedSpell.toString());
             spell.castSpell(world, this.caster, Hand.MAIN_HAND, this);
+        } else {
+            spell.castSpellClient(world, this.caster, Hand.MAIN_HAND, this);
         }
 
 //        user.incrementStat(Stats.USED.getOrCreateStat(this)); // TODO figure out wtf this is

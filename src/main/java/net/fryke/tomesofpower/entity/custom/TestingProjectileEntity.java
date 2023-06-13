@@ -75,7 +75,7 @@ public class TestingProjectileEntity extends ThrownEntity {
     @Override
     public void onCollision(HitResult hitResult) { // called on collision with a block
         super.onCollision(hitResult);
-        if (!this.world.isClient) { // checks if the world is client
+        if (!this.getWorld().isClient) { // checks if the world is client
 //            this.world.sendEntityStatus(this, (byte)3); // particle?
             this.kill(); // kills the projectile
         }

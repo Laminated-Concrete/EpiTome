@@ -11,6 +11,7 @@ public class CustomSpellEntity extends Entity {
     protected Spell spell;
     protected int lifetimeTicks = -1;
     protected int remainingLifetimeTicks = -1;
+    protected int tickCounter = 0;
 
     public CustomSpellEntity(EntityType<?> type, World world) {
         super(type, world);
@@ -24,6 +25,7 @@ public class CustomSpellEntity extends Entity {
     @Override
     public void tick() {
         super.tick();
+        tickCounter++;
 
         if(lifetimeTicks > 0 && remainingLifetimeTicks == 0) {
             // if we have a lifetime set and we are out of lifetime

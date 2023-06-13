@@ -49,4 +49,9 @@ public class EmberSpell extends ProjectileSpell {
 
         caster.getItemCooldownManager().set(tome, cooldownLengthTicks); // number is in ticks
     }
+
+    @Override
+    public void castSpellClient(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
+
+    }
 }
