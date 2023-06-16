@@ -32,7 +32,7 @@ public class FlameDashEffect extends StatusEffect {
         Vec3d pos2 = new Vec3d(entity.getX() + EFFECT_RANGE, entity.getY() + EFFECT_RANGE, entity.getZ() + EFFECT_RANGE);
 
         // Get the entities within the effect range and set them on fire if they aren't on fire already
-        World world = entity.world;
+        World world = entity.getWorld();
         world.getEntitiesByClass(LivingEntity.class, new Box(pos1, pos2), (livingEntity) -> !livingEntity.equals(entity))
             .forEach(livingEntity -> {
                 if (!livingEntity.isOnFire()) {

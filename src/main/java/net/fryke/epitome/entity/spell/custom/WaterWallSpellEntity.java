@@ -27,13 +27,13 @@ public class WaterWallSpellEntity extends CustomSpellEntity {
         super.tick();
         this.setBoundingBox(this.calculateBoundingBox());
 
-        if(world.isClient) {
+        if(getWorld().isClient) {
             for (int i = 0; i < 10; i++) {
                 Vec3d randomPoint = RandomnessHelper.getRandomPointInBox(getBoundingBox(), Direction.DOWN);
-                world.addParticle(ModParticles.FALLING_UP_WATER, randomPoint.getX(), randomPoint.getY(), randomPoint.getZ(), 0, 0.2, 0);
+                getWorld().addParticle(ModParticles.FALLING_UP_WATER, randomPoint.getX(), randomPoint.getY(), randomPoint.getZ(), 0, 0.2, 0);
             }
         } else {
-            List<Entity> entities = world.getOtherEntities(this, getBoundingBox(), (entity) -> !entity.isSpectator());
+            List<Entity> entities = getWorld().getOtherEntities(this, getBoundingBox(), (entity) -> !entity.isSpectator());
             entities.forEach((entity) -> {
                 Vec3d initialVelocity = entity.getVelocity();
                 double xVelocity = -initialVelocity.getX();

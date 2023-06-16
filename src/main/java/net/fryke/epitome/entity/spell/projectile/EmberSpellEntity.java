@@ -50,7 +50,7 @@ public class EmberSpellEntity extends ProjectileSpellEntity implements GeoEntity
 
         double randomNumber = (double) ((System.currentTimeMillis() * 2654435761L) & 0xFFFFFFFFL) / 0xFFFFFFFFL;
         if(tickCounter % 3 == 0) {
-            world.addParticle(
+            getWorld().addParticle(
                     ParticleTypes.FLAME,
                     getBoundingBox().getCenter().getX(), getBoundingBox().getCenter().getY(), getBoundingBox().getCenter().getZ(),
                     minValue + (maxValue - minValue) * randomNumber, 0.0, minValue + (maxValue - minValue) * Math.random()
@@ -85,8 +85,8 @@ public class EmberSpellEntity extends ProjectileSpellEntity implements GeoEntity
             this.kill(); // kills the projectile
 
             if(hitResult instanceof BlockHitResult) {
-                BlockState blockState = world.getBlockState(((BlockHitResult) hitResult).getBlockPos());
-                this.setBlockOnFire((BlockHitResult) hitResult, blockState, (PlayerEntity) this.getOwner(), this.world);
+                BlockState blockState = getWorld().getBlockState(((BlockHitResult) hitResult).getBlockPos());
+                this.setBlockOnFire((BlockHitResult) hitResult, blockState, (PlayerEntity) this.getOwner(), this.getWorld());
             }
         }
     }

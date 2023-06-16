@@ -47,7 +47,7 @@ public class EpiTomeUtilities {
     }
 
     public static EntityHitResult configurableRaycast(Entity entity, Vec3d min, Vec3d max, Box box, Predicate<Entity> predicate, double distance, float targetingMargin) {
-        World world = entity.world;
+        World world = entity.getWorld();
         double localDistance = distance;
         Entity finalEntity = null;
         Vec3d vec3d = null;

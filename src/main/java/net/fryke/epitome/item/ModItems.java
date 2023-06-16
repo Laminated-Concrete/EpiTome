@@ -15,17 +15,16 @@ public class ModItems {
         EpiTomeMod.LOGGER.info("Registering Mod Items for " + EpiTomeMod.MOD_ID);
     }
 
-    private static Item registerItem(String name, Item item, ItemGroup group) {
-        ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
+    private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(EpiTomeMod.MOD_ID, name), item);
     }
 
     private static FabricItemSettings tomeSettings = new FabricItemSettings().maxCount(1).fireproof();
 
     /// Tome Registrations
-    public static final Item TESTING_TOME = registerItem("testing_tome", new TestingTomeItem(tomeSettings), ModItemGroup.TOMES_OF_POWER);
-    public static final Item EARTH_TOME = registerItem("earth_tome", new EarthTomeItem(tomeSettings), ModItemGroup.TOMES_OF_POWER);
-    public static final Item AIR_TOME = registerItem("air_tome", new AirTomeItem(tomeSettings), ModItemGroup.TOMES_OF_POWER);
-    public static final Item FIRE_TOME = registerItem("fire_tome", new FireTomeItem(tomeSettings), ModItemGroup.TOMES_OF_POWER);
-    public static final Item WATER_TOME = registerItem("water_tome", new WaterTomeItem(tomeSettings), ModItemGroup.TOMES_OF_POWER);
+    public static final Item TESTING_TOME = registerItem("testing_tome", new TestingTomeItem(tomeSettings));
+    public static final Item EARTH_TOME = registerItem("earth_tome", new EarthTomeItem(tomeSettings));
+    public static final Item AIR_TOME = registerItem("air_tome", new AirTomeItem(tomeSettings));
+    public static final Item FIRE_TOME = registerItem("fire_tome", new FireTomeItem(tomeSettings));
+    public static final Item WATER_TOME = registerItem("water_tome", new WaterTomeItem(tomeSettings));
 }

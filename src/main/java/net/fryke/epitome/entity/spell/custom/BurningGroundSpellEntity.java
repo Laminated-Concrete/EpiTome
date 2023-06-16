@@ -26,8 +26,8 @@ public class BurningGroundSpellEntity extends CustomSpellEntity {
     public void tick() {
         super.tick();
 
-        if(!world.isClient) {
-            List<LivingEntity> targetEntities = this.getEntitiesInRadius(world, getPos(), radius);
+        if(!getWorld().isClient) {
+            List<LivingEntity> targetEntities = this.getEntitiesInRadius(getWorld(), getPos(), radius);
 
             // TODO this works, but it's totally invisible. we need to particle it up
             // TODO do we want to slow entities down as well?
@@ -42,10 +42,10 @@ public class BurningGroundSpellEntity extends CustomSpellEntity {
             Vec3d centerPoint = getBoundingBox().getCenter();
             Vec3d pos = getRandomPointOnCircle(new Vec3d(centerPoint.getX(), getY(), centerPoint.getZ()), radius);
 
-            world.addParticle(ParticleTypes.FLAME, pos.getX(), pos.getY() + 1, pos.getZ(), 0, 0.05, 0);
-            world.addParticle(ParticleTypes.FLAME, pos.getX() + (2 * (centerPoint.getX() - pos.getX())), pos.getY() + 1, pos.getZ() + (2 * (centerPoint.getZ() - pos.getZ())), 0, 0.05, 0);
-            world.addParticle(ParticleTypes.FLAME, pos.getX(), pos.getY() + 1, pos.getZ() + (2 * (centerPoint.getZ() - pos.getZ())), 0, 0.05, 0);
-            world.addParticle(ParticleTypes.FLAME, pos.getX() + (2 * (centerPoint.getX() - pos.getX())), pos.getY() + 1, pos.getZ(), 0, 0.05, 0);
+            getWorld().addParticle(ParticleTypes.FLAME, pos.getX(), pos.getY() + 1, pos.getZ(), 0, 0.05, 0);
+            getWorld().addParticle(ParticleTypes.FLAME, pos.getX() + (2 * (centerPoint.getX() - pos.getX())), pos.getY() + 1, pos.getZ() + (2 * (centerPoint.getZ() - pos.getZ())), 0, 0.05, 0);
+            getWorld().addParticle(ParticleTypes.FLAME, pos.getX(), pos.getY() + 1, pos.getZ() + (2 * (centerPoint.getZ() - pos.getZ())), 0, 0.05, 0);
+            getWorld().addParticle(ParticleTypes.FLAME, pos.getX() + (2 * (centerPoint.getX() - pos.getX())), pos.getY() + 1, pos.getZ(), 0, 0.05, 0);
         }
 
 //        if(tickCounter % 3 == 0) {

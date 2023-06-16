@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fryke.epitome.block.ModBlocks;
 import net.fryke.epitome.effects.ModEffects;
 import net.fryke.epitome.entity.ModEntities;
+import net.fryke.epitome.item.ModItemGroup;
 import net.fryke.epitome.item.ModItems;
 import net.fryke.epitome.event.ServerConnectionInitHandler;
 import net.fryke.epitome.particles.ModParticles;
@@ -32,6 +33,7 @@ public class EpiTomeMod implements ModInitializer {
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModItemGroup.registerModItemGroups();
 		ModEntities.registerModEntities();
 		ModSpells.registerModSpells();
 		ModEffects.registerModEffects();

@@ -60,14 +60,12 @@ public class ProjectileSpellEntity extends ProjectileEntity {
         tickCounter++;
 
         if(lifetimeTicks > 0 && remainingLifetimeTicks == 0) {
-            EpiTomeMod.LOGGER.info("we are out of life, kill");
             // if we have a lifetime set and we are out of lifetime
             kill(); // kill the entity
             return;
         } else if(lifetimeTicks > 0) {
             // otherwise if we still have a lifetime then we need to keep track of the remainingLifeTime
             remainingLifetimeTicks--;
-            EpiTomeMod.LOGGER.info("we still have life, remaining life = " + remainingLifetimeTicks);
         }
 
         double appliedDrag;
@@ -82,7 +80,7 @@ public class ProjectileSpellEntity extends ProjectileEntity {
             } else if (blockState.isOf(Blocks.END_GATEWAY)) {
                 BlockEntity blockEntity = this.getWorld().getBlockEntity(blockPos);
                 if (blockEntity instanceof EndGatewayBlockEntity && EndGatewayBlockEntity.canTeleport(this)) {
-                    EndGatewayBlockEntity.tryTeleportingEntity(this.world, blockPos, blockState, this, (EndGatewayBlockEntity)blockEntity);
+                    EndGatewayBlockEntity.tryTeleportingEntity(this.getWorld(), blockPos, blockState, this, (EndGatewayBlockEntity)blockEntity);
                 }
                 bl = true;
             }
