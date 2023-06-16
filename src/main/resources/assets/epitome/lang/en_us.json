@@ -1,0 +1,15 @@
+{
+  "item.epitome.testing_tome": "Tome of Testing",
+  "item.epitome.earth_tome": "Tome of Earth",
+  "item.epitome.air_tome": "Tome of Air",
+  "item.epitome.fire_tome": "Tome of Fire",
+  "item.epitome.water_tome": "Tome of Water",
+
+  "block.epitome.ritual_block": "Ritual Block",
+
+  "effect.epitome.flame_dash_effect": "Flame Dash Aura",
+  "effect.epitome.feather_fall_effect": "Feather Fall",
+
+  "category.epitome.keybinds_category": "EpiTome",
+  "key.epitome.modifier_key": "Modifier Key"
+}
