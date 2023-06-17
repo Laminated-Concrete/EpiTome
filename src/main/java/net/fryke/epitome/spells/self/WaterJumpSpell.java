@@ -20,7 +20,7 @@ import java.util.List;
 public class WaterJumpSpell extends SelfSpell {
     public WaterJumpSpell() {
         SPELL_ID = SpellIdentifiers.WATER_JUMP_SPELL_ID;
-        cooldownLengthTicks = 100; // 5s
+        cooldownLengthTicks = 200; // 10s
     }
 
     @Override

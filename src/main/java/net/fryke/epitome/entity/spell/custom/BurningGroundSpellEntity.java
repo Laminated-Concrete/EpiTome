@@ -29,8 +29,6 @@ public class BurningGroundSpellEntity extends CustomSpellEntity {
         if(!getWorld().isClient) {
             List<LivingEntity> targetEntities = this.getEntitiesInRadius(getWorld(), getPos(), radius);
 
-            // TODO this works, but it's totally invisible. we need to particle it up
-            // TODO do we want to slow entities down as well?
             targetEntities.forEach((LivingEntity entity) -> {
                 entity.setOnFireFor(1);
             });
@@ -47,44 +45,6 @@ public class BurningGroundSpellEntity extends CustomSpellEntity {
             getWorld().addParticle(ParticleTypes.FLAME, pos.getX(), pos.getY() + 1, pos.getZ() + (2 * (centerPoint.getZ() - pos.getZ())), 0, 0.05, 0);
             getWorld().addParticle(ParticleTypes.FLAME, pos.getX() + (2 * (centerPoint.getX() - pos.getX())), pos.getY() + 1, pos.getZ(), 0, 0.05, 0);
         }
-
-//        if(tickCounter % 3 == 0) {
-//        for (int i = 0; i < 1; i++) {
-
-//        Vec3d centerPoint = getBoundingBox().getCenter();
-//        Vec3d pos = getRandomPointOnCircle(new Vec3d(centerPoint.getX(), getY(), centerPoint.getZ()), radius);
-////        if(tickCounter % )
-//
-//        world.addParticle(ParticleTypes.FLAME, pos.getX(), pos.getY() + 1, pos.getZ(), 0, 0.05, 0);
-//        world.addParticle(ParticleTypes.FLAME, pos.getX() + (2 * (centerPoint.getX() - pos.getX())), pos.getY() + 1, pos.getZ() + (2 * (centerPoint.getZ() - pos.getZ())), 0, 0.05, 0);
-//        world.addParticle(ParticleTypes.FLAME, pos.getX(), pos.getY() + 1, pos.getZ() + (2 * (centerPoint.getZ() - pos.getZ())), 0, 0.05, 0);
-//        world.addParticle(ParticleTypes.FLAME, pos.getX() + (2 * (centerPoint.getX() - pos.getX())), pos.getY() + 1, pos.getZ(), 0, 0.05, 0);
-//
-//        MinecraftClient.getInstance().
-//            world.addParticle(ParticleTypes.FLAME, pos.getX(), pos.getY() + 1, pos.getZ(), 0, 0.05, 0);
-//        });
-
-
-//
-//        MinecraftClient.getInstance().execute(() -> {
-//            world.addParticle(ParticleTypes.FLAME, pos.getX() + (2 * (centerPoint.getX() - pos.getX())), pos.getY() + 1, pos.getZ() + (2 * (centerPoint.getZ() - pos.getZ())), 0, 0.05, 0);
-//        });
-//
-//        MinecraftClient.getInstance().execute(() -> {
-//            world.addParticle(ParticleTypes.FLAME, pos.getX() + (2 * (centerPoint.getX() - pos.getX())), pos.getY() + 1, pos.getZ(), 0, 0.05, 0);
-//        });
-
-
-
-//        world.addParticle(ParticleTypes.FLAME, pos.getX() + (2 * (centerPoint.getX() - pos.getX())), pos.getY() + 1, pos.getZ() + (2 * (centerPoint.getZ() - pos.getZ())), 0, 0.05, 0);
-//        world.addParticle(ParticleTypes.FLAME, pos.getX(), pos.getY() + 1, pos.getZ() + (2 * (centerPoint.getZ() - pos.getZ())), 0, 0.05, 0);
-//        world.addParticle(ParticleTypes.FLAME, pos.getX() + (2 * (centerPoint.getX() - pos.getX())), pos.getY() + 1, pos.getZ(), 0, 0.05, 0);
-//        }
-//        }
-
-//        if(tickCounter % 2 == 0) {
-//            MinecraftClient.getInstance().particleManager.addParticle(ParticleTypes.SMOKE, pos.getX(), pos.getY() + 1, pos.getZ(), 0, 0.2, 0);
-//        }
     }
 
     public Vec3d getRandomPointOnCircle(Vec3d centerPoint, double radius) {

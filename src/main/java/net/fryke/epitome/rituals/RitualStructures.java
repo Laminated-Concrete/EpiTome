@@ -28,10 +28,30 @@ public class RitualStructures {
     public static final Identifier EARTH_RITUAL_START_ID = new Identifier(EpiTomeMod.MOD_ID, "earth_ritual_start");
     public static final RitualStructure EARTH_RITUAL_START = registerRitualStructure(EARTH_RITUAL_START_ID,
         new RitualStructure(RitualIdentifiers.EARTH_RITUAL_ID, new BlockEntry[]{
-            new BlockEntry(new Vec3i(2 ,0, 2), new Block[]{Blocks.OBSIDIAN}, new Block[]{Blocks.AIR}),
-            new BlockEntry(new Vec3i(-2 ,0, 2), new Block[]{Blocks.OBSIDIAN}, new Block[]{Blocks.AIR}),
-            new BlockEntry(new Vec3i(2 ,0, -2), new Block[]{Blocks.OBSIDIAN}, new Block[]{Blocks.AIR}),
-            new BlockEntry(new Vec3i(-2 ,0, -2), new Block[]{Blocks.OBSIDIAN}, new Block[]{Blocks.AIR})
+            new BlockEntry(new Vec3i(2 ,0, 2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(-2 ,0, 2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(2 ,0, -2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(-2 ,0, -2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(2 ,1, 2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(-2 ,1, 2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(2 ,1, -2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(-2 ,1, -2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(2 ,2, 2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(-2 ,2, 2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(2 ,2, -2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(-2 ,2, -2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(2 ,3, 2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(-2 ,3, 2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(2 ,3, -2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(-2 ,3, -2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(1 ,0, 2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(-1 ,0, 2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(1 ,0, -2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(-1 ,0, -2), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(2 ,0, 1), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(-2 ,0, 1), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(2 ,0, -1), new Block[]{Blocks.BOOKSHELF}, null),
+            new BlockEntry(new Vec3i(-2 ,0, -1), new Block[]{Blocks.BOOKSHELF}, null),
     }));
 }
 

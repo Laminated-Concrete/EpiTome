@@ -15,6 +15,7 @@ public class FlameDashSpell extends SelfSpell {
     public FlameDashSpell() {
         super();
         SPELL_ID = SpellIdentifiers.FLAME_DASH_SPELL_ID;
+        chargeTimeTicks = 20; // 1s
         cooldownLengthTicks = 100; // 5s
     }
 
