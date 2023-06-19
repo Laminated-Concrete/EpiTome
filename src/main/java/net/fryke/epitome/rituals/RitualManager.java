@@ -24,7 +24,7 @@ import java.util.*;
 
 public class RitualManager {
     private static RitualManager instance;
-    private Map<Identifier, RitualStructure> structureMap;
+    private final Map<Identifier, RitualStructure> structureMap;
 
     public static final Identifier KNOWLEDGE_RITUAL_ID = new Identifier(EpiTomeMod.MOD_ID, "knowledge_ritual");
     public static final Identifier EARTH_RITUAL_ID = new Identifier(EpiTomeMod.MOD_ID, "earth_ritual");
@@ -79,7 +79,7 @@ public class RitualManager {
             return false;
         }
 
-        Boolean overallValid = false;
+        boolean overallValid = false;
         // here we loop through numbers 0-3 and use them, multiplied by 90, to iterate over the possible rotations of 90, 180, and 270 degrees
         for (int i = 0; i < 4; i++) {
             Boolean isValid = this.isValidStructure(world, ritualBlockPos, ritualStructure, 90 * i);
@@ -94,7 +94,7 @@ public class RitualManager {
     }
 
     public Boolean isValidStructure(World world, BlockPos ritualBlockPos, RitualStructure ritualStructure, int rotationDegrees) {
-        Boolean validStructure = true; // we start assuming we are good to go
+        boolean validStructure = true; // we start assuming we are good to go
         for (BlockEntry blockEntry : ritualStructure.blockEntries()) {
             // we get our data ready
             Vec3i offset = blockEntry.blockPosOffset();
@@ -102,13 +102,13 @@ public class RitualManager {
 
             // we get the target pos, rotate it, and get the block at that location
             BlockPos targetPos = ritualBlockPos.add(offset);
-            BlockPos targetRotatedPos = this.rotatePoint(targetPos, ritualBlockPos, rotationDegrees);
+            BlockPos targetRotatedPos = rotatePoint(targetPos, ritualBlockPos, rotationDegrees);
             Block targetBlock = world.getBlockState(targetRotatedPos).getBlock();
 
             // if we have allowed blocks, that means we are looking for something specific
             if(allowedBlockIds.length != 0) {
                 // we grab the target block's ID, convert it to a string, and check it against the string IDs in the array
-                if(!Arrays.stream(allowedBlockIds).anyMatch((blockIdString) -> {
+                if(Arrays.stream(allowedBlockIds).noneMatch((blockIdString) -> {
                     String targetBlockId = Registries.BLOCK.getId(targetBlock).toString();
                     return blockIdString.equals(targetBlockId);
                 })) {

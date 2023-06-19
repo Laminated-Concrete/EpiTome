@@ -26,7 +26,7 @@ import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.object.PlayState;
 
 public class EmberSpellEntity extends ProjectileSpellEntity implements GeoEntity {
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public EmberSpellEntity(EntityType<? extends ProjectileSpellEntity> entityType, World world) {
         super(entityType, world);
@@ -107,7 +107,7 @@ public class EmberSpellEntity extends ProjectileSpellEntity implements GeoEntity
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
         // not sure if we need this for entities that have no animations?
-        controllerRegistrar.add(new AnimationController<GeoAnimatable>(this, "controller", 0, this::predicate));
+        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::predicate));
     }
 
     private PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {

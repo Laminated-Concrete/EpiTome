@@ -19,8 +19,8 @@ import java.util.function.Supplier;
  *  and animate it as we see fit. To pull that off, we needed an animatable separate from the TomeItem.
  */
 public class SpellPageAnimatable implements SingletonGeoAnimatable {
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-    public TomeItem tome;
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    public final TomeItem tome;
 
     public SpellPageAnimatable(TomeItem tome) {
         this.tome = tome;

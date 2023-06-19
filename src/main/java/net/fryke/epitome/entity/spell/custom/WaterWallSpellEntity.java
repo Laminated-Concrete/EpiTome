@@ -80,10 +80,10 @@ public class WaterWallSpellEntity extends CustomSpellEntity {
         } else if(direction == Direction.WEST || direction == Direction.EAST) {
             firstCorner = new Vec3d(initialBoxCenter.getX() + (thickness / 2), getY() - 1, initialBoxCenter.getZ() + (width / 2));
             secondCorner = new Vec3d(initialBoxCenter.getX() - (thickness / 2), getY() - 1 + height, initialBoxCenter.getZ() - (width / 2));
-        } else {
-
         }
 
+        assert firstCorner != null;
+        assert secondCorner != null;
         return new Box(firstCorner, secondCorner);
     }
 

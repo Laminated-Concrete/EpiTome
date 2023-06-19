@@ -16,7 +16,7 @@ import net.minecraft.registry.SimpleRegistry;
 import net.minecraft.util.Identifier;
 
 public class ModSpells {
-    public static SimpleRegistry spellRegistry = FabricRegistryBuilder.createSimple(Spell.class, new Identifier(EpiTomeMod.MOD_ID, "spell_registry_type")).attribute(RegistryAttribute.SYNCED).buildAndRegister();
+    public static final SimpleRegistry<Spell> spellRegistry = FabricRegistryBuilder.createSimple(Spell.class, new Identifier(EpiTomeMod.MOD_ID, "spell_registry_type")).attribute(RegistryAttribute.SYNCED).buildAndRegister();
 
     public static void registerModSpells() {
         EpiTomeMod.LOGGER.info("Registering Mod Spells for " + EpiTomeMod.MOD_ID);

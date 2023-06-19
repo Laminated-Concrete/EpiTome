@@ -12,7 +12,7 @@ public abstract class BlockEntityMixin implements BlockEntityDBTInterface {
     protected void writeNbt(NbtCompound nbt) {}
 
     @Shadow
-    protected void readNbt(NbtCompound nbt) {}
+    public void readNbt(NbtCompound nbt) {}
 
     public void setNbtData(NbtCompound dbtData) {
         this.readNbt(dbtData);

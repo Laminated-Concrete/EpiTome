@@ -14,8 +14,7 @@ public class SpellPageModel extends GeoModel {
 
     @Override
     public Identifier getTextureResource(GeoAnimatable animatable) {
-        Identifier textureId = new Identifier(EpiTomeMod.MOD_ID, "textures/spell_pages/" + ((SpellPageAnimatable) animatable).tome.selectedSpell.getPath() + ".png");
-        return textureId;
+        return new Identifier(EpiTomeMod.MOD_ID, "textures/spell_pages/" + ((SpellPageAnimatable) animatable).tome.selectedSpell.getPath() + ".png");
     }
 
     @Override

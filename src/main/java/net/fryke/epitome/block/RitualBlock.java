@@ -21,6 +21,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Objects;
 
 public class RitualBlock extends BlockWithEntity implements BlockEntityProvider {
     private Ritual currentRitual;
@@ -38,7 +39,7 @@ public class RitualBlock extends BlockWithEntity implements BlockEntityProvider 
             if(resultItemStack != null) {
                 EpiTomeMod.LOGGER.info("We have a tome item stack");
                 // we have a tome in the ritual block, so we let the user take it
-                Boolean succeeded = player.giveItemStack(resultItemStack);
+                boolean succeeded = player.giveItemStack(resultItemStack);
                 if(succeeded) {
                     EpiTomeMod.LOGGER.info("setting tome item stack to null");
                     resultItemStack = null;
@@ -61,7 +62,7 @@ public class RitualBlock extends BlockWithEntity implements BlockEntityProvider 
                         return ActionResult.FAIL;
                     }
 
-                    Class ritualClass = ModRituals.ritualRegistry.get(ritualId).getClass();
+                    Class<? extends Object> ritualClass = Objects.requireNonNull(ModRituals.ritualRegistry.get(ritualId)).getClass();
                     try {
                         Ritual ritual = (Ritual) ritualClass.getDeclaredConstructor().newInstance();
 
@@ -98,7 +99,7 @@ public class RitualBlock extends BlockWithEntity implements BlockEntityProvider 
 
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ModBlocks.RITUAL_BLOCK_ENTITY, (world1, pos, state1, be) -> RitualBlockEntity.tick(world1, pos, state1, be));
+        return checkType(type, ModBlocks.RITUAL_BLOCK_ENTITY, RitualBlockEntity::tick);
     }
 
     @Nullable

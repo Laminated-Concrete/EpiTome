@@ -37,21 +37,11 @@ public class EpiTomeModClient implements ClientModInitializer {
                 "category.epitome.keybinds_category" // The translation key of the keybinding's category.
         ));
 
-//
-//        ClientTickEvents.END_CLIENT_TICK.register(client -> {
-//            while (keyBinding.wasPressed()) {
-//                Item heldItem = client.player.getInventory().getMainHandStack().getItem();
-//                if(TomeItem.class.isAssignableFrom(heldItem.getClass())) {
-//                    TomeItem tome = (TomeItem) heldItem;
-//                    tome.switchSpell(1);
-//                }
-//            }
-//        });
-
         SCROLL_EVENT.register((scrollDirection, callbackInfo) -> {
             // Now we have to be careful about this. We don't want to ruin the scrolling behavior
             MinecraftClient client = MinecraftClient.getInstance();
             if(client.currentScreen == null && keyBinding.isPressed()) {
+                assert client.player != null;
                 Item heldItem = client.player.getInventory().getMainHandStack().getItem();
                 if (TomeItem.class.isAssignableFrom(heldItem.getClass())) {
                     TomeItem tome = (TomeItem) heldItem;

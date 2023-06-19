@@ -66,7 +66,7 @@ public class EpiTomeMod implements ModInitializer {
 			@Override
 			public void reload(ResourceManager manager) {
 				Map<Identifier, JsonElement> results = new HashMap<>();
-				// we use the JsonDataLoader cause it already has everything we need
+				// we use the JsonDataLoader because it already has everything we need
 				JsonDataLoader.load(manager, "rituals", new Gson(), results); // the 'dataType' param here is actually the target folder name
 				LOGGER.info("Trying to reload json DATA = " + results.entrySet());
 				// the loaded data is placed in the results object, so we iterate over that

@@ -60,7 +60,7 @@ public class ProjectileSpellEntity extends ProjectileEntity {
         tickCounter++;
 
         if(lifetimeTicks > 0 && remainingLifetimeTicks == 0) {
-            // if we have a lifetime set and we are out of lifetime
+            // if we have a lifetime set, and we are out of lifetime
             kill(); // kill the entity
             return;
         } else if(lifetimeTicks > 0) {
@@ -125,7 +125,7 @@ public class ProjectileSpellEntity extends ProjectileEntity {
     }
 
     /**
-     * Is run on the server. Prepares a packet to send from server to client to let the client know an projectile_entity spawned
+     * Is run on the server. Prepares a packet to send from server to client to let the client know a projectile_entity spawned
      * @return Packet<ClientPlayPacketListener>
      */
     @Override
@@ -134,7 +134,7 @@ public class ProjectileSpellEntity extends ProjectileEntity {
             this.kill();
             return super.createSpawnPacket();
         }
-        // fyi this is run on the server. prepares a packet to send from server to client to let the client know an projectile_entity spawned
+        // fyi this is run on the server. prepares a packet to send from server to client to let the client know a projectile_entity spawned
 
         PacketByteBuf packet = new PacketByteBuf(Unpooled.buffer()); // in theory should dynamically resize itself based on what is put in
 

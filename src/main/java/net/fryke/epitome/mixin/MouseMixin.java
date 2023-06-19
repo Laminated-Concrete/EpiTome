@@ -20,7 +20,7 @@ public class MouseMixin {
         MinecraftClient client = MinecraftClient.getInstance();
 
         // This chunk is ripped from Mouse.java and is used to determine the direction of the mousewheel
-        double d = (client.options.getDiscreteMouseScroll().getValue() != false ? Math.signum(vertical) : vertical) * client.options.getMouseWheelSensitivity().getValue();
+        double d = (client.options.getDiscreteMouseScroll().getValue() ? Math.signum(vertical) : vertical) * client.options.getMouseWheelSensitivity().getValue();
         if (this.eventDeltaWheel != 0.0 && Math.signum(d) != Math.signum(this.eventDeltaWheel)) {
             this.eventDeltaWheel = 0.0;
         }
@@ -29,9 +29,9 @@ public class MouseMixin {
         if (i == 0) {
             return;
         }
-        this.eventDeltaWheel -= (double)i;
+        this.eventDeltaWheel -= i;
 
-        // Call our custom event so we can do as we please
+        // Call our custom event, so we can do as we please
         EpiTomeModClient.SCROLL_EVENT.invoker().onScroll(i, ci);
     }
 }

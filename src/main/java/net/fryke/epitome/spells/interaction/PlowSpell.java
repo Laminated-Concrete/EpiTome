@@ -30,8 +30,7 @@ public class PlowSpell extends Spell {
     @Override
     public void castSpell(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
         HitResult hitResult = MinecraftClient.getInstance().crosshairTarget;
-        if (hitResult instanceof BlockHitResult) {
-            BlockHitResult blockHitResult = (BlockHitResult) hitResult;
+        if (hitResult instanceof BlockHitResult blockHitResult) {
             ItemUsageContext context = new ItemUsageContext(caster, hand, blockHitResult);
 
             // This logic is taken from HoeItem

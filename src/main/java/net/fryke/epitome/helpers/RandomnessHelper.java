@@ -5,11 +5,12 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class RandomnessHelper {
     private long seed;
-    private long multiplier = 1664525L;;
-    private long increment = 1013904223L;;
-    private long modulus = (1L << 32);;
+    private final long multiplier = 1664525L;
+    private final long increment = 1013904223L;
+    private final long modulus = (1L << 32);
 
     public RandomnessHelper() {
         this.seed = System.currentTimeMillis();

@@ -47,7 +47,7 @@ public class TestingProjectileEntity extends ThrownEntity {
 
     @Override
     public Packet<ClientPlayPacketListener> createSpawnPacket() {
-        // fyi this is run on the server. prepares a packet to send from server to client to let the client know an projectile_entity spawned
+        // fyi this is run on the server. prepares a packet to send from server to client to let the client know a projectile_entity spawned
 
         PacketByteBuf packet = new PacketByteBuf(Unpooled.buffer()); // in theory should dynamically resize itself based on what is put in
 

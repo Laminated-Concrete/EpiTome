@@ -30,8 +30,7 @@ public class PickUpSpell extends Spell {
         HitResult hitResult = MinecraftClient.getInstance().crosshairTarget;
         if(storedBlockState == null) {
             // if we don't have a stored block state then we want to grab the block
-            if (hitResult instanceof BlockHitResult) {
-                BlockHitResult blockHitResult = (BlockHitResult) hitResult;
+            if (hitResult instanceof BlockHitResult blockHitResult) {
                 BlockPos targetBlockPos = blockHitResult.getBlockPos();
 
                 // we always save the block state
@@ -50,8 +49,7 @@ public class PickUpSpell extends Spell {
                 caster.getItemCooldownManager().set(tome, cooldownLengthTicks);
             }
         } else {
-            if (hitResult instanceof BlockHitResult) {
-                BlockHitResult blockHitResult = (BlockHitResult) hitResult;
+            if (hitResult instanceof BlockHitResult blockHitResult) {
 
                 // we need to calc the target coordinate based on where they right-clicked on the block
                 BlockPos hitBlockPos = blockHitResult.getBlockPos();

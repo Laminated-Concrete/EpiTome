@@ -33,11 +33,11 @@ import java.util.function.Supplier;
 public class TomeItem extends Item implements GeoItem {
     public Identifier tomeId;
 
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
-    private SpellPageAnimatable spellPageAnimatable;
+    private final SpellPageAnimatable spellPageAnimatable;
 
-    public ArrayList<Identifier> spellList = new ArrayList<>();
+    public final ArrayList<Identifier> spellList = new ArrayList<>();
     public Identifier selectedSpell = null;
     public int chargeTime = 0; // in ticks
     private PlayerEntity caster;
@@ -53,6 +53,7 @@ public class TomeItem extends Item implements GeoItem {
         ItemStack itemStack = user.getStackInHand(hand);
 
         Spell spell = (Spell) ModSpells.spellRegistry.get(selectedSpell);
+        assert spell != null;
         chargeTime = spell.chargeTimeTicks;
 
         if(chargeTime > 0) {
@@ -60,13 +61,10 @@ public class TomeItem extends Item implements GeoItem {
             // actually casting the spell happens later in finishUsing
             return TypedActionResult.consume(itemStack);
         } else {
-            // no charge up time, so cast it right away
+            // no charge uptime, so cast it right away
             this.castSelectedSpell(world);
             return TypedActionResult.success(itemStack);
         }
-//        if(hand == Hand.MAIN_HAND) {
-//
-//        }
     }
 
     @Override
@@ -91,7 +89,7 @@ public class TomeItem extends Item implements GeoItem {
     }
 
     public float getChargeProgress(int useTicks) {
-        float percentage = useTicks / this.chargeTime;
+        float percentage = (float) useTicks / this.chargeTime;
         if (percentage > 1.0F) {
             percentage = 1.0F;
         }
@@ -101,7 +99,7 @@ public class TomeItem extends Item implements GeoItem {
     @Override
     public int getMaxUseTime(ItemStack stack) {
         // so the way this works is we set this to a really high number
-        // then when they actually stop letting go of the mouse button, we do a thing
+        // when they actually stop letting go of the mouse button, we do a thing
         return 72000;
     }
 
@@ -130,7 +128,9 @@ public class TomeItem extends Item implements GeoItem {
         }
 
         Spell spell = (Spell) ModSpells.spellRegistry.get(selectedSpell);
+        assert spell != null;
         chargeTime = spell.chargeTimeTicks;
+        assert MinecraftClient.getInstance().player != null;
         MinecraftClient.getInstance().player.sendMessage(Text.literal("Switched to spell " + selectedSpell.toString()), false);
     }
 
@@ -138,6 +138,7 @@ public class TomeItem extends Item implements GeoItem {
         // this part happens on the server for obvious security concerns
         Spell spell = (Spell) ModSpells.spellRegistry.get(selectedSpell);
 //        ToPMod.LOGGER.info("Trying to cast spell = " + selectedSpell.toString());
+        assert spell != null;
         if (!world.isClient) {
 //            ToPMod.LOGGER.info("Trying to cast spell on server = " + selectedSpell.toString());
             spell.castSpell(world, this.caster, Hand.MAIN_HAND, this);

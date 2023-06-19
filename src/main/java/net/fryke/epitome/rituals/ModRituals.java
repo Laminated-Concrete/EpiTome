@@ -11,7 +11,7 @@ import net.minecraft.registry.SimpleRegistry;
 import net.minecraft.util.Identifier;
 
 public class ModRituals {
-    public static SimpleRegistry ritualRegistry = FabricRegistryBuilder.createSimple(Ritual.class, new Identifier(EpiTomeMod.MOD_ID, "ritual_registry_type")).attribute(RegistryAttribute.SYNCED).buildAndRegister();
+    public static final SimpleRegistry<Ritual> ritualRegistry = FabricRegistryBuilder.createSimple(Ritual.class, new Identifier(EpiTomeMod.MOD_ID, "ritual_registry_type")).attribute(RegistryAttribute.SYNCED).buildAndRegister();
 
     public static void registerModRituals() {
         EpiTomeMod.LOGGER.info("Registering Mod Rituals for " + EpiTomeMod.MOD_ID);

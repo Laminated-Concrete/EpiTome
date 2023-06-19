@@ -1,11 +1,9 @@
 package net.fryke.epitome.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fryke.epitome.EpiTomeMod;
 import net.fryke.epitome.item.tomes.*;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -19,7 +17,7 @@ public class ModItems {
         return Registry.register(Registries.ITEM, new Identifier(EpiTomeMod.MOD_ID, name), item);
     }
 
-    private static FabricItemSettings tomeSettings = new FabricItemSettings().maxCount(1).fireproof();
+    private static final FabricItemSettings tomeSettings = new FabricItemSettings().maxCount(1).fireproof();
 
     /// Tome Registrations
     public static final Item TESTING_TOME = registerItem("testing_tome", new TestingTomeItem(tomeSettings));

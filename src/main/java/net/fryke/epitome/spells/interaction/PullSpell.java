@@ -12,7 +12,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class PullSpell extends InteractionSpell {
-    private double spellStrength = 1.3;
 
     public PullSpell() {
         super();
@@ -43,6 +42,7 @@ public class PullSpell extends InteractionSpell {
                 yMod = 1;
             }
 
+            double spellStrength = 1.3;
             hitResult.getEntity().addVelocity(direction.x * spellStrength, direction.y * spellStrength * yMod, direction.z * spellStrength);
             caster.getItemCooldownManager().set(tome, cooldownLengthTicks);
         }

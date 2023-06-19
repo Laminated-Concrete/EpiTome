@@ -3,7 +3,6 @@ package net.fryke.epitome;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.hit.EntityHitResult;
-import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -18,32 +17,17 @@ public class EpiTomeUtilities {
         if (cameraEntity == null || client.world == null) {
             return null;
         }
-//        HitResult targetEntity = cameraEntity.raycast(distance, tickDelta, false);
+
         Vec3d cameraPosVec = cameraEntity.getCameraPosVec(tickDelta);
         double distanceSquared = distance * distance;
 
-//        if (targetEntity != null) {
-//            distanceSquared = targetEntity.getPos().squaredDistanceTo(cameraPosVec);
-//        }
         Vec3d cameraRotationVec = cameraEntity.getRotationVec(1.0f);
         Vec3d endPointVec = cameraPosVec.add(cameraRotationVec.x * distance, cameraRotationVec.y * distance, cameraRotationVec.z * distance);
 
         Box box = cameraEntity.getBoundingBox().stretch(cameraRotationVec.multiply(distance)).expand(1.0, 1.0, 1.0);
         EntityHitResult entityHitResult = configurableRaycast(cameraEntity, cameraPosVec, endPointVec, box, entity -> !entity.isSpectator(), distanceSquared, targetingMargin);
-//        if (entityHitResult != null) {
-//            Vec3d vec3d4 = entityHitResult.getPos();
-//            double g = cameraPosVec.squaredDistanceTo(vec3d4);
-//            if (g < distanceSquared || targetEntity == null) {
-//                targetEntity = entityHitResult;
-//            }
-//        }
 
-        HitResult targetEntity = entityHitResult;
-
-        if(!(targetEntity instanceof EntityHitResult)) {
-            return null;
-        }
-        return (EntityHitResult) targetEntity;
+        return entityHitResult;
     }
 
     public static EntityHitResult configurableRaycast(Entity entity, Vec3d min, Vec3d max, Box box, Predicate<Entity> predicate, double distance, float targetingMargin) {

@@ -3,29 +3,6 @@ package net.fryke.epitome.rituals.types;
 public class EarthRitual extends Ritual {
     @Override
     public Boolean canStart() {
-//        BlockPos targetPos = ritualBlockPos.add(2, 0, 2);
-//        if(!RitualHelpers.isBlockType(world, targetPos, Blocks.OBSIDIAN)) {
-//            return false;
-//        }
-//
-//        targetPos = ritualBlockPos.add(-2, 0, 2);
-//        if(!RitualHelpers.isBlockType(world, targetPos, Blocks.OBSIDIAN)) {
-//            return false;
-//        }
-//
-//        targetPos = ritualBlockPos.add(2, 0, -2);
-//        if(!RitualHelpers.isBlockType(world, targetPos, Blocks.OBSIDIAN)) {
-//            return false;
-//        }
-//
-//        targetPos = ritualBlockPos.add(-2, 0, -2);
-//        if(!RitualHelpers.isBlockType(world, targetPos, Blocks.OBSIDIAN)) {
-//            return false;
-//        }
-
-
-
-
         return true;
     }
 

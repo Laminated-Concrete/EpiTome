@@ -18,7 +18,7 @@ import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
-// This was ripped from Minecraft vanilla code so I could get a better handle on the use of random numbers
+// This was ripped from Minecraft vanilla code, so I could get a better handle on the use of random numbers
 @Environment(value=EnvType.CLIENT)
 public abstract class CustomAbstractParticle {
     private static final Box EMPTY_BOUNDING_BOX = new Box(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);

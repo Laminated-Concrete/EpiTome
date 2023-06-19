@@ -28,12 +28,14 @@ public class ServerConnectionInitHandler implements ServerPlayConnectionEvents.I
             // here we need to execute the spawning code on the main thread. is this how?
             client.executeTask(() -> {
                 if(spellEntityIdentifier != null) {
-                    EntityType spellEntity = Registries.ENTITY_TYPE.get(spellEntityIdentifier);
-                    ProjectileSpellEntity test = (ProjectileSpellEntity) spellEntity.create(MinecraftClient.getInstance().world);
-                    test.setSpellData(x, y, z, entityId, entityUUID, lifetimeTicks);
+                    EntityType<?> spellEntity = Registries.ENTITY_TYPE.get(spellEntityIdentifier);
+                    ProjectileSpellEntity entity = (ProjectileSpellEntity) spellEntity.create(MinecraftClient.getInstance().world);
+                    assert entity != null;
+                    entity.setSpellData(x, y, z, entityId, entityUUID, lifetimeTicks);
 
                     // we use a custom client-only constructor here
-                    MinecraftClient.getInstance().world.addEntity(entityId, test); // addEntity vs spawnEntity?
+                    assert MinecraftClient.getInstance().world != null;
+                    MinecraftClient.getInstance().world.addEntity(entityId, entity); // addEntity vs spawnEntity?
                 }
             });
         });

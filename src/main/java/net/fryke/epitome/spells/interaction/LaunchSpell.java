@@ -12,7 +12,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class LaunchSpell extends InteractionSpell {
-    private double spellStrength = 1.3;
 
     public LaunchSpell() {
         super();
@@ -34,6 +33,7 @@ public class LaunchSpell extends InteractionSpell {
         EntityHitResult hitResult = EpiTomeUtilities.configurableRaycast(caster, eyePos, maxPos, box, entity -> !entity.isSpectator(), spellRange*spellRange, 0.3f);
 
         if(hitResult != null) {
+            double spellStrength = 1.3;
             hitResult.getEntity().addVelocity(0, spellStrength, 0);
             caster.getItemCooldownManager().set(tome, cooldownLengthTicks);
         }

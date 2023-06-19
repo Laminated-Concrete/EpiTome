@@ -12,8 +12,8 @@ import software.bernie.geckolib.cache.object.BakedGeoModel;
 import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 
 public class SpellPageLayer extends GeoRenderLayer<TomeItem> {
-    public SpellPageAnimatable spellPageAnimatable;
-    private SpellPageLayerRenderer testRenderer = new SpellPageLayerRenderer();
+    public final SpellPageAnimatable spellPageAnimatable;
+    private final SpellPageLayerRenderer testRenderer = new SpellPageLayerRenderer();
 
     public SpellPageLayer(SpellPageAnimatable spellPageAnimatable) {
         super(new SpellPageLayerRenderer()); // this is automatically passing in the tomeItem type into the renderer, so the renderer expects tomeTime animatables

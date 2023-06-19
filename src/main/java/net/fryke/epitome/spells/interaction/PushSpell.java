@@ -12,7 +12,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class PushSpell extends InteractionSpell {
-    private double spellStrength = 1.5;
 
     public PushSpell() {
         super();
@@ -42,6 +41,7 @@ public class PushSpell extends InteractionSpell {
                 direction = new Vec3d(direction.getX(), 0.4, direction.getZ());
             }
 
+            double spellStrength = 1.5;
             hitResult.getEntity().addVelocity(direction.x * spellStrength, direction.y * spellStrength, direction.z * spellStrength);
             caster.getItemCooldownManager().set(tome, cooldownLengthTicks);
         }

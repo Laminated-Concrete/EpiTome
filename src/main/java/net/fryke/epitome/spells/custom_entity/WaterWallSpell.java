@@ -26,8 +26,7 @@ public class WaterWallSpell extends CustomEntitySpell {
     public void castSpell(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
         HitResult hitResult = caster.raycast(spellRange, 0.0F, false);
         if(hitResult.getType() == HitResult.Type.MISS) { return; }
-        if(hitResult instanceof BlockHitResult) {
-            BlockHitResult blockHitResult = (BlockHitResult) hitResult;
+        if(hitResult instanceof BlockHitResult blockHitResult) {
             BlockPos pos = blockHitResult.getBlockPos();
             Vec3d targetPos = new Vec3d(pos.getX() + 0.5, pos.getY() + 2, pos.getZ() + 0.5);
 

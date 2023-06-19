@@ -12,7 +12,6 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class BurningGroundSpellEntity extends CustomSpellEntity {
-    private double radius = 5;
     public BurningGroundSpellEntity(EntityType<?> type, World world) {
         super(type, world);
     }
@@ -26,12 +25,11 @@ public class BurningGroundSpellEntity extends CustomSpellEntity {
     public void tick() {
         super.tick();
 
+        double radius = 5;
         if(!getWorld().isClient) {
-            List<LivingEntity> targetEntities = this.getEntitiesInRadius(getWorld(), getPos(), radius);
+            List<LivingEntity> targetEntities = getEntitiesInRadius(getWorld(), getPos(), radius);
 
-            targetEntities.forEach((LivingEntity entity) -> {
-                entity.setOnFireFor(1);
-            });
+            targetEntities.forEach((LivingEntity entity) -> entity.setOnFireFor(1));
 
             if(this.lifetimeTicks == -1 && this.remainingLifetimeTicks == -1) {
                 this.kill();

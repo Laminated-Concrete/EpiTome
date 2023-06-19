@@ -27,7 +27,7 @@ public class CustomSpellEntity extends Entity {
         tickCounter++;
 
         if(lifetimeTicks > 0 && remainingLifetimeTicks == 0) {
-            // if we have a lifetime set and we are out of lifetime
+            // if we have a lifetime set, and we are out of lifetime
             kill(); // kill the entity
         } else if(lifetimeTicks > 0) {
             // otherwise if we still have a lifetime then we need to keep track of the remainingLifeTime
