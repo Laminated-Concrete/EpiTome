@@ -1,5 +1,6 @@
 package net.fryke.epitome.item.tomes;
 
+import net.fryke.epitome.EpiTomeMod;
 import net.fryke.epitome.client.SpellPageAnimatable;
 import net.fryke.epitome.client.render.TomeRenderer;
 import net.fryke.epitome.spells.ModSpells;
@@ -14,6 +15,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.client.RenderProvider;
@@ -56,7 +58,7 @@ public class TomeItem extends Item implements GeoItem {
         if(chargeTime > 0) {
             user.setCurrentHand(hand);
             // actually casting the spell happens later in finishUsing
-            return TypedActionResult.fail(itemStack);
+            return TypedActionResult.consume(itemStack);
         } else {
             // no charge up time, so cast it right away
             this.castSelectedSpell(world);
@@ -68,15 +70,43 @@ public class TomeItem extends Item implements GeoItem {
     }
 
     @Override
-    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        // at this point they have 'charged' the spell long enough and it auto-casts
-        this.castSelectedSpell(world);
-        return super.finishUsing(stack, world, user);
+    public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
+        int useTicks = this.getMaxUseTime(stack) - remainingUseTicks;
+        float chargeProgress = this.getChargeProgress(useTicks);
+        if(chargeProgress == 1.0F) {
+            EpiTomeMod.LOGGER.info("Spell is ready to cast");
+        }
+    }
+
+    @Override
+    public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
+        int useTicks = this.getMaxUseTime(stack) - remainingUseTicks;
+        float chargeProgress = this.getChargeProgress(useTicks);
+
+        if (chargeProgress == 1.0F) {
+            EpiTomeMod.LOGGER.info("Finished charging, we want to cast to spell now");
+            this.castSelectedSpell(world);
+        }
+        EpiTomeMod.LOGGER.info("On stopped using");
+    }
+
+    public float getChargeProgress(int useTicks) {
+        float percentage = useTicks / this.chargeTime;
+        if (percentage > 1.0F) {
+            percentage = 1.0F;
+        }
+        return percentage;
     }
 
     @Override
     public int getMaxUseTime(ItemStack stack) {
-        return chargeTime; // returns in ticks
+        // so the way this works is we set this to a really high number
+        // then when they actually stop letting go of the mouse button, we do a thing
+        return 72000;
+    }
+
+    public UseAction getUseAction(ItemStack stack) {
+        return UseAction.NONE;
     }
 
     public void switchSpell(int direction) {

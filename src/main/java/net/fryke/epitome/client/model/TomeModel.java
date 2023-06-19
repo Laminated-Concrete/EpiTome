@@ -8,7 +8,8 @@ import software.bernie.geckolib.model.GeoModel;
 public class TomeModel extends GeoModel<TomeItem> {
     @Override
     public Identifier getModelResource(TomeItem animatable) {
-        return new Identifier(EpiTomeMod.MOD_ID, "geo/tome.geo.json");
+        Identifier geoId = new Identifier(EpiTomeMod.MOD_ID, "geo/" + animatable.tomeId.getPath() + ".geo.json");
+        return geoId;
     }
 
     @Override
