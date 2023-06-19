@@ -1,0 +1,375 @@
+{
+  "signatureBlockId": "minecraft:netherrack",
+  "blockEntries": [
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:netherrack"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:netherrack"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": -3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:netherrack"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:netherrack"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:netherrack"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:netherrack"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:air"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": -3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:netherrack"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:netherrack"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:netherrack"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:netherrack"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:nether_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:netherrack"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:netherrack"
+      ]
+    }
+  ]
+}

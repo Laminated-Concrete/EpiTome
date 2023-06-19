@@ -1,0 +1,345 @@
+{
+  "signatureBlockId": "minecraft:white_wool",
+  "blockEntries": [
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:white_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:light_blue_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 2,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:white_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": -1,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:white_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": -1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_fence"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 3,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:light_blue_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": -2,
+        "z": -3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:light_blue_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": -1,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_fence"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_planks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": -1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_planks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": -1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_planks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 4,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:white_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": -1,
+        "z": -3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:white_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": -1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_planks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": -1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_planks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": -1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_planks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:air"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 5,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:light_blue_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": -1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_planks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": -1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_planks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": -1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_planks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": -1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_planks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": -3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:light_blue_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 4,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:white_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": -1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_planks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": -1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_planks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_fence"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:white_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_fence"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:oak_fence"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 3,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:white_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 2,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:light_blue_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 3,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:white_wool"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 4,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:light_blue_wool"
+      ]
+    }
+  ]
+}

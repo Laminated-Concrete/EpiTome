@@ -1,0 +1,835 @@
+{
+  "signatureBlockId": "minecraft:clay",
+  "blockEntries": [
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 0,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 2,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 2,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 2,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 3,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": -3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 3,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 3,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": -3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 1,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 1,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 2,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 3,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 0,
+        "z": -3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 0,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:air"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 1,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 2,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 3,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": -3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 1,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 1,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 2,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 3,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": -3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 3,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 3,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:gravel"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 2,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 2,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 2,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 3,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:sand"
+      ]
+    }
+  ]
+}

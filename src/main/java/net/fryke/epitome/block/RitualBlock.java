@@ -3,8 +3,8 @@ package net.fryke.epitome.block;
 import net.fryke.epitome.EpiTomeMod;
 import net.fryke.epitome.entity.RitualBlockEntity;
 import net.fryke.epitome.rituals.ModRituals;
+import net.fryke.epitome.rituals.RitualManager;
 import net.fryke.epitome.rituals.types.Ritual;
-import net.fryke.epitome.rituals.RitualHelpers;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -53,7 +53,14 @@ public class RitualBlock extends BlockWithEntity implements BlockEntityProvider 
                     }
                 } else {
                     EpiTomeMod.LOGGER.info("trying to start ritual");
-                    Identifier ritualId = RitualHelpers.determineRitual(state, world, pos, player, hand, hit);
+                    Identifier ritualId = RitualManager.getInstance().determineRitual(state, world, pos, player, hand, hit);
+                    if(ritualId == null) {
+                        EpiTomeMod.LOGGER.info("we failed to find a ritual ID");
+                        // if we have failed to find a ritual ID, then we fail
+                        // TODO we probably want to play a sound or notify the player of the problem?
+                        return ActionResult.FAIL;
+                    }
+
                     Class ritualClass = ModRituals.ritualRegistry.get(ritualId).getClass();
                     try {
                         Ritual ritual = (Ritual) ritualClass.getDeclaredConstructor().newInstance();

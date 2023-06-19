@@ -1,0 +1,515 @@
+{
+  "signatureBlockId": "minecraft:bookshelf",
+  "blockEntries": [
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 3,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 3,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:air"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_brick_stairs"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone_bricks"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 3,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 3,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 4,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:bookshelf"
+      ]
+    }
+  ]
+}

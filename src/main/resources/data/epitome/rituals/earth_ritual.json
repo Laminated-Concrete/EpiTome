@@ -1,0 +1,655 @@
+{
+  "signatureBlockId": "minecraft:stone",
+  "blockEntries": [
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:diorite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 0,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:diorite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:diorite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:diorite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -3,
+        "y": 2,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:diorite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:diorite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:diorite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:diorite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 2,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:diorite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -2,
+        "y": 3,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:diorite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 0,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:granite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:granite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 2,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:granite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 3,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 3,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": -1,
+        "y": 3,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 0,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:granite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:air"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 1,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:granite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 2,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:granite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 3,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 3,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 3,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 0,
+        "y": 3,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:granite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 0,
+        "z": 3
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:granite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 1,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:granite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 2,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 2,
+        "z": 2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:granite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 3,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 3,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 1,
+        "y": 3,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:andesite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 1,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:andesite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": -2
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:stone"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:andesite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:obsidian"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 2,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:andesite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 2,
+        "y": 3,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:andesite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 0,
+        "z": -1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:andesite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:andesite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 0,
+        "z": 1
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:andesite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 1,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:andesite"
+      ]
+    },
+    {
+      "blockPosOffset": {
+        "x": 3,
+        "y": 2,
+        "z": 0
+      },
+      "allowedBlockTypeIds": [
+        "minecraft:andesite"
+      ]
+    }
+  ]
+}
