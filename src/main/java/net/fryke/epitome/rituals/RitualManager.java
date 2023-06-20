@@ -230,12 +230,13 @@ public class RitualManager {
             return null;
         }
     }
+
+    public record RitualStructure(String signatureBlockId, BlockEntry[] blockEntries) {
+
+    }
+
+    public record BlockEntry(Vec3i blockPosOffset, String[] allowedBlockTypeIds) {
+
+    }
 }
 
-record RitualStructure(String signatureBlockId, BlockEntry[] blockEntries) {
-
-}
-
-record BlockEntry(Vec3i blockPosOffset, String[] allowedBlockTypeIds) {
-
-}

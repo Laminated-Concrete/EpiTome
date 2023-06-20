@@ -13,11 +13,13 @@ public class KnowledgeRitual extends Ritual {
         super();
         this.ritualId = RitualIdentifiers.KNOWLEDGE_RITUAL_ID;
         this.tomeId = TomeIdentifiers.FIRE_TOME;
+        this.ritualTimeLimit = 100; // 5s
+        this.hasTask = false;
     }
 
     @Override
     public Boolean canStart() {
-        Boolean validStructure = RitualManager.getInstance().checkStructure(world, ritualBlockPos, RitualManager.KNOWLEDGE_RITUAL_ID);
+        Boolean validStructure = RitualManager.getInstance().checkStructure(world, ritualBlockPos, ritualId);
 
         if(!validStructure) {
             EpiTomeMod.LOGGER.info("Ritual cannot start");
@@ -38,13 +40,6 @@ public class KnowledgeRitual extends Ritual {
 
     @Override
     public void onTick() {
-        BlockPos firstTargetPos = ritualBlockPos.add(-2, 0, -2);
-        BlockState firstBlockState = this.world.getBlockState(firstTargetPos);
-
-        if(firstBlockState.getBlock() == Blocks.OBSIDIAN) {
-            EpiTomeMod.LOGGER.info("Ritual condition fufilled");
-            state = RitualStates.SUCCEEDED;
-            finishedRitual();
-        }
+        // TODO particle effects
     }
 }

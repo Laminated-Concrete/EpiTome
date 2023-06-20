@@ -4,25 +4,19 @@ import net.fryke.epitome.EpiTomeMod;
 import net.fryke.epitome.item.tomes.TomeIdentifiers;
 import net.fryke.epitome.rituals.RitualIdentifiers;
 import net.fryke.epitome.rituals.RitualManager;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Arrays;
 
-public class EarthRitual extends Ritual {
-    public EarthRitual() {
+public class FireRitual extends Ritual {
+    public FireRitual() {
         super();
-        this.ritualId = RitualIdentifiers.EARTH_RITUAL_ID;
-        this.tomeId = TomeIdentifiers.EARTH_TOME;
+        this.ritualId = RitualIdentifiers.FIRE_RITUAL_ID;
+        this.tomeId = TomeIdentifiers.FIRE_TOME;
 
-        // considering we have 15 blocks of obsidian that must be mined
-        // and it takes like ~10 seconds per block
-        // and then we want to account for them switching targets
-        // we give them like 170 seconds = 3,400 ticks
-        this.ritualTimeLimit = 3400; // 170s
+        // we want this one to be fast. they are lighting fires
+        this.ritualTimeLimit = 200; // 10s
     }
 
     @Override
@@ -48,22 +42,22 @@ public class EarthRitual extends Ritual {
 
     @Override
     public void onTick() {
-        // for this ritual, they must break the obsidian blocks
+        // for this ritual, they must set all the netherrack blocks on fire
         RitualManager.RitualStructure structure = RitualManager.getInstance().getRitualStructure(ritualId);
-        boolean allBroken = true;
+        boolean allLit = true;
 
         for (RitualManager.BlockEntry entry : structure.blockEntries()) {
-            if(Arrays.stream(entry.allowedBlockTypeIds()).anyMatch((id) -> id.equals("minecraft:obsidian"))) {
-                // we just check if the block is still obsidian, if it is then we fail the check and break
-                BlockPos targetPos = ritualBlockPos.add(entry.blockPosOffset());
-                if(world.getBlockState(targetPos).getBlock() == Blocks.OBSIDIAN) {
-                    allBroken = false;
+            if(Arrays.stream(entry.allowedBlockTypeIds()).anyMatch((id) -> id.equals("minecraft:netherrack"))) {
+                // fire is actually considered a proper block by itself, so we want to target the coords above each netherrack block
+                BlockPos targetPos = ritualBlockPos.add(entry.blockPosOffset()).add(0, 1, 0);
+                if(world.getBlockState(targetPos).getBlock() != Blocks.FIRE) {
+                    allLit = false;
                     break;
                 }
             }
         }
 
-        if(allBroken) {
+        if(allLit) {
             EpiTomeMod.LOGGER.info("Ritual condition fufilled");
             state = RitualStates.SUCCEEDED;
             finishedRitual();
