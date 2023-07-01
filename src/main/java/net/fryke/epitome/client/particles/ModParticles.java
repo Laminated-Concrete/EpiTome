@@ -1,4 +1,4 @@
-package net.fryke.epitome.particles;
+package net.fryke.epitome.client.particles;
 
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.fryke.epitome.EpiTomeMod;

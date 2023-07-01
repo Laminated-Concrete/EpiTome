@@ -3,6 +3,7 @@ package net.fryke.epitome.rituals;
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
 import net.fabricmc.fabric.api.event.registry.RegistryAttribute;
 import net.fryke.epitome.EpiTomeMod;
+import net.fryke.epitome.helpers.ModLogger;
 import net.fryke.epitome.rituals.types.*;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.SimpleRegistry;
@@ -12,7 +13,7 @@ public class ModRituals {
     public static final SimpleRegistry<Ritual> ritualRegistry = FabricRegistryBuilder.createSimple(Ritual.class, new Identifier(EpiTomeMod.MOD_ID, "ritual_registry_type")).attribute(RegistryAttribute.SYNCED).buildAndRegister();
 
     public static void registerModRituals() {
-        EpiTomeMod.LOGGER.info("Registering Mod Rituals for " + EpiTomeMod.MOD_ID);
+        ModLogger.log("Registering Mod Rituals for " + EpiTomeMod.MOD_ID);
     }
 
     public static Ritual registerRitual(Identifier ritualIdentifier, Ritual ritual) {

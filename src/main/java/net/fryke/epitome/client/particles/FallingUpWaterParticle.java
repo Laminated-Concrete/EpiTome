@@ -1,4 +1,4 @@
-package net.fryke.epitome.particles;
+package net.fryke.epitome.client.particles;
 
 import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;

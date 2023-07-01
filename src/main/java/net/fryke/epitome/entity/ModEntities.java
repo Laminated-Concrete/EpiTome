@@ -1,11 +1,8 @@
 package net.fryke.epitome.entity;
 
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fryke.epitome.EpiTomeMod;
-import net.fryke.epitome.client.render.BurningGroundEntityRenderer;
-import net.fryke.epitome.client.render.TestingProjectileEntityRenderer;
-import net.fryke.epitome.client.render.WaterWallEntityRenderer;
+import net.fryke.epitome.helpers.ModLogger;
 import net.fryke.epitome.entity.spell.custom.BurningGroundSpellEntity;
 import net.fryke.epitome.entity.spell.custom.WaterWallSpellEntity;
 import net.fryke.epitome.spells.SpellIdentifiers;
@@ -39,16 +36,7 @@ public class ModEntities {
     );
 
     public static void registerModEntities() {
-        EpiTomeMod.LOGGER.info("Registering Mod Entities for " + EpiTomeMod.MOD_ID);
-
-        EntityRendererRegistry.register(TESTING_PROJECTILE_ENTITY_ENTITY_TYPE,
-                TestingProjectileEntityRenderer::new);
-
-        EntityRendererRegistry.register(BURNING_GROUND_SPELL_ENTITY_TYPE,
-                BurningGroundEntityRenderer::new);
-
-        EntityRendererRegistry.register(WATER_WALL_SPELL_ENTITY_TYPE,
-                WaterWallEntityRenderer::new);
+        ModLogger.log("Registering Mod Entities for " + EpiTomeMod.MOD_ID);
     }
 
     private static EntityType registerSpellEntity(Identifier spellIdentifier, EntityType type) {

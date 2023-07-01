@@ -1,6 +1,6 @@
 package net.fryke.epitome.rituals.types;
 
-import net.fryke.epitome.EpiTomeMod;
+import net.fryke.epitome.helpers.ModLogger;
 import net.fryke.epitome.entity.RitualBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -55,26 +55,26 @@ public abstract class Ritual {
 
     public void startRitual() {
         if(state == RitualStates.NOT_STARTED) {
-            EpiTomeMod.LOGGER.info("ritual state was not started, am starting now");
+            ModLogger.log("ritual state was not started, am starting now");
             state = RitualStates.RUNNING;
             this.onStarted();
         }
     }
 
     public void tick() {
-        EpiTomeMod.LOGGER.info("IRitual tick = " + this.ritualBlockPos);
+        ModLogger.log("IRitual tick = " + this.ritualBlockPos);
         if(state == RitualStates.RUNNING) {
             if(timeRemaining == -1) {
-                EpiTomeMod.LOGGER.info("Initing ritual timer");
+                ModLogger.log("Initing ritual timer");
                 timeRemaining = ritualTimeLimit;
             }
             timeRemaining--;
-            EpiTomeMod.LOGGER.info("Ticks remaining = " + timeRemaining);
+            ModLogger.log("Ticks remaining = " + timeRemaining);
 
             this.onTick();
 
             if(timeRemaining == 0) {
-                EpiTomeMod.LOGGER.info("Time ran out");
+                ModLogger.log("Time ran out");
                 if(hasTask) {
                     // if we have a task to be completed and time ran out, we failed
                     state = RitualStates.FAILED;
@@ -90,7 +90,7 @@ public abstract class Ritual {
     public void finishedRitual() {
         if(state == RitualStates.SUCCEEDED) {
             // spawn the tome?
-            EpiTomeMod.LOGGER.info("Ritual succeeded. trying to spawn item");
+            ModLogger.log("Ritual succeeded. trying to spawn item");
 
             // The ritual succeeded, so we insert the resulting tome into the ritual block
             blockEntity.insertTome(this.tomeId);

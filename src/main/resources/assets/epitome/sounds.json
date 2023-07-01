@@ -1,0 +1,22 @@
+{
+  "started_casting_accent": {
+    "sounds": [
+      "epitome:started_casting_accent"
+    ]
+  },
+  "finished_casting_accent_1": {
+    "sounds": [
+      "epitome:finished_casting_accent_1"
+    ]
+  },
+  "finished_casting_accent_2": {
+    "sounds": [
+      "epitome:finished_casting_accent_2"
+    ]
+  },
+  "casting_loop": {
+    "sounds": [
+      "epitome:casting_loop"
+    ]
+  }
+}

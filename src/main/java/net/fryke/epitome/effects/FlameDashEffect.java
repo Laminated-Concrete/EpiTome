@@ -1,6 +1,6 @@
 package net.fryke.epitome.effects;
 
-import net.fryke.epitome.EpiTomeMod;
+import net.fryke.epitome.helpers.ModLogger;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
@@ -25,7 +25,7 @@ public class FlameDashEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
-        EpiTomeMod.LOGGER.info("trying to do the thing");
+        ModLogger.log("trying to do the thing");
 
         // Define the corners of the box we'll use for searching for entities to set on fire
         Vec3d pos1 = new Vec3d(entity.getX() - EFFECT_RANGE, entity.getY() - EFFECT_RANGE, entity.getZ() - EFFECT_RANGE);

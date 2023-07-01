@@ -1,6 +1,7 @@
 package net.fryke.epitome.effects;
 
 import net.fryke.epitome.EpiTomeMod;
+import net.fryke.epitome.helpers.ModLogger;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -16,7 +17,7 @@ public class ModEffects {
             new FeatherFallEffect());
 
     public static void registerModEffects() {
-        EpiTomeMod.LOGGER.info("Registering Mod Effects for " + EpiTomeMod.MOD_ID);
+        ModLogger.log("Registering Mod Effects for " + EpiTomeMod.MOD_ID);
     }
 
     public static StatusEffect registerEffect(Identifier effectIdentifier, StatusEffect effect) {

@@ -9,7 +9,8 @@
     "ExampleMixin",
     "PlayerRendererMixin",
     "BlockEntityMixin",
-    "MouseMixin"
+    "MouseMixin",
+    "HeldItemRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

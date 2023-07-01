@@ -1,7 +1,7 @@
 package net.fryke.epitome.entity.spell.custom;
 
 import net.fryke.epitome.helpers.RandomnessHelper;
-import net.fryke.epitome.particles.ModParticles;
+import net.fryke.epitome.client.particles.ModParticles;
 import net.fryke.epitome.spells.types.Spell;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

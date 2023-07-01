@@ -13,7 +13,7 @@ import net.fryke.epitome.entity.ModEntities;
 import net.fryke.epitome.item.ModItemGroup;
 import net.fryke.epitome.item.ModItems;
 import net.fryke.epitome.event.ServerConnectionInitHandler;
-import net.fryke.epitome.particles.ModParticles;
+import net.fryke.epitome.client.particles.ModParticles;
 import net.fryke.epitome.rituals.ModRituals;
 import net.fryke.epitome.rituals.RitualManager;
 import net.fryke.epitome.spells.ModSpells;
@@ -51,6 +51,7 @@ public class EpiTomeMod implements ModInitializer {
 		ModParticles.registerModParticles();
 		ModRituals.registerModRituals();
 		ModCommands.initializeModCommands();
+		ModSounds.registerModSoundEvents();
 		RitualManager ritualManager = RitualManager.getInstance();
 
 		ServerPlayConnectionEvents.INIT.register(new ServerConnectionInitHandler());

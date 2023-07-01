@@ -98,13 +98,13 @@
 					]
 				},
 				{
-					"name": "pageBone1",
-					"pivot": [2.75, 1.5, 0],
+					"name": "leftPageBone",
+					"pivot": [2.75, 1.501, 0],
 					"cubes": [
 						{
 							"origin": [-2.75, 1.5, -3.5],
 							"size": [5.5, 0, 7],
-							"pivot": [-0.25, 0, 0],
+							"pivot": [0, 0, 0],
 							"rotation": [0, 0, 0],
 							"uv": {
 								"up": {"uv": [14, 14], "uv_size": [5.5, 7]}
@@ -113,16 +113,76 @@
 					]
 				},
 				{
-					"name": "pageBone2",
-					"pivot": [2.75, 1.5, 0],
+					"name": "rightPageBone",
+					"pivot": [2.75, 1.501, 0],
 					"cubes": [
 						{
 							"origin": [-2.75, 1.5, -3.5],
 							"size": [5.5, 0, 7],
-							"pivot": [-0.25, 0, 0],
+							"pivot": [0, 0, 0],
 							"rotation": [0, 0, 0],
 							"uv": {
 								"up": {"uv": [6, 16], "uv_size": [5.5, 7]}
+							}
+						}
+					]
+				},
+				{
+					"name": "movingPageBone1",
+					"pivot": [2.75, 1.501, 0],
+					"cubes": [
+						{
+							"origin": [-2.75, 1.5, -3.5],
+							"size": [5.5, 0, 7],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 0, 0],
+							"uv": {
+								"up": {"uv": [6, 16], "uv_size": [5.5, 7]}
+							}
+						}
+					]
+				},
+				{
+					"name": "movingPageBone2",
+					"pivot": [2.75, 1.501, 0],
+					"cubes": [
+						{
+							"origin": [-2.75, 1.5, -3.5],
+							"size": [5.5, 0, 7],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 0, 0],
+							"uv": {
+								"up": {"uv": [6, 16], "uv_size": [5.5, 7]}
+							}
+						}
+					]
+				},
+				{
+					"name": "movingPageBone3",
+					"pivot": [2.75, 1.501, 0],
+					"cubes": [
+						{
+							"origin": [-2.75, 1.5, -3.5],
+							"size": [5.5, 0, 7],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 0, 0],
+							"uv": {
+								"up": {"uv": [6, 16], "uv_size": [5.5, 7]}
+							}
+						}
+					]
+				},
+				{
+					"name": "movingPageBoneTest",
+					"pivot": [2.75, 1.501, 0],
+					"cubes": [
+						{
+							"origin": [-2.75, 1.5, -3.5],
+							"size": [5.5, 0, 7],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 0, 0],
+							"uv": {
+								"up": {"uv": [0.125, 25], "uv_size": [5.5, 7]}
 							}
 						}
 					]

@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fryke.epitome.EpiTomeMod;
+import net.fryke.epitome.helpers.ModLogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -60,10 +61,10 @@ public class RitualManager {
             String signatureBlockId = entry.getValue().signatureBlockId();
             Block targetBlock = world.getBlockState(pos.add(0, -1, 0)).getBlock();
             String targetBlockId = Registries.BLOCK.getId(targetBlock).toString();
-            EpiTomeMod.LOGGER.info("checking signatureBlockId = "  + signatureBlockId + " against " + targetBlockId);
+            ModLogger.log("checking signatureBlockId = "  + signatureBlockId + " against " + targetBlockId);
 
             if(signatureBlockId.equals(targetBlockId)) {
-                EpiTomeMod.LOGGER.info("we found a matching ritual = " + entry.getKey());
+                ModLogger.log("we found a matching ritual = " + entry.getKey());
                 // we have a match, return the ID
                 return entry.getKey();
             }

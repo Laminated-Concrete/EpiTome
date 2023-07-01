@@ -5,6 +5,9 @@ import net.fryke.epitome.item.tomes.TomeItem;
 import net.fryke.epitome.spells.SpellIdentifiers;
 import net.fryke.epitome.spells.types.InteractionSpell;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleType;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.Box;
@@ -49,6 +52,13 @@ public class PushSpell extends InteractionSpell {
 
     @Override
     public void castSpellClient(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
-
+        Vec3d eyePos = caster.getCameraPosVec(1.0f);
+        Vec3d rotationVec = caster.getRotationVec(1.0f);
+        ParticleEffect effect = ParticleTypes.EFFECT;
+        world.addParticle(effect, eyePos.getX(), eyePos.getY(), eyePos.getZ(), (rotationVec.x * 2) + Math.random() * 0.5, (rotationVec.y * 2) + Math.random() * 0.5, (rotationVec.z * 2) + Math.random() * 0.5);
+        world.addParticle(effect, eyePos.getX(), eyePos.getY(), eyePos.getZ(), (rotationVec.x * 2) + Math.random() * 0.5, (rotationVec.y * 2) + Math.random() * 0.5, (rotationVec.z * 2) + Math.random() * 0.5);
+        world.addParticle(effect, eyePos.getX(), eyePos.getY(), eyePos.getZ(), (rotationVec.x * 2) + Math.random() * 0.5, (rotationVec.y * 2) + Math.random() * 0.5, (rotationVec.z * 2) + Math.random() * 0.5);
+        world.addParticle(effect, eyePos.getX(), eyePos.getY(), eyePos.getZ(), (rotationVec.x * 2) + Math.random() * 0.5, (rotationVec.y * 2) + Math.random() * 0.5, (rotationVec.z * 2) + Math.random() * 0.5);
+        world.addParticle(effect, eyePos.getX(), eyePos.getY(), eyePos.getZ(), (rotationVec.x * 2) + Math.random() * 0.5, (rotationVec.y * 2) + Math.random() * 0.5, (rotationVec.z * 2) + Math.random() * 0.5);
     }
 }

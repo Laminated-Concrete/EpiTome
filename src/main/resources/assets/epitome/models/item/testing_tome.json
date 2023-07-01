@@ -8,14 +8,14 @@
   "display": {
     "thirdperson_righthand": {
       "rotation": [
-        110,
+        104,
         0,
-        6
+        10
       ],
       "translation": [
         0,
-        1,
-        0
+        2.25,
+        -0.5
       ]
     },
     "thirdperson_lefthand": {
@@ -56,23 +56,43 @@
     },
     "ground": {
       "rotation": [
+        82,
+        0,
+        0
+      ],
+      "translation": [
         0,
         0,
-        70
+        -1.75
       ]
     },
     "gui": {
       "rotation": [
         90,
-        90,
+        -5,
+        22
+      ],
+      "translation": [
+        1,
+        0,
         0
+      ],
+      "scale": [
+        1.7,
+        1.7,
+        1.7
       ]
     },
     "fixed": {
       "rotation": [
-        -90,
-        -90,
-        0
+        90,
+        0,
+        180
+      ],
+      "translation": [
+        0,
+        0,
+        1
       ]
     }
   }

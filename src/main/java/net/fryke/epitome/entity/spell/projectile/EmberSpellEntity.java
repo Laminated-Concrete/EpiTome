@@ -1,5 +1,6 @@
 package net.fryke.epitome.entity.spell.projectile;
 
+import net.fryke.epitome.client.sounds.SpellSoundEffect;
 import net.fryke.epitome.spells.types.Spell;
 import net.minecraft.block.*;
 import net.minecraft.client.MinecraftClient;
@@ -7,6 +8,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
@@ -45,6 +48,13 @@ public class EmberSpellEntity extends ProjectileSpellEntity implements GeoEntity
     public void tick() {
         super.tick();
 
+        if (this.isTouchingWater()) {
+            getWorld().playSound(null, getBlockPos(), SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.PLAYERS, 1.0f, 1.0f);
+//            getWorld().playSoundFromEntity(null, this, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.PLAYERS, 1.0f, 1.0f);
+//            MinecraftClient.getInstance().getSoundManager().play(new SpellSoundEffect(SoundEvents.BLOCK_FIRE_EXTINGUISH));
+            this.kill();
+        }
+
         double minValue = -0.1;
         double maxValue = 0.1;
 
@@ -58,7 +68,7 @@ public class EmberSpellEntity extends ProjectileSpellEntity implements GeoEntity
         }
 
         if(tickCounter % 5 == 0) {
-            MinecraftClient.getInstance().particleManager.addParticle(
+            getWorld().addParticle(
                     ParticleTypes.SMOKE,
                     getBoundingBox().getCenter().getX(), getBoundingBox().getCenter().getY(), getBoundingBox().getCenter().getZ(),
                     minValue + (maxValue - minValue) * randomNumber, 0.1, minValue + (maxValue - minValue) * Math.random()

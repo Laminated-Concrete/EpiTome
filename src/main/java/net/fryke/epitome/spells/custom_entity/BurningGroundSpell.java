@@ -1,11 +1,13 @@
 package net.fryke.epitome.spells.custom_entity;
 
+import net.fryke.epitome.client.sounds.SpellSoundEffect;
 import net.fryke.epitome.entity.ModEntities;
 import net.fryke.epitome.entity.spell.custom.BurningGroundSpellEntity;
 import net.fryke.epitome.item.tomes.TomeItem;
 import net.fryke.epitome.spells.SpellIdentifiers;
 import net.fryke.epitome.spells.types.CustomEntitySpell;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
@@ -21,6 +23,7 @@ public class BurningGroundSpell extends CustomEntitySpell {
         spellRange = 10;
         chargeTimeTicks = 40; // 2s
         lifetimeTicks = 100; // 5s
+        on_cast_sound = SoundEvents.ENTITY_GHAST_SHOOT;
     }
 
     @Override

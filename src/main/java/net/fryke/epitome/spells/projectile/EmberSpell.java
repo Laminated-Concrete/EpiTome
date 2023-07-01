@@ -1,10 +1,14 @@
 package net.fryke.epitome.spells.projectile;
 
+import net.fryke.epitome.ModSounds;
+import net.fryke.epitome.client.sounds.SpellSoundEffect;
+import net.fryke.epitome.client.sounds.TomeSoundEffect;
 import net.fryke.epitome.entity.ModEntities;
 import net.fryke.epitome.entity.spell.projectile.EmberSpellEntity;
 import net.fryke.epitome.item.tomes.TomeItem;
 import net.fryke.epitome.spells.SpellIdentifiers;
 import net.fryke.epitome.spells.types.ProjectileSpell;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -18,6 +22,7 @@ public class EmberSpell extends ProjectileSpell {
         chargeTimeTicks = 10; // 0.5s
         lifetimeTicks = 40; // 2s
         cooldownLengthTicks = 20; // 1s
+        on_cast_sound = SoundEvents.ENTITY_GHAST_SHOOT;
     }
 
     @Override
@@ -29,7 +34,6 @@ public class EmberSpell extends ProjectileSpell {
         float dragScalar = 0.95f;
 
         // TODO can we like space these out so they fire unevenly? maybe make the sound here too?
-        world.playSound(null, caster.getX(), caster.getY(), caster.getZ(), SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
 
         // For this spell, we want to shoot out three projectiles in a fan
         EmberSpellEntity spellEntityLeft = new EmberSpellEntity(ModEntities.EMBER_SPELL_ENTITY_TYPE, world, gravity, dragScalar, caster, this);

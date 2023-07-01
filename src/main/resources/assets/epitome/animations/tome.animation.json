@@ -127,7 +127,7 @@
 						}
 					}
 				},
-				"pageBone1": {
+				"rightPageBone": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -145,13 +145,70 @@
 						}
 					}
 				},
-				"pageBone2": {
+				"leftPageBone": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
 						"0.5": {
-							"vector": [0, 0, 23]
+							"vector": [0, 0, 159]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [-2.75, 0, 0]
+						}
+					}
+				},
+				"movingPageBone1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0, 160],
+							"easing": "linear"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [-2.75, 0, 0]
+						}
+					}
+				},
+				"movingPageBone2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0, 160],
+							"easing": "linear"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [-2.75, 0, 0]
+						}
+					}
+				},
+				"movingPageBone3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0, 160],
+							"easing": "linear"
 						}
 					},
 					"position": {
@@ -291,7 +348,7 @@
 						}
 					}
 				},
-				"pageBone1": {
+				"rightPageBone": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 21]
@@ -309,10 +366,67 @@
 						}
 					}
 				},
-				"pageBone2": {
+				"leftPageBone": {
 					"rotation": {
 						"0.0": {
-							"vector": [0, 0, 23]
+							"vector": [0, 0, 159]
+						},
+						"0.5": {
+							"vector": [0, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [-2.75, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"movingPageBone1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 160],
+							"easing": "linear"
+						},
+						"0.5": {
+							"vector": [0, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [-2.75, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"movingPageBone2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 160],
+							"easing": "linear"
+						},
+						"0.5": {
+							"vector": [0, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [-2.75, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"movingPageBone3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 160],
+							"easing": "linear"
 						},
 						"0.5": {
 							"vector": [0, 0, 0]
@@ -327,6 +441,194 @@
 						}
 					}
 				}
+			}
+		},
+		"animation.model.pagesFlipLeft": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"bones": {
+				"bottomBone": {
+					"rotation": {
+						"vector": [0, 0, 20]
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				},
+				"topBone": {
+					"rotation": {
+						"vector": [0, 0, 160]
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				},
+				"bindingBone": {
+					"rotation": {
+						"vector": ["linear", "linear", "linear"]
+					},
+					"position": {
+						"vector": ["linear", "linear", "linear"]
+					},
+					"scale": {
+						"vector": ["linear", "linear", "linear"]
+					}
+				},
+				"rightPageBone": {
+					"rotation": {
+						"vector": [0, 0, 21]
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				},
+				"leftPageBone": {
+					"rotation": {
+						"vector": [0, 0, 159]
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				},
+				"movingPageBone1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 20.5]
+						},
+						"0.25": {
+							"vector": [0, 0, 161],
+							"easing": "linear"
+						}
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				},
+				"movingPageBone3": {
+					"rotation": {
+						"0.1667": {
+							"vector": [0, 0, 20.5]
+						},
+						"0.4167": {
+							"vector": [0, 0, 161],
+							"easing": "linear"
+						}
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				},
+				"movingPageBone2": {
+					"rotation": {
+						"0.0833": {
+							"vector": [0, 0, 20.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 161],
+							"easing": "linear"
+						}
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				}
+			},
+			"timeline": {
+				"0.25": "switchPageTexture;"
+			}
+		},
+		"animation.model.pagesFlipRight": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"bones": {
+				"bottomBone": {
+					"rotation": {
+						"vector": [0, 0, 20]
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				},
+				"topBone": {
+					"rotation": {
+						"vector": [0, 0, 160]
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				},
+				"bindingBone": {
+					"rotation": {
+						"vector": ["linear", "linear", "linear"]
+					},
+					"position": {
+						"vector": ["linear", "linear", "linear"]
+					},
+					"scale": {
+						"vector": ["linear", "linear", "linear"]
+					}
+				},
+				"rightPageBone": {
+					"rotation": {
+						"vector": [0, 0, 21]
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				},
+				"leftPageBone": {
+					"rotation": {
+						"vector": [0, 0, 159]
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				},
+				"movingPageBone1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 160]
+						},
+						"0.25": {
+							"vector": [0, 0, 20.5],
+							"easing": "linear"
+						}
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				},
+				"movingPageBone3": {
+					"rotation": {
+						"0.1667": {
+							"vector": [0, 0, 160]
+						},
+						"0.4167": {
+							"vector": [0, 0, 20.5],
+							"easing": "linear"
+						}
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				},
+				"movingPageBone2": {
+					"rotation": {
+						"0.0833": {
+							"vector": [0, 0, 160]
+						},
+						"0.3333": {
+							"vector": [0, 0, 20.5],
+							"easing": "linear"
+						}
+					},
+					"position": {
+						"vector": [-2.75, 0, 0]
+					}
+				}
+			},
+			"timeline": {
+				"0.25": "switchPageTexture;"
 			}
 		}
 	},

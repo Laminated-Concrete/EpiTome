@@ -3,7 +3,7 @@ package net.fryke.epitome.spells.interaction;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
-import net.fryke.epitome.EpiTomeMod;
+import net.fryke.epitome.helpers.ModLogger;
 import net.fryke.epitome.item.tomes.TomeItem;
 import net.fryke.epitome.spells.types.Spell;
 import net.minecraft.block.Block;
@@ -57,7 +57,7 @@ public class PlowSpell extends Spell {
             // TODO figure out the sound we want to play here
             // TODO figure out effects?
         } else {
-            EpiTomeMod.LOGGER.info("Hit result is not BlockHitResult");
+            ModLogger.log("Hit result is not BlockHitResult");
         }
     }
 

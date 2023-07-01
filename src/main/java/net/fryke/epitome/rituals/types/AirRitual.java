@@ -1,16 +1,12 @@
 package net.fryke.epitome.rituals.types;
 
-import net.fryke.epitome.EpiTomeMod;
+import net.fryke.epitome.helpers.ModLogger;
 import net.fryke.epitome.item.tomes.TomeIdentifiers;
 import net.fryke.epitome.rituals.RitualIdentifiers;
 import net.fryke.epitome.rituals.RitualManager;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.Items;
-import net.minecraft.util.TypeFilter;
-import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 
@@ -34,7 +30,7 @@ public class AirRitual extends Ritual {
         Boolean validStructure = RitualManager.getInstance().checkStructure(world, ritualBlockPos, ritualId);
 
         if(!validStructure) {
-            EpiTomeMod.LOGGER.info("Ritual cannot start");
+            ModLogger.log("Ritual cannot start");
         }
 
         return validStructure;
@@ -64,14 +60,14 @@ public class AirRitual extends Ritual {
                 Box box = new Box(
                     targetPos.getX(), targetPos.getY(), targetPos.getZ(),
                     targetPos.getX() + 1, targetPos.getY() + 1, targetPos.getZ() + 1);
-                EpiTomeMod.LOGGER.info("target box = " + box);
+                ModLogger.log("target box = " + box);
 
                 List<Entity> entities = world.getOtherEntities(caster, box);
                 boolean hasAFeather = false;
                 if(!entities.isEmpty()) {
                     for (Entity entity : entities) {
                         if(entity instanceof ItemEntity itemEntity) {
-                            EpiTomeMod.LOGGER.info(itemEntity.getStack().getItem().toString());
+                            ModLogger.log(itemEntity.getStack().getItem().toString());
                             if(itemEntity.getStack().getItem() == Items.FEATHER) {
                                 hasAFeather = true;
                             }
@@ -80,7 +76,7 @@ public class AirRitual extends Ritual {
                 }
 
                 if(!hasAFeather) {
-                    EpiTomeMod.LOGGER.info("no feathers at = " + targetPos);
+                    ModLogger.log("no feathers at = " + targetPos);
                     allDropped = false;
                     break;
                 }
@@ -88,7 +84,7 @@ public class AirRitual extends Ritual {
         }
 
         if(allDropped) {
-            EpiTomeMod.LOGGER.info("Ritual condition fufilled");
+            ModLogger.log("Ritual condition fufilled");
             state = RitualStates.SUCCEEDED;
             finishedRitual();
         }

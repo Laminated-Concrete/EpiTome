@@ -1,13 +1,10 @@
 package net.fryke.epitome.rituals.types;
 
-import net.fryke.epitome.EpiTomeMod;
+import net.fryke.epitome.helpers.ModLogger;
 import net.fryke.epitome.item.tomes.TomeIdentifiers;
 import net.fryke.epitome.rituals.RitualIdentifiers;
 import net.fryke.epitome.rituals.RitualManager;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Arrays;
@@ -30,7 +27,7 @@ public class EarthRitual extends Ritual {
         Boolean validStructure = RitualManager.getInstance().checkStructure(world, ritualBlockPos, ritualId);
 
         if(!validStructure) {
-            EpiTomeMod.LOGGER.info("Ritual cannot start");
+            ModLogger.log("Ritual cannot start");
         }
 
         return validStructure;
@@ -64,7 +61,7 @@ public class EarthRitual extends Ritual {
         }
 
         if(allBroken) {
-            EpiTomeMod.LOGGER.info("Ritual condition fufilled");
+            ModLogger.log("Ritual condition fufilled");
             state = RitualStates.SUCCEEDED;
             finishedRitual();
         }

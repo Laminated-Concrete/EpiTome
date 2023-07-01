@@ -151,6 +151,8 @@ public class ProjectileSpellEntity extends ProjectileEntity {
         // other metadata
         packet.writeInt(spell.lifetimeTicks);
 
+        packet.writeRegistryKey(getWorld().getRegistryKey());
+
         // remember this is just creating the packet. It is sent automatically after this point
         return ServerPlayNetworking.createS2CPacket(SPAWN_SPELL_PACKET_ID, packet);
     }

@@ -1,12 +1,9 @@
 package net.fryke.epitome.rituals.types;
 
-import net.fryke.epitome.EpiTomeMod;
+import net.fryke.epitome.helpers.ModLogger;
 import net.fryke.epitome.item.tomes.TomeIdentifiers;
 import net.fryke.epitome.rituals.RitualIdentifiers;
 import net.fryke.epitome.rituals.RitualManager;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.util.math.BlockPos;
 
 public class KnowledgeRitual extends Ritual {
     public KnowledgeRitual() {
@@ -22,7 +19,7 @@ public class KnowledgeRitual extends Ritual {
         Boolean validStructure = RitualManager.getInstance().checkStructure(world, ritualBlockPos, ritualId);
 
         if(!validStructure) {
-            EpiTomeMod.LOGGER.info("Ritual cannot start");
+            ModLogger.log("Ritual cannot start");
         }
 
         return validStructure;

@@ -3,6 +3,7 @@ package net.fryke.epitome.spells;
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
 import net.fabricmc.fabric.api.event.registry.RegistryAttribute;
 import net.fryke.epitome.EpiTomeMod;
+import net.fryke.epitome.helpers.ModLogger;
 import net.fryke.epitome.spells.custom_entity.BurningGroundSpell;
 import net.fryke.epitome.spells.custom_entity.WaterWallSpell;
 import net.fryke.epitome.spells.interaction.*;
@@ -19,7 +20,7 @@ public class ModSpells {
     public static final SimpleRegistry<Spell> spellRegistry = FabricRegistryBuilder.createSimple(Spell.class, new Identifier(EpiTomeMod.MOD_ID, "spell_registry_type")).attribute(RegistryAttribute.SYNCED).buildAndRegister();
 
     public static void registerModSpells() {
-        EpiTomeMod.LOGGER.info("Registering Mod Spells for " + EpiTomeMod.MOD_ID);
+        ModLogger.log("Registering Mod Spells for " + EpiTomeMod.MOD_ID);
     }
 
     public static Spell registerSpell(Identifier spellIdentifier, Spell spell) {

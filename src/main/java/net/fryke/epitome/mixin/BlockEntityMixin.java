@@ -1,13 +1,13 @@
 package net.fryke.epitome.mixin;
 
-import net.fryke.epitome.interfaces.BlockEntityDBTInterface;
+import net.fryke.epitome.interfaces.BlockEntityNBTInterface;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.NbtCompound;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(BlockEntity.class)
-public abstract class BlockEntityMixin implements BlockEntityDBTInterface {
+public abstract class BlockEntityMixin implements BlockEntityNBTInterface {
     @Shadow
     protected void writeNbt(NbtCompound nbt) {}
 

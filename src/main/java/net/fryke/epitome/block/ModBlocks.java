@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fryke.epitome.EpiTomeMod;
+import net.fryke.epitome.helpers.ModLogger;
 import net.fryke.epitome.entity.RitualBlockEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -24,7 +25,7 @@ public class ModBlocks {
     );
 
     public static void registerModBlocks() {
-        EpiTomeMod.LOGGER.info("Registering Mod Blocks for " + EpiTomeMod.MOD_ID);
+        ModLogger.log("Registering Mod Blocks for " + EpiTomeMod.MOD_ID);
     }
 
     private static Block registerBlock(String name, Block block) {

@@ -1,4 +1,4 @@
-package net.fryke.epitome.particles;
+package net.fryke.epitome.client.particles;
 
 import java.util.List;
 import java.util.Optional;

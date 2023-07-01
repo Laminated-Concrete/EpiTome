@@ -1,11 +1,13 @@
 package net.fryke.epitome.spells.self;
 
+import net.fryke.epitome.client.sounds.SpellSoundEffect;
 import net.fryke.epitome.effects.ModEffects;
 import net.fryke.epitome.item.tomes.TomeItem;
 import net.fryke.epitome.spells.SpellIdentifiers;
 import net.fryke.epitome.spells.types.SelfSpell;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -17,6 +19,7 @@ public class FlameDashSpell extends SelfSpell {
         SPELL_ID = SpellIdentifiers.FLAME_DASH_SPELL_ID;
         chargeTimeTicks = 20; // 1s
         cooldownLengthTicks = 100; // 5s
+        on_cast_sound = SoundEvents.ENTITY_GHAST_SHOOT;
     }
 
     @Override
