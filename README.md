@@ -16,12 +16,12 @@ If you have any questions or concerns regarding this project, feel free to reach
 ## Completed Features
 - 4 magical tomes with 3 spells each, for a total of 12 spells.
 - A multi-block ritual system showcasing unique and engaging mechanics.
-- A budding narrative where your choices dictate the future of your world.
+- A budding narrative with room to grow.
 
 ## In-Development Features
-- 16 more magical tomes in additional tiers
-- The continuation of the story
-- More rituals with inspired mechanics
+- 16 more magical tomes in additional tiers, for a total of 20 tomes and 60 spells.
+- The continuation of the story, with the desire for your choices to matter and shape the fate of your world.
+- More rituals with inspired mechanics.
 
 ## People we _really_ need
 Regardless of your expertise, if you have a desire to help we'll take it. This is a great opportunity to experiment and learn in a risk-free environment.
