@@ -1,0 +1,11 @@
+{
+  "name": "Tome of Knowledge",
+  "landing_text": "Welcome to Patchouli",
+  "version": 1,
+  "creative_tab": "minecraft:tools_and_utilities",
+  "use_resource_pack": true,
+  "model": "epitome:testing_tome",
+  "dont_generate_book": true,
+  "custom_book_item": "epitome:testing_tome",
+  "show_progress": false
+}

@@ -14,8 +14,10 @@ import net.minecraft.client.option.HotbarStorage;
 import net.minecraft.client.option.HotbarStorageEntry;
 import net.minecraft.client.render.item.BuiltinModelItemRenderer;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Equipment;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -49,7 +51,7 @@ public class TomeItem extends Item implements GeoItem {
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
-    private final SpellPageAnimatable spellPageAnimatable;
+    protected final SpellPageAnimatable spellPageAnimatable;
 
     public final ArrayList<Identifier> spellList = new ArrayList<>();
     public Identifier selectedSpell = null;
@@ -152,7 +154,7 @@ public class TomeItem extends Item implements GeoItem {
         return UseAction.NONE;
     }
 
-    public void switchSpell(ItemStack stack, int direction) {
+    public void switchSpell(ItemStack stack, int direction, EquipmentSlot equipmentSlot) {
         ModLogger.log("Switching spell in direction " + direction);
         int currentIndex = spellList.indexOf(selectedSpell);
         if(direction == 1) {
@@ -178,7 +180,7 @@ public class TomeItem extends Item implements GeoItem {
         chargeTime = spell.chargeTimeTicks;
         assert MinecraftClient.getInstance().player != null;
 
-        SwitchSpellPacket packet = new SwitchSpellPacket(selectedSpell, MinecraftClient.getInstance().player.getUuid());
+        SwitchSpellPacket packet = new SwitchSpellPacket(selectedSpell, MinecraftClient.getInstance().player.getUuid(), equipmentSlot);
         ClientPlayNetworking.send(packet);
 
         if(direction == 1) {
@@ -296,7 +298,7 @@ public class TomeItem extends Item implements GeoItem {
 //            ModLogger.log("PAGES ANIMATION IS RUNNING, DO NOTHING");
 //            return PlayState.CONTINUE;
 //        }
-
+        
         if(pagesState == ModelStates.PAGES_FLIP_LEFT) {
             ModLogger.log("PAGE FLIP LEFT STATE TRIGGERED");
             // We should start in the IDLE_OPEN state and end up there

@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "epitome:testing_tome"
+    },
+    "title": "EpiTome",
+    "description": "The power to rewrite reality.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "condition": {
+        "items": [
+          {
+            "items": [
+              "epitome:starting_pamphlet"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "components": [
+    {
+      "type": "patchouli:image",
+      "image": "epitome:textures/patchouli_images/testing_image.png",
+      "width": 116,
+      "height": 140,
+      "advancement": "epitome:testing",
+      "negate_advancement": true
+    }
+  ]
+}

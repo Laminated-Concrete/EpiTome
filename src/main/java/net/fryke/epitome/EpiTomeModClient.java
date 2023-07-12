@@ -58,11 +58,11 @@ public class EpiTomeModClient implements ClientModInitializer {
 
                 if (TomeItem.class.isAssignableFrom(heldRightItem.getClass())) {
                     TomeItem tome = (TomeItem) heldRightItem;
-                    tome.switchSpell(rightHandStack, scrollDirection);
+                    tome.switchSpell(rightHandStack, scrollDirection, EquipmentSlot.MAINHAND);
                     callbackInfo.cancel();
                 } else if (TomeItem.class.isAssignableFrom(heldLeftItem.getClass())) {
                     TomeItem tome = (TomeItem) heldLeftItem;
-                    tome.switchSpell(leftHandStack, scrollDirection);
+                    tome.switchSpell(leftHandStack, scrollDirection, EquipmentSlot.OFFHAND);
                     callbackInfo.cancel();
                 }
             }

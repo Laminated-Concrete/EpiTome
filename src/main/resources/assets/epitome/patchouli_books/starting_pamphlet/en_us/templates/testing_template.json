@@ -1,0 +1,22 @@
+{
+  "components": [
+    {
+      "type": "patchouli:header",
+      "text": "Testing Header",
+      "x": -1,
+      "y": -1
+    },
+    {
+      "type": "patchouli:separator",
+      "x": -1,
+      "y": -1
+    },
+    {
+      "type": "patchouli:image",
+      "image": "epitome:textures/patchouli_images/testing_image.png",
+      "width": 116,
+      "height": 120,
+      "y": 20
+    }
+  ]
+}

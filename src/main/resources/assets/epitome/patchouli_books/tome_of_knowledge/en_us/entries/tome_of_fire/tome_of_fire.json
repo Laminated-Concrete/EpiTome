@@ -1,0 +1,11 @@
+{
+  "name": "Tome of Fire",
+  "icon": "minecraft:writable_book",
+  "category": "epitome:tomes",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This is a test entry, but it should show up!"
+    }
+  ]
+}

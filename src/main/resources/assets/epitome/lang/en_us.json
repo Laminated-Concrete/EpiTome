@@ -11,5 +11,8 @@
   "effect.epitome.feather_fall_effect": "Feather Fall",
 
   "category.epitome.keybinds_category": "EpiTome",
-  "key.epitome.modifier_key": "Modifier Key"
+  "key.epitome.modifier_key": "Modifier Key",
+
+  "achievement.testing.title": "Testing 123",
+  "achievement.testing.description": "Mine a diamond ore block."
 }

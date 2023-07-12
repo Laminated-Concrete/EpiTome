@@ -1,0 +1,9 @@
+{
+  "name": "Collection of Notes",
+  "landing_text": "This seems to be a collection of tattered notes. TODO",
+  "version": 0,
+  "creative_tab": "minecraft:tools_and_utilities",
+  "use_resource_pack": true,
+  "show_progress": false,
+  "pamphlet": true
+}
