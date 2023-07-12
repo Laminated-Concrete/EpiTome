@@ -6,7 +6,7 @@ This is the repository for EpiTome. Come check out the [Discord Server](https://
 
 EpiTome is a Minecraft magic mod themed around magical Tomes. This README will be updated with the current features as the project continues.
 
-You can find the download for the current release at (non yet).  
+You can find the download for the current release at (none yet).  
 You can find the Wiki for the mod [in Notion](https://laminated-concrete.notion.site/18276b4d406044f8a3df38e2bae53320?v=1c2462279577492c8aa232c2034f2641&pvs=4).
 
 We can always use more help, from coding to modeling to story writing to audio design. If you are interested in helping, check out the [Getting Started](https://www.notion.so/laminated-concrete/Getting-Started-efc7603e0ea14aa18101dc3c9acde1c6?pvs=4) page.
