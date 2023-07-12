@@ -32,4 +32,4 @@ Regardless of your expertise, if you have a desire to help we'll take it. This i
 But even if those above categories don't suit you, I guarantee we can use help with whatever does interest you. Reach out to Fryke on Discord if you'd like to pitch in.
 
 ## Contributing
-Note that by submitting a pull request or any code contribution to this project, you agree to license your contributed code under the same MIT license as this project.
+Note that by submitting any contributions to this project, you agree to license your contribution under the same MIT license as this project.
