@@ -1,0 +1,61 @@
+{
+  "name": "Ritual of Knowledge",
+  "icon": "minecraft:writable_book",
+  "category": "epitome:notes",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "TODO the tattered notes from Catherine"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Ritual of Knowledge",
+      "multiblock": {
+        "pattern": [
+          [
+            "B    ",
+            "     ",
+            "     ",
+            "     ",
+            "     "
+          ],
+          [
+            "BB   ",
+            "     ",
+            "     ",
+            "     ",
+            "B  B "
+          ],
+          [
+            "BBB B",
+            "B    ",
+            "     ",
+            "B    ",
+            "BB BB"
+          ],
+          [
+            "SBBBS",
+            "B    ",
+            "B    ",
+            "B    ",
+            "SBBBS"
+          ],
+          [
+            "SSSSS",
+            "STWWW",
+            "ST0  ",
+            "STEEE",
+            "SSSSS"
+          ]
+        ],
+        "mapping": {
+          "S": "minecraft:stone_bricks",
+          "B": "minecraft:bookshelf",
+          "T": "minecraft:stone_brick_stairs",
+          "E": "minecraft:stone_brick_stairs[facing=east]",
+          "W": "minecraft:stone_brick_stairs[facing=west]"
+        }
+      }
+    }
+  ]
+}

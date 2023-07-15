@@ -5,5 +5,6 @@
   "creative_tab": "minecraft:tools_and_utilities",
   "use_resource_pack": true,
   "show_progress": false,
+  "model": "minecraft:paper",
   "pamphlet": true
 }

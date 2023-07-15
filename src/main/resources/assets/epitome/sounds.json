@@ -4,14 +4,14 @@
       "epitome:started_casting_accent"
     ]
   },
-  "finished_casting_accent_1": {
+  "finished_casting_accent": {
     "sounds": [
-      "epitome:finished_casting_accent_1"
+      "epitome:finished_casting_accent"
     ]
   },
-  "finished_casting_accent_2": {
+  "ready_to_cast_accent": {
     "sounds": [
-      "epitome:finished_casting_accent_2"
+      "epitome:ready_to_cast_accent"
     ]
   },
   "casting_loop": {
