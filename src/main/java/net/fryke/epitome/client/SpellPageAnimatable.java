@@ -1,16 +1,11 @@
 package net.fryke.epitome.client;
 
-import net.fryke.epitome.item.tomes.TomeItem;
 import net.minecraft.client.render.item.BuiltinModelItemRenderer;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
 import software.bernie.geckolib.animatable.client.RenderProvider;
-import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
@@ -72,6 +67,10 @@ public class SpellPageAnimatable implements SingletonGeoAnimatable {
 
     public void setRenderingContext(ModelTransformationMode renderingContext) {
         this.renderingContext = renderingContext;
+    }
+
+    public ModelTransformationMode getRenderingContext() {
+        return this.renderingContext;
     }
 
     public void setSpellTextureName(String spellTextureName) {

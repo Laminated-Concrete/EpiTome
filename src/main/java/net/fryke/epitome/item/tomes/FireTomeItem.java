@@ -16,6 +16,6 @@ public class FireTomeItem extends TomeItem {
         spellList.add(SpellIdentifiers.FLAME_DASH_SPELL_ID);
 
         // this sets the default on-load page texture for the book model
-        spellPageAnimatable.setSpellTextureName(SpellIdentifiers.EMBER_SPELL_ID.getPath());
+//        spellPageAnimatable.setSpellTextureName(SpellIdentifiers.EMBER_SPELL_ID.getPath());
     }
 }

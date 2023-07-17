@@ -6,9 +6,11 @@ import net.fryke.epitome.item.tomes.TomeItem;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import software.bernie.geckolib.cache.object.BakedGeoModel;
+import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 
 public class SpellPageLayer extends GeoRenderLayer<TomeItem> {
@@ -22,15 +24,18 @@ public class SpellPageLayer extends GeoRenderLayer<TomeItem> {
 
     @Override
     public void render(MatrixStack poseStack, TomeItem animatable, BakedGeoModel bakedModel, RenderLayer renderType, VertexConsumerProvider bufferSource, VertexConsumer buffer, float partialTick, int packedLight, int packedOverlay) {
-        poseStack.push();
+        ModelTransformationMode context = spellPageAnimatable.getRenderingContext();
+        if(context != ModelTransformationMode.GROUND && context != ModelTransformationMode.GUI ) {
+            poseStack.push();
 
-        Identifier textureId = testRenderer.getTextureLocation(spellPageAnimatable);
-        RenderLayer spellPageRenderType = RenderLayer.getEntityCutoutNoCull(textureId);
-        BakedGeoModel actualBakedModel = testRenderer.getGeoModel().getBakedModel(testRenderer.getGeoModel().getModelResource(spellPageAnimatable));
+            Identifier textureId = testRenderer.getTextureLocation(spellPageAnimatable);
+            RenderLayer spellPageRenderType = RenderLayer.getEntityCutoutNoCull(textureId);
+            BakedGeoModel actualBakedModel = testRenderer.getGeoModel().getBakedModel(testRenderer.getGeoModel().getModelResource(spellPageAnimatable));
 
-        testRenderer.actuallyRender(poseStack, spellPageAnimatable, actualBakedModel, spellPageRenderType, bufferSource, bufferSource.getBuffer(spellPageRenderType),
+            testRenderer.actuallyRender(poseStack, spellPageAnimatable, actualBakedModel, spellPageRenderType, bufferSource, bufferSource.getBuffer(spellPageRenderType),
                 false, partialTick, packedLight, packedOverlay, 1, 1, 1, 1);
 
-        poseStack.pop();
+            poseStack.pop();
+        }
     }
 }

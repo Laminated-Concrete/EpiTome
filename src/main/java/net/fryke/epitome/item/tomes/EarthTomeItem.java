@@ -14,5 +14,8 @@ public class EarthTomeItem extends TomeItem {
         spellList.add(SpellIdentifiers.DIG_SPELL_ID);
         spellList.add(SpellIdentifiers.PLOW_SPELL_ID);
         spellList.add(SpellIdentifiers.PICK_UP_SPELL_ID);
+
+        // this sets the default on-load page texture for the book model
+        spellPageAnimatable.setSpellTextureName(SpellIdentifiers.DIG_SPELL_ID.getPath());
     }
 }

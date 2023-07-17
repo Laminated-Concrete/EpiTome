@@ -4,8 +4,8 @@
 		{
 			"description": {
 				"identifier": "geometry.unknown",
-				"texture_width": 16,
-				"texture_height": 16,
+				"texture_width": 147,
+				"texture_height": 147,
 				"visible_bounds_width": 2,
 				"visible_bounds_height": 1.5,
 				"visible_bounds_offset": [0, 0.25, 0]
@@ -19,8 +19,76 @@
 							"origin": [-2.75, 1.5, -3.5],
 							"size": [5.5, 0.001, 7],
 							"uv": {
-								"up": {"uv": [0, 0], "uv_size": [8, 10.25]},
-								"down": {"uv": [8, 10.25], "uv_size": [8, -10.25]}
+								"up": {"uv": [0, 0], "uv_size": [66, 84]},
+								"down": {"uv": [81, 84], "uv_size": [66, -84]}
+							}
+						}
+					]
+				},
+				{
+					"name": "chargingBone",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "chargingBone1",
+					"parent": "chargingBone",
+					"pivot": [2.25, 1.488, 0],
+					"cubes": [
+						{
+							"origin": [2, 1.488, -3],
+							"size": [0.5, 0, 6],
+							"pivot": [2.25, 1.488, 0],
+							"rotation": [0.2, 0, 0],
+							"uv": {
+								"up": {"uv": [73, 72], "uv_size": [-6, -72]}
+							}
+						}
+					]
+				},
+				{
+					"name": "chargingBone2",
+					"parent": "chargingBone",
+					"pivot": [-0.25085, 1.49213, -2.75],
+					"cubes": [
+						{
+							"origin": [-2.5, 1.491, -3],
+							"size": [4.5, 0, 0.5],
+							"pivot": [-0.25, 1.491, -2.75],
+							"rotation": [0, 0, -0.2],
+							"uv": {
+								"up": {"uv": [54, 91], "uv_size": [-54, -6]}
+							}
+						}
+					]
+				},
+				{
+					"name": "chargingBone3",
+					"parent": "chargingBone",
+					"pivot": [-2.25, 1.48713, 0.25083],
+					"cubes": [
+						{
+							"origin": [-2.5, 1.48713, -2.5],
+							"size": [0.5, 0, 5.5],
+							"pivot": [-2.25, 1.48713, 0.25],
+							"rotation": [-0.2, 0, 0],
+							"uv": {
+								"up": {"uv": [80, 66], "uv_size": [-6, -66]}
+							}
+						}
+					]
+				},
+				{
+					"name": "chargingBone4",
+					"parent": "chargingBone",
+					"pivot": [0, 1.25, 2.75],
+					"cubes": [
+						{
+							"origin": [-2, 1.492, 2.5],
+							"size": [4, 0, 0.5],
+							"pivot": [0.00084, 1.492, 2.75],
+							"rotation": [0, 0, 0.2],
+							"uv": {
+								"up": {"uv": [103, 91], "uv_size": [-48, -6]}
 							}
 						}
 					]

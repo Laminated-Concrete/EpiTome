@@ -157,6 +157,15 @@ public class TomeItem extends Item implements GeoItem {
         return 72000;
     }
 
+    @Override
+    public void postProcessNbt(NbtCompound nbt) {
+        super.postProcessNbt(nbt);
+        ModLogger.log("NBT data being processed by item " + nbt.getString("epitome.selectedSpell"));
+        Identifier storedSpellId = new Identifier(nbt.getString("epitome.selectedSpell"));
+        selectedSpell = storedSpellId;
+        spellPageAnimatable.setSpellTextureName(storedSpellId.getPath());
+    }
+
     public UseAction getUseAction(ItemStack stack) {
         return UseAction.NONE;
     }
