@@ -31,5 +31,15 @@ Regardless of your expertise, if you have a desire to help we'll take it. This i
 
 But even if those above categories don't suit you, I guarantee we can use help with whatever does interest you. Reach out to Fryke on Discord if you'd like to pitch in.
 
-## Contributing
+## Legal Note
 Note that by submitting any contributions to this project, you agree to license your contribution under the same MIT license as this project.
+
+## Contributors and Thanks
+Below is a list of all people that have contributed to the project, paid or unpaid. I (Fryke) cannot express my gratitude enough for your help in making this a reality. It is an honor and a privilege to have worked with each of you thus far.
+
+- davka for making the Tome of Earth model.
+- [Flash](https://sketchfab.com/fflashh) for making the Tome of Fire and Water models.
+- Grumpus for helping me sort out Discord shenanigans.
+- Morbid and IGoRawr for dealing with my constant ramblings.
+
+And then a specific thanks to the many Minecraft magic mods I grew up playing, notably Thaumcraft, Botania, Blood Magic, and Witchery, all which inspired me to make this mod.
