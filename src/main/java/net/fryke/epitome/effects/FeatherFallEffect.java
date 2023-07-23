@@ -6,7 +6,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class FeatherFallEffect extends StatusEffect {
     public FeatherFallEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 0xFF4500); // Choose a custom color for the effect
+        super(StatusEffectCategory.BENEFICIAL, 0xFFFFFF); // Choose a custom color for the effect
     }
 
     // This method is called every tick to check whether it should apply the status effect or not
