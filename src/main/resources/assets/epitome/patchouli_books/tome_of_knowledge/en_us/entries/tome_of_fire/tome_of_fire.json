@@ -4,8 +4,37 @@
   "category": "epitome:tomes",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "This is a test entry, but it should show up!"
+      "type": "epitome:full_image_with_item",
+      "item": "epitome:fire_tome",
+      "image_path": "epitome:textures/patchouli_images/fire_tome_page.png"
+    },
+    {
+      "type": "epitome:full_image",
+      "image_path": "epitome:textures/patchouli_images/fire_tome_flavor.png"
+    },
+    {
+      "type": "epitome:full_image",
+      "image_path": "epitome:textures/patchouli_images/ember_spell_page.png"
+    },
+    {
+      "type": "epitome:full_image",
+      "image_path": "epitome:textures/patchouli_images/ember_spell_flavor.png"
+    },
+    {
+      "type": "epitome:full_image",
+      "image_path": "epitome:textures/patchouli_images/burning_ground_spell_page.png"
+    },
+    {
+      "type": "epitome:full_image",
+      "image_path": "epitome:textures/patchouli_images/burning_ground_spell_flavor.png"
+    },
+    {
+      "type": "epitome:full_image",
+      "image_path": "epitome:textures/patchouli_images/flame_dash_spell_page.png"
+    },
+    {
+      "type": "epitome:full_image",
+      "image_path": "epitome:textures/patchouli_images/flame_dash_spell_flavor.png"
     }
   ]
 }

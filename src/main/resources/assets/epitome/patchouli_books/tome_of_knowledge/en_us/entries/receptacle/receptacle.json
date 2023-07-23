@@ -1,7 +1,7 @@
 {
   "name": "The Receptacle",
   "icon": "minecraft:writable_book",
-  "category": "epitome:notes",
+  "category": "epitome:rituals",
   "pages": [
     {
       "type": "patchouli:text",
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "type": "epitome:fake_text_image_with_header",
+      "type": "epitome:image_with_header",
       "header_text": "The Receptacle",
       "image_path": "epitome:textures/patchouli_images/testing_page_with_header.png"
     },

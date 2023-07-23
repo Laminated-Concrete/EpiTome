@@ -1,0 +1,28 @@
+{
+  "components": [
+    {
+      "type": "patchouli:header",
+      "text": "Testing Header",
+      "x": -1,
+      "y": -1
+    },
+    {
+      "type": "patchouli:separator",
+      "x": -1,
+      "y": -1
+    },
+    {
+      "type": "patchouli:item",
+      "item": "epitome:fire_tome",
+      "x": 50,
+      "y": 15
+    },
+    {
+      "type": "patchouli:item",
+      "item": "epitome:fire_tome",
+      "framed": true,
+      "x": 50,
+      "y": 15
+    }
+  ]
+}

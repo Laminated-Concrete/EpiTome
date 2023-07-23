@@ -2,10 +2,12 @@
   "components": [
     {
       "type": "patchouli:image",
-      "image": "epitome:textures/patchouli_images/testing_image.png",
+      "image": "#image_path#",
       "width": 116,
       "height": 146,
-      "y": -5
+      "y": -5,
+      "texture_width": 116,
+      "texture_height": 146
     }
   ]
 }
