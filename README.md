@@ -40,6 +40,6 @@ Below is a list of all people that have contributed to the project, paid or unpa
 - davka for making the Tome of Earth model.
 - [Flash](https://sketchfab.com/fflashh) for making the Tome of Fire and Water models.
 - Grumpus for helping me sort out Discord shenanigans.
-- Morbid and IGoRawr for dealing with my constant ramblings.
+- MorbidTortoise and IGoRawr for dealing with my constant ramblings.
 
 And then a specific thanks to the many Minecraft magic mods I grew up playing, notably Thaumcraft, Botania, Blood Magic, and Witchery, all which inspired me to make this mod.
