@@ -9,6 +9,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
@@ -41,7 +43,7 @@ public class WaterJumpSpell extends SelfSpell {
             }
         });
 
-        // then we want to add some feather falling to them
+        // then we want to add some feather falling to the player
         StatusEffectInstance effectInstance = new StatusEffectInstance(ModEffects.FEATHER_FALL_EFFECT_TYPE, 100, 0); // duration is in ticks
         caster.addStatusEffect(effectInstance);
 
@@ -70,6 +72,21 @@ public class WaterJumpSpell extends SelfSpell {
 
     @Override
     public void castSpellClient(World world, PlayerEntity caster, Hand hand, TomeItem tome) {
+        // we want to throw out some particles around the player's location to indicate the slowing area
+        Vec3d pos = caster.getPos();
+        double theta, magnitude;
+        ParticleEffect effect = ParticleTypes.SPLASH;
 
+        for (int i = 0; i < 20; i++) {
+            theta = Math.random() * 2 * Math.PI;
+            magnitude = (Math.random() * 3) + 1;
+            world.addParticle(effect, pos.getX() + Math.cos(theta) * magnitude, pos.getY() + 0.2, pos.getZ() + Math.sin(theta) * magnitude, 0, 0, 0);
+        }
+
+        for (int i = 0; i < 10; i++) {
+            theta = Math.random() * 2 * Math.PI;
+            magnitude = (Math.random() * 2) + 1;
+            world.addParticle(effect, pos.getX() + Math.cos(theta) * magnitude, pos.getY() + 0.4, pos.getZ() + Math.sin(theta) * magnitude, 0, 0, 0);
+        }
     }
 }
