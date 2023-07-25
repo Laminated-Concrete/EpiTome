@@ -24,7 +24,7 @@ public class ModItemGroup {
                 entries.add(ModItems.FIRE_TOME);
                 entries.add(ModItems.WATER_TOME);
 
-                entries.add(ModBlocks.RITUAL_BLOCK);
+                entries.add(ModBlocks.RECEPTACLE_BLOCK);
             }))
             .build());
 

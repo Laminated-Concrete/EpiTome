@@ -1,7 +1,7 @@
 package net.fryke.epitome.rituals.types;
 
+import net.fryke.epitome.entity.ReceptacleBlockEntity;
 import net.fryke.epitome.helpers.ModLogger;
-import net.fryke.epitome.entity.RitualBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
@@ -36,7 +36,7 @@ public abstract class Ritual {
     public BlockState ritualBlockState;
     public BlockPos ritualBlockPos;
     public World world;
-    public RitualBlockEntity blockEntity;
+    public ReceptacleBlockEntity blockEntity;
     public Identifier tomeId;
     public Map<String, BlockState> blockStateMap = new HashMap<>(); // Block or BlockState?
 
@@ -44,7 +44,7 @@ public abstract class Ritual {
 
     }
 
-    public void setData(PlayerEntity caster, BlockState blockState, BlockPos blockPos, World world, RitualBlockEntity blockEntity) {
+    public void setData(PlayerEntity caster, BlockState blockState, BlockPos blockPos, World world, ReceptacleBlockEntity blockEntity) {
         this.caster = caster;
         this.ritualBlockState = blockState;
         this.ritualBlockPos = blockPos;
@@ -62,7 +62,7 @@ public abstract class Ritual {
     }
 
     public void tick() {
-        ModLogger.log("IRitual tick = " + this.ritualBlockPos);
+//        ModLogger.log("Ritual tick = " + this.ritualBlockPos);
         if(state == RitualStates.RUNNING) {
             if(timeRemaining == -1) {
                 ModLogger.log("Initing ritual timer");

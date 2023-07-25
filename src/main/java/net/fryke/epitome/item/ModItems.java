@@ -2,6 +2,7 @@ package net.fryke.epitome.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fryke.epitome.EpiTomeMod;
+import net.fryke.epitome.block.ModBlocks;
 import net.fryke.epitome.helpers.ModLogger;
 import net.fryke.epitome.item.tomes.*;
 import net.minecraft.item.Item;
@@ -19,6 +20,8 @@ public class ModItems {
     }
 
     private static final FabricItemSettings tomeSettings = new FabricItemSettings().maxCount(0).fireproof().maxDamage(0);
+
+    public static final Item RECEPTACLE_ITEM = registerItem("receptacle_block", new ReceptacleItem(ModBlocks.RECEPTACLE_BLOCK, new FabricItemSettings()));
 
     /// Tome Registrations
     public static final Item TESTING_TOME = registerItem("testing_tome", new TestingTomeItem(tomeSettings));

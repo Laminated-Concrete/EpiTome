@@ -4,14 +4,13 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
-import net.fryke.epitome.client.render.BurningGroundEntityRenderer;
-import net.fryke.epitome.client.render.EmberSpellRenderer;
-import net.fryke.epitome.client.render.TestingProjectileEntityRenderer;
-import net.fryke.epitome.client.render.WaterWallEntityRenderer;
+import net.fryke.epitome.block.ModBlocks;
+import net.fryke.epitome.client.render.*;
 import net.fryke.epitome.entity.ModEntities;
 import net.fryke.epitome.event.ClientConnectionInitHandler;
 import net.fryke.epitome.interfaces.ScrollEvent;
@@ -21,6 +20,7 @@ import net.fryke.epitome.client.particles.FallingUpWaterParticle;
 import net.fryke.epitome.client.particles.ModParticles;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
@@ -84,5 +84,9 @@ public class EpiTomeModClient implements ClientModInitializer {
             WaterWallEntityRenderer::new);
 
         ClientPlayConnectionEvents.INIT.register(new ClientConnectionInitHandler());
+
+        BlockEntityRendererFactories.register(ModBlocks.RECEPTACLE_BLOCK_ENTITY, ReceptacleBlockEntityRenderer::new);
+
+//        BlockEntityRendererRegistry.register(ModBlocks.RECEPTACLE_BLOCK_ENTITY, ReceptacleBlockEntityRenderer::new);
     }
 }
