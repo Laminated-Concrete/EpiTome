@@ -62,14 +62,14 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     outputs:
-      filename: ${{ steps.get-filenames.outputs.filenames }}
+      filenames: ${{ steps.get-filenames.outputs.filenames }}
     steps:
       - name: Download
         uses: actions/download-artifact@v3
         with:
           name: Artifacts
 
-      - name: "Get File name"
+      - name: "Get File Names"
         id: get-filenames
         run: echo filenames=$(ls -1 *.jar) >> $GITHUB_OUTPUT
 
@@ -95,7 +95,7 @@ jobs:
           draft: true
           prerelease: true
           generate_release_notes: true
-          files: ${{ steps.get-filename.outputs.filenames }}
+          files: ${{ steps.get-filenames.outputs.filenames }}
 
 #      - name: Upload Release Asset
 #        id: upload-release-asset
