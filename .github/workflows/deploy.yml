@@ -95,7 +95,9 @@ jobs:
           draft: true
           prerelease: true
           generate_release_notes: true
-          files: ${{ steps.get-filenames.outputs.filenames }}
+          files: |
+            epitome-${{needs.build.outputs.build_version}}.jar
+            epitome-${{needs.build.outputs.build_version}}-sources.jar
 
 #      - name: Upload Release Asset
 #        id: upload-release-asset
