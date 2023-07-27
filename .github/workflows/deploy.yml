@@ -24,7 +24,7 @@ jobs:
         os: [ubuntu-22.04, windows-2022]
     runs-on: ${{ matrix.os }}
     outputs:
-      build_version: ${{ steps.build-version.outputs.version }}
+      build_version: ${{ env.VERSION_NAME }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -80,7 +80,7 @@ jobs:
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: 'refs/tags/${{env.VERSION_NAME}}',
+              ref: 'refs/tags/${{needs.build.outputs.build_version}}',
               sha: context.sha
             })
 
