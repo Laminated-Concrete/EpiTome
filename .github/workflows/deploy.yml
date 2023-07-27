@@ -45,11 +45,7 @@ jobs:
       - name: Retrieve Version
         id: build-version
         run: |
-          echo "VERSION_NAME=$(./gradlew -q printVersionName)" >> $GITHUB_OUTPUT
-
-      - name: Get version
-        run: |
-          echo "version_name=${{steps.android_version.outputs.VERSION_NAME}}" >> $GITHUB_ENV
+          echo "VERSION_NAME=$(./gradlew -q printVersionName)" >> $GITHUB_ENV
 
       - name: Build
         run: ./gradlew build
