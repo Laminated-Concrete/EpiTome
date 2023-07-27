@@ -1,6 +1,8 @@
 ![](https://i.imgur.com/PR35xZW.jpeg)
 
-[![GPLv3 License](https://img.shields.io/static/v1?label=Licence&message=MIT&color=green)](https://opensource.org/licenses/) [![GitHub Release](https://img.shields.io/static/v1?label=Version&message=UNRELEASED&color=blue)]() [![Discord](https://img.shields.io/static/v1?label=Discord&message=Click%20to%20Join&color=purple)](https://discord.gg/uZ733wCMZ6)
+[![GPLv3 License](https://img.shields.io/static/v1?label=Licence&message=MIT&color=green)](https://opensource.org/licenses/)
+[![GitHub Release](https://img.shields.io/static/v1?label=Version&message=v0.1.0-alpha&color=blue)]()
+[![Discord](https://img.shields.io/static/v1?label=Discord&message=Click%20to%20Join&color=purple)](https://discord.gg/uZ733wCMZ6)
 
 This is the repository for EpiTome. Come check out the [Discord Server](https://discord.gg/uZ733wCMZ6).
 
