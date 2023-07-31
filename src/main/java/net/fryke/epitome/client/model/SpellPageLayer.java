@@ -15,7 +15,7 @@ import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 
 public class SpellPageLayer extends GeoRenderLayer<TomeItem> {
     public final SpellPageAnimatable spellPageAnimatable;
-    private final SpellPageLayerRenderer testRenderer = new SpellPageLayerRenderer();
+    private final SpellPageLayerRenderer spellPageLayerRenderer = new SpellPageLayerRenderer();
 
     public SpellPageLayer(SpellPageAnimatable spellPageAnimatable) {
         super(new SpellPageLayerRenderer()); // this is automatically passing in the tomeItem type into the renderer, so the renderer expects tomeTime animatables
@@ -25,14 +25,14 @@ public class SpellPageLayer extends GeoRenderLayer<TomeItem> {
     @Override
     public void render(MatrixStack poseStack, TomeItem animatable, BakedGeoModel bakedModel, RenderLayer renderType, VertexConsumerProvider bufferSource, VertexConsumer buffer, float partialTick, int packedLight, int packedOverlay) {
         ModelTransformationMode context = spellPageAnimatable.getRenderingContext();
-        if(context != ModelTransformationMode.GROUND && context != ModelTransformationMode.GUI ) {
+        if(context != ModelTransformationMode.GROUND && context != ModelTransformationMode.GUI) {
             poseStack.push();
 
-            Identifier textureId = testRenderer.getTextureLocation(spellPageAnimatable);
+            Identifier textureId = spellPageLayerRenderer.getTextureLocation(spellPageAnimatable);
             RenderLayer spellPageRenderType = RenderLayer.getEntityCutoutNoCull(textureId);
-            BakedGeoModel actualBakedModel = testRenderer.getGeoModel().getBakedModel(testRenderer.getGeoModel().getModelResource(spellPageAnimatable));
+            BakedGeoModel actualBakedModel = spellPageLayerRenderer.getGeoModel().getBakedModel(spellPageLayerRenderer.getGeoModel().getModelResource(spellPageAnimatable));
 
-            testRenderer.actuallyRender(poseStack, spellPageAnimatable, actualBakedModel, spellPageRenderType, bufferSource, bufferSource.getBuffer(spellPageRenderType),
+            spellPageLayerRenderer.actuallyRender(poseStack, spellPageAnimatable, actualBakedModel, spellPageRenderType, bufferSource, bufferSource.getBuffer(spellPageRenderType),
                 false, partialTick, packedLight, packedOverlay, 1, 1, 1, 1);
 
             poseStack.pop();
