@@ -69,7 +69,7 @@ public abstract class Ritual {
                 timeRemaining = ritualTimeLimit;
             }
             timeRemaining--;
-            ModLogger.log("Ticks remaining = " + timeRemaining);
+//            ModLogger.log("Ticks remaining = " + timeRemaining);
 
             this.onTick();
 

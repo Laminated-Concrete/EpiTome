@@ -1,5 +1,6 @@
 package net.fryke.epitome.entity;
 
+import net.fryke.epitome.EpiTomeMod;
 import net.fryke.epitome.helpers.ModLogger;
 import net.fryke.epitome.block.ModBlocks;
 import net.fryke.epitome.rituals.ModRituals;
@@ -40,6 +41,7 @@ public class ReceptacleBlockEntity extends BlockEntity implements GeoBlockEntity
     private Ritual currentRitual;
     private int ritualTimeTicks = -1;
     private ItemStack resultItemStack;
+    private Identifier heldTomeIdentifier = new Identifier(EpiTomeMod.MOD_ID, "null");
 
     private enum ModelStates {
         INACTIVE,
@@ -70,6 +72,7 @@ public class ReceptacleBlockEntity extends BlockEntity implements GeoBlockEntity
         nbt.putString("anim_state", animState.toString());
         nbt.putBoolean("completed_ritual", completedRitual);
         nbt.putInt("ritual_time_ticks", ritualTimeTicks);
+        nbt.putString("held_tome", heldTomeIdentifier.toString());
         super.writeNbt(nbt);
     }
 
@@ -80,6 +83,7 @@ public class ReceptacleBlockEntity extends BlockEntity implements GeoBlockEntity
         animState = ModelStates.valueOf(nbt.getString("anim_state"));
         completedRitual = nbt.getBoolean("completed_ritual");
         ritualTimeTicks = nbt.getInt("ritual_time_ticks");
+        heldTomeIdentifier = new Identifier(nbt.getString("held_tome"));
         ModLogger.log("animState on read nbt = " + animState);
     }
 
@@ -103,6 +107,7 @@ public class ReceptacleBlockEntity extends BlockEntity implements GeoBlockEntity
                 if(succeeded) {
                     ModLogger.log("setting tome item stack to null");
                     resultItemStack = null;
+                    heldTomeIdentifier = new Identifier(EpiTomeMod.MOD_ID, "null");
                     completedRitual = true;
                     animState = ModelStates.INACTIVE;
                     world.updateListeners(pos, state, state, Block.NOTIFY_LISTENERS);
@@ -164,10 +169,19 @@ public class ReceptacleBlockEntity extends BlockEntity implements GeoBlockEntity
     public void insertTome(Identifier tomeId) {
         ModLogger.log("inserting a tome into the ritual block");
         resultItemStack = new ItemStack(Registries.ITEM.get(tomeId));
+        heldTomeIdentifier = tomeId;
         currentRitual = null;
         ritualTimeTicks = -1;
         animState = ModelStates.FINISHED;
         world.updateListeners(pos, getCachedState(), getCachedState(), Block.NOTIFY_LISTENERS);
+    }
+
+    public ItemStack getResultItemStack() {
+        return resultItemStack;
+    }
+
+    public Identifier getHeldTomeIdentifier() {
+        return heldTomeIdentifier;
     }
 
     public void cancelRitual() {
@@ -192,14 +206,13 @@ public class ReceptacleBlockEntity extends BlockEntity implements GeoBlockEntity
             // considering that 20 ticks is about 1 second, that's 200 ticks for the full animation
 
             double scalar = (double)200 / (double)ritualTimeTicks;
-            ModLogger.log("ritualTimeTicks = " + ritualTimeTicks + ", scalar = " + scalar);
+//            ModLogger.log("ritualTimeTicks = " + ritualTimeTicks + ", scalar = " + scalar);
 
             controller.setAnimationSpeed(scalar);
             controller.setAnimation(RawAnimation.begin().then("animation.model.progress", Animation.LoopType.HOLD_ON_LAST_FRAME));
         } else {
-            // otherwise if we are in any other state, we want to jump to the end of the animation
-            // TODO
-            controller.setAnimation(null);
+            // otherwise if we are in any other state, we want to jump to reset the animation
+            controller.setAnimation(RawAnimation.begin().then("animation.model.progressReset", Animation.LoopType.LOOP));
         }
 
         return PlayState.CONTINUE;

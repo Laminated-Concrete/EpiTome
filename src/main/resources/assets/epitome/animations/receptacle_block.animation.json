@@ -53,233 +53,203 @@
 			"loop": "hold_on_last_frame",
 			"animation_length": 10,
 			"bones": {
-				"book": {
-					"rotation": {
-						"0.0": {
-							"vector": [75, 0, 0]
-						},
-						"1.5833": {
-							"vector": [0, 0, 0],
-							"easing": "easeOutElastic",
-							"easingArgs": [3]
-						},
-						"4.0": {
-							"vector": [0, 360, 0],
-							"easing": "easeInQuad"
-						}
-					},
-					"position": {
-						"0.0": {
-							"vector": [0, -4, 0]
-						},
-						"1.3333": {
-							"vector": [0, 0, 0]
-						},
-						"1.5833": {
-							"vector": [0, 2.19, 0]
-						},
-						"4.0": {
-							"vector": [0, 0, 0]
-						}
-					}
-				},
-				"piston16": {
+				"pressureGauge1N": {
 					"position": {
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
 						"2.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston12": {
+				"pressureGauge2N": {
 					"position": {
 						"2.0": {
 							"vector": [0, 0, 0]
 						},
 						"4.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston13": {
+				"pressureGauge3N": {
 					"position": {
 						"4.0": {
 							"vector": [0, 0, 0]
 						},
 						"6.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston14": {
+				"pressureGauge4N": {
 					"position": {
 						"6.0": {
 							"vector": [0, 0, 0]
 						},
 						"8.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston15": {
+				"pressureGauge5N": {
 					"position": {
 						"8.0": {
 							"vector": [0, 0, 0]
 						},
 						"10.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston6": {
+				"pressureGauge1S": {
 					"position": {
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
 						"2.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston7": {
+				"pressureGauge2S": {
 					"position": {
 						"2.0": {
 							"vector": [0, 0, 0]
 						},
 						"4.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston8": {
+				"pressureGauge3S": {
 					"position": {
 						"4.0": {
 							"vector": [0, 0, 0]
 						},
 						"6.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston9": {
+				"pressureGauge4S": {
 					"position": {
 						"6.0": {
 							"vector": [0, 0, 0]
 						},
 						"8.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston10": {
+				"pressureGauge5S": {
 					"position": {
 						"8.0": {
 							"vector": [0, 0, 0]
 						},
 						"10.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston17": {
-					"position": {
-						"0.0": {
-							"vector": [-0.28, 0, 0]
-						},
-						"2.0": {
-							"vector": [-0.275, 0, 0]
-						}
-					}
-				},
-				"piston18": {
-					"position": {
-						"2.0": {
-							"vector": [0, 0, 0]
-						},
-						"4.0": {
-							"vector": [-0.275, 0, 0]
-						}
-					}
-				},
-				"piston19": {
-					"position": {
-						"4.0": {
-							"vector": [0, 0, 0]
-						},
-						"6.0": {
-							"vector": [-0.275, 0, 0]
-						}
-					}
-				},
-				"piston20": {
-					"position": {
-						"6.0": {
-							"vector": [0, 0, 0]
-						},
-						"8.0": {
-							"vector": [-0.275, 0, 0]
-						}
-					}
-				},
-				"piston21": {
-					"position": {
-						"8.0": {
-							"vector": [0, 0, 0]
-						},
-						"10.0": {
-							"vector": [-0.275, 0, 0]
-						}
-					}
-				},
-				"piston2": {
+				"pressureGauge1W": {
 					"position": {
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
 						"2.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston3": {
+				"pressureGauge2W": {
 					"position": {
 						"2.0": {
 							"vector": [0, 0, 0]
 						},
 						"4.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston4": {
+				"pressureGauge3W": {
 					"position": {
 						"4.0": {
 							"vector": [0, 0, 0]
 						},
 						"6.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston5": {
+				"pressureGauge4W": {
 					"position": {
 						"6.0": {
 							"vector": [0, 0, 0]
 						},
 						"8.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
 						}
 					}
 				},
-				"piston11": {
+				"pressureGauge5W": {
 					"position": {
 						"8.0": {
 							"vector": [0, 0, 0]
 						},
 						"10.0": {
-							"vector": [-0.275, 0, 0]
+							"vector": [0, 0, -3.1]
+						}
+					}
+				},
+				"pressureGauge1E": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2.0": {
+							"vector": [0, 0, -3.1]
+						}
+					}
+				},
+				"pressureGauge2E": {
+					"position": {
+						"2.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.0": {
+							"vector": [0, 0, -3.1]
+						}
+					}
+				},
+				"pressureGauge3E": {
+					"position": {
+						"4.0": {
+							"vector": [0, 0, 0]
+						},
+						"6.0": {
+							"vector": [0, 0, -3.1]
+						}
+					}
+				},
+				"pressureGauge4E": {
+					"position": {
+						"6.0": {
+							"vector": [0, 0, 0]
+						},
+						"8.0": {
+							"vector": [0, 0, -3.1]
+						}
+					}
+				},
+				"pressureGauge5E": {
+					"position": {
+						"8.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [0, 0, -3.1]
 						}
 					}
 				}
@@ -524,6 +494,10 @@
 					}
 				}
 			}
+		},
+		"animation.model.progressReset": {
+			"loop": true,
+			"animation_length": 0.04167
 		}
 	},
 	"geckolib_format_version": 2

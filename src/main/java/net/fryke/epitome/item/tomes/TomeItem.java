@@ -11,21 +11,16 @@ import net.fryke.epitome.spells.ModSpells;
 import net.fryke.epitome.spells.SpellIdentifiers;
 import net.fryke.epitome.spells.types.Spell;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.option.HotbarStorage;
-import net.minecraft.client.option.HotbarStorageEntry;
 import net.minecraft.client.render.item.BuiltinModelItemRenderer;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Equipment;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
@@ -36,9 +31,7 @@ import software.bernie.geckolib.animatable.client.RenderProvider;
 import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.*;
-import software.bernie.geckolib.core.keyframe.event.CustomInstructionKeyframeEvent;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import software.bernie.geckolib.util.RenderUtils;
@@ -265,6 +258,7 @@ public class TomeItem extends Item implements GeoItem {
         AnimationController<TomeItem> pagesController = new AnimationController<>(this, "pages_controller", 0, this::pagesPredicate);
 
         pagesController.setCustomInstructionKeyframeHandler(customInstructionKeyframeEvent -> {
+
             String instruction = customInstructionKeyframeEvent.getKeyframeData().getInstructions();
             ModLogger.log(instruction + " " + (instruction == "switchPageTexture;") + instruction.equals("switchPageTexture;"));
             if(instruction.equals("switchPageTexture;")) { // there is automatically a semicolon at the end of the instruction
@@ -282,7 +276,7 @@ public class TomeItem extends Item implements GeoItem {
 
         ModelTransformationMode renderingContext = tAnimationState.getData(DataTickets.ITEM_RENDER_PERSPECTIVE);
         spellPageAnimatable.setRenderingContext(renderingContext);
-        if(renderingContext == ModelTransformationMode.GROUND || renderingContext == ModelTransformationMode.GUI) {
+        if(renderingContext == null || renderingContext == ModelTransformationMode.GROUND || renderingContext == ModelTransformationMode.GUI) {
             return PlayState.CONTINUE;
         }
 
