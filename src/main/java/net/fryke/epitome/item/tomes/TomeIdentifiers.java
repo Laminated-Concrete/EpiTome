@@ -4,6 +4,7 @@ import net.fryke.epitome.EpiTomeMod;
 import net.minecraft.util.Identifier;
 
 public class TomeIdentifiers {
+    public static final Identifier TOME_OF_KNOWLEDGE = new Identifier(EpiTomeMod.MOD_ID, "knowledge_tome");
     public static final Identifier TESTING_TOME = new Identifier(EpiTomeMod.MOD_ID, "testing_tome");
     public static final Identifier EARTH_TOME = new Identifier(EpiTomeMod.MOD_ID, "earth_tome");
     public static final Identifier FIRE_TOME = new Identifier(EpiTomeMod.MOD_ID, "fire_tome");

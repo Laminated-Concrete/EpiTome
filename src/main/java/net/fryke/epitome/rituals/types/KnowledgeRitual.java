@@ -9,7 +9,7 @@ public class KnowledgeRitual extends Ritual {
     public KnowledgeRitual() {
         super();
         this.ritualId = RitualIdentifiers.KNOWLEDGE_RITUAL_ID;
-        this.tomeId = TomeIdentifiers.FIRE_TOME;
+        this.tomeId = TomeIdentifiers.TOME_OF_KNOWLEDGE;
         this.ritualTimeLimit = 100; // 5s
         this.hasTask = false;
     }

@@ -13,7 +13,6 @@ public class TomeModel extends GeoModel<TomeItem> {
 
     @Override
     public Identifier getTextureResource(TomeItem animatable) {
-//        return new Identifier(EpiTomeMod.MOD_ID, "textures/no_texture.png");
         return new Identifier(EpiTomeMod.MOD_ID, "textures/tomes/" + animatable.tomeId.getPath() + ".png");
     }
 

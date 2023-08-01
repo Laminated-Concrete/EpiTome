@@ -23,6 +23,9 @@ public class ModItems {
 
     public static final Item RECEPTACLE_ITEM = registerItem("receptacle_block", new ReceptacleItem(ModBlocks.RECEPTACLE_BLOCK, new FabricItemSettings()));
 
+    /// This is the item used for the patchouli book
+    public static final Item KNOWLEDGE_TOME = registerItem("knowledge_tome", new KnowledgeTomeItem(tomeSettings));
+
     /// Tome Registrations
     public static final Item TESTING_TOME = registerItem("testing_tome", new TestingTomeItem(tomeSettings));
     public static final Item EARTH_TOME = registerItem("earth_tome", new EarthTomeItem(tomeSettings));

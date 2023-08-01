@@ -18,6 +18,7 @@ public class ModItemGroup {
             .icon(() -> new ItemStack(ModItems.TESTING_TOME))
             .entries(((displayContext, entries) -> {
                 // The order these are added = the order they are displayed
+                entries.add(ModItems.KNOWLEDGE_TOME);
                 entries.add(ModItems.TESTING_TOME);
                 entries.add(ModItems.AIR_TOME);
                 entries.add(ModItems.EARTH_TOME);
