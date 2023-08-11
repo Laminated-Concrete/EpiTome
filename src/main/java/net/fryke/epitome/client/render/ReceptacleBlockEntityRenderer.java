@@ -1,10 +1,8 @@
 package net.fryke.epitome.client.render;
 
-import net.fryke.epitome.client.ReceptacleTomeAnimatable;
 import net.fryke.epitome.client.model.ReceptacleBlockEntityModel;
 import net.fryke.epitome.client.model.ReceptacleTomeLayer;
 import net.fryke.epitome.entity.ReceptacleBlockEntity;
-import net.fryke.epitome.item.tomes.TomeItem;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;

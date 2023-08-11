@@ -18,5 +18,25 @@
     "sounds": [
       "epitome:casting_loop"
     ]
+  },
+  "started_casting_t1": {
+    "sounds": [
+      "epitome:started_casting_t1"
+    ]
+  },
+  "ready_to_cast_t1": {
+    "sounds": [
+      "epitome:ready_to_cast_t1"
+    ]
+  },
+  "finished_casting_t1": {
+    "sounds": [
+      "epitome:finished_casting_t1"
+    ]
+  },
+  "casting_loop_t1": {
+    "sounds": [
+      "epitome:casting_loop_t1"
+    ]
   }
 }

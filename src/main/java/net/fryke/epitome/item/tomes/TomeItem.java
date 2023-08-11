@@ -6,13 +6,16 @@ import net.fryke.epitome.helpers.ModLogger;
 import net.fryke.epitome.ModSounds;
 import net.fryke.epitome.client.SpellPageAnimatable;
 import net.fryke.epitome.client.render.TomeRenderer;
+import net.fryke.epitome.interfaces.IEntityNbtSaver;
 import net.fryke.epitome.packets.SwitchSpellPacket;
 import net.fryke.epitome.spells.ModSpells;
 import net.fryke.epitome.spells.SpellIdentifiers;
 import net.fryke.epitome.spells.types.Spell;
+import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.item.BuiltinModelItemRenderer;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -63,12 +66,7 @@ public class TomeItem extends Item implements GeoItem {
     private ModelStates bookState = ModelStates.NEW;
     private ModelStates pagesState = ModelStates.NEW;
 
-    private TomeSoundEffect casting_loop_sound = new TomeSoundEffect(caster, ModSounds.CASTING_LOOP_EVENT, true);
-
     private boolean playedReadySoundEffect = false;
-    private final SoundEvent started_casting_sound = ModSounds.STARTED_CASTING_ACCENT_EVENT;
-    private final SoundEvent finished_casting_sound = ModSounds.FINISHED_CASTING_ACCENT_EVENT;
-    private final SoundEvent ready_to_cast_sound = ModSounds.READY_TO_CAST_ACCENT_EVENT;
 
     public TomeItem(Settings settings) {
         super(settings);
@@ -80,15 +78,28 @@ public class TomeItem extends Item implements GeoItem {
         caster = user;
         ItemStack itemStack = user.getStackInHand(hand);
 
-        Spell spell = (Spell) ModSpells.spellRegistry.get(selectedSpell);
+        if(!world.isClient) {
+            selectedSpell = new Identifier(itemStack.getNbt().getString("epitome.selectedSpell"));
+        }
+
+        Spell spell = ModSpells.spellRegistry.get(selectedSpell);
         assert spell != null;
-        chargeTime = spell.chargeTimeTicks;
+        if(spell != null) {
+            chargeTime = spell.chargeTimeTicks;
+        }
         this.playedReadySoundEffect = false;
 
         if(chargeTime > 0) {
             if(!world.isClient) {
-                world.playSound(null, user.getBlockPos(), started_casting_sound, SoundCategory.PLAYERS, 1.0f, 1.0f);
+                world.playSoundFromEntity(null, user, ModSounds.STARTED_CASTING_T1_EVENT, SoundCategory.NEUTRAL, 1.0f, 1.0f);
+//                world.playSound(null, user.getBlockPos(), started_casting_sound, SoundCategory.PLAYERS, 1.0f, 1.0f);
+
+
             }
+            NbtCompound epitomeData = ((IEntityNbtSaver) user).getEpitomeData();
+            epitomeData.putBoolean("is_casting", true);
+            ((IEntityNbtSaver) user).triggerEpitomeDataUpdate();
+
             user.setCurrentHand(hand);
             // actually casting the spell happens later in finishUsing
             return TypedActionResult.consume(itemStack);
@@ -106,16 +117,11 @@ public class TomeItem extends Item implements GeoItem {
         if(chargeProgress == 1.0F) {
             if(!playedReadySoundEffect && !world.isClient) {
                 ModLogger.log("Playing ready-to-cast sound effect " + user.getBlockPos());
-                world.playSound(null, user.getBlockPos(), ready_to_cast_sound, SoundCategory.PLAYERS, 1.0f, 1.0f);
+                world.playSoundFromEntity(null, user, ModSounds.READY_TO_CAST_T1_EVENT, SoundCategory.PLAYERS, 1.0f, 1.0f);
+//                world.playSound(null, user.getBlockPos(), ready_to_cast_sound, SoundCategory.PLAYERS, 1.0f, 1.0f);
                 this.playedReadySoundEffect = true;
             }
 //            ModLogger.log("Spell is ready to cast");
-        }
-
-        if(world.isClient && useTicks > 2) {
-            if(!MinecraftClient.getInstance().getSoundManager().isPlaying(casting_loop_sound)) {
-                MinecraftClient.getInstance().getSoundManager().play(casting_loop_sound);
-            }
         }
     }
 
@@ -124,14 +130,17 @@ public class TomeItem extends Item implements GeoItem {
         int useTicks = this.getMaxUseTime(stack) - remainingUseTicks;
         float chargeProgress = this.getChargeProgress(useTicks);
 
-        if(MinecraftClient.getInstance().getSoundManager().isPlaying(casting_loop_sound)) {
-            MinecraftClient.getInstance().getSoundManager().stop(casting_loop_sound);
-        }
-
         if (chargeProgress == 1.0F) {
             ModLogger.log("Finished charging, we want to cast to spell now");
             this.castSelectedSpell(world, stack, user);
         }
+
+//        if(!world.isClient) {
+            NbtCompound epitomeData = ((IEntityNbtSaver) user).getEpitomeData();
+            epitomeData.putBoolean("is_casting", false);
+            ((IEntityNbtSaver) user).triggerEpitomeDataUpdate();
+//        }
+
         ModLogger.log("On stopped using");
     }
 
@@ -212,7 +221,8 @@ public class TomeItem extends Item implements GeoItem {
         assert spell != null;
 
         if (!world.isClient) {
-            world.playSound(null, user.getBlockPos(), finished_casting_sound, SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.playSoundFromEntity(null, user, ModSounds.FINISHED_CASTING_T1_EVENT, SoundCategory.PLAYERS, 1.0f, 1.0f);
+//            world.playSound(null, user.getBlockPos(), finished_casting_sound, SoundCategory.PLAYERS, 1.0f, 1.0f);
             spell.doCastSpell(world, this.caster, Hand.MAIN_HAND, this);
         } else {
             spell.doCastSpellClient(world, this.caster, Hand.MAIN_HAND, this);
@@ -258,7 +268,6 @@ public class TomeItem extends Item implements GeoItem {
         AnimationController<TomeItem> pagesController = new AnimationController<>(this, "pages_controller", 0, this::pagesPredicate);
 
         pagesController.setCustomInstructionKeyframeHandler(customInstructionKeyframeEvent -> {
-
             String instruction = customInstructionKeyframeEvent.getKeyframeData().getInstructions();
             ModLogger.log(instruction + " " + (instruction == "switchPageTexture;") + instruction.equals("switchPageTexture;"));
             if(instruction.equals("switchPageTexture;")) { // there is automatically a semicolon at the end of the instruction
@@ -284,8 +293,8 @@ public class TomeItem extends Item implements GeoItem {
             return PlayState.CONTINUE;
         }
 
-        if(bookState == ModelStates.NEW) {
-            ModLogger.log("NEW STATE TRIGGERED");
+        if(bookState == ModelStates.NEW || bookState == ModelStates.IDLE_OPEN) {
+//            ModLogger.log("NEW STATE TRIGGERED");
             // We are new and want to initialize the model
             controller.setAnimation(RawAnimation.begin().then("animation.model.openBook", Animation.LoopType.HOLD_ON_LAST_FRAME));
             spellPageAnimatable.setAnimation("animation.model.openBook");

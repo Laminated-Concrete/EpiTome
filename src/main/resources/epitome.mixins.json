@@ -10,7 +10,11 @@
     "PlayerRendererMixin",
     "BlockEntityMixin",
     "MouseMixin",
-    "HeldItemRendererMixin"
+    "HeldItemRendererMixin",
+    "EntityClientMixin"
+  ],
+  "server": [
+    "EntityServerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

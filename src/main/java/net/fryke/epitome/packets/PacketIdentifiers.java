@@ -5,4 +5,5 @@ import net.minecraft.util.Identifier;
 
 public class PacketIdentifiers {
     public static final Identifier SWITCH_SPELL_PACKET_ID = new Identifier(EpiTomeMod.MOD_ID, "switch_spell_packet");
+    public static final Identifier EPITOME_DATA_PACKET_ID = new Identifier(EpiTomeMod.MOD_ID, "epitome_data_packet");
 }

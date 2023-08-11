@@ -7,6 +7,8 @@ import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fryke.epitome.entity.spell.projectile.ProjectileSpellEntity;
 import net.fryke.epitome.helpers.ModLogger;
+import net.fryke.epitome.interfaces.IEntityNbtSaver;
+import net.fryke.epitome.packets.EpitomeDataUpdatePacket;
 import net.fryke.epitome.packets.SwitchSpellPacket;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
@@ -29,6 +31,16 @@ import java.util.UUID;
 public class ClientConnectionInitHandler implements ClientPlayConnectionEvents.Init{
     @Override
     public void onPlayInit(ClientPlayNetworkHandler handler, MinecraftClient client) {
+        ClientPlayNetworking.registerGlobalReceiver(EpitomeDataUpdatePacket.TYPE, (packet, player, responseSender) -> {
+            ModLogger.log("handler player name = " + player.getName());
+            PlayerEntity targetPlayer = client.world.getPlayerByUuid(packet.playerUuid());
+            ModLogger.log("targetPlayer name = " + targetPlayer.getName());
+
+            NbtCompound epitomeData = packet.epitomeData();
+            ((IEntityNbtSaver)targetPlayer).setEpitomeData(epitomeData);
+        });
+
+
         ClientPlayNetworking.registerGlobalReceiver(SwitchSpellPacket.TYPE, (packet, player, responseSender) -> {
             ModLogger.log("us player thing = " + player.getName());
             PlayerEntity targetPlayer = client.world.getPlayerByUuid(packet.playerUuid());

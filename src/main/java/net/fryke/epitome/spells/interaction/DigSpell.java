@@ -7,6 +7,7 @@ import net.fryke.epitome.spells.SpellIdentifiers;
 import net.fryke.epitome.spells.types.InteractionSpell;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.Hand;
